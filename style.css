@@ -199,12 +199,66 @@ footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8p
 .project-section ul { padding-left: 20px; }
 .project-section li { margin-bottom: 6px; }
 
-/* ---------- Figurer ---------- */
-.fig { margin: 22px 0; }
-.fig a { display: block; }
-.fig img { display: block; width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--line); background: #fff; }
-.fig figcaption { font-family: var(--mono); font-size: 12px; color: var(--muted); margin-top: 8px; line-height: 1.5; }
-.fig-hero { margin: 26px 0 8px; }
-.fig-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 4px 18px; align-items: start; }
-.fig-grid .fig.wide { grid-column: 1 / -1; }
-@media (max-width: 700px) { .fig-grid { grid-template-columns: 1fr; } }
+/* ---------- Galleri ---------- */
+.project-page { max-width: 920px; }
+.project-page .project-lede,
+.project-page .project-section > p,
+.project-page .project-section > ul { max-width: 740px; }
+
+.fig { margin: 0; }
+.tile {
+  position: relative; display: block; overflow: hidden; border-radius: 12px;
+  border: 1px solid var(--line); background: var(--bg, #0b0f20);
+  aspect-ratio: 4 / 3; cursor: zoom-in; transition: border-color .2s, transform .2s;
+}
+.tile img { display: block; width: 100%; height: 100%; object-fit: var(--fit, contain); }
+.tile:hover, .tile:focus-visible { border-color: var(--brass); transform: translateY(-2px); outline: none; }
+.tile::after {
+  content: "⤢"; position: absolute; right: 8px; bottom: 8px; width: 26px; height: 26px; line-height: 26px;
+  text-align: center; font-size: 14px; color: #fff; background: rgba(10,13,24,.7); border-radius: 8px;
+  opacity: 0; transition: opacity .2s;
+}
+.tile:hover::after, .tile:focus-visible::after { opacity: 1; }
+.fig figcaption {
+  font-family: var(--mono); font-size: 11.5px; line-height: 1.5; color: var(--muted); margin-top: 8px;
+  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+}
+.gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 20px 16px; margin: 18px 0 4px; }
+.fig-hero { margin: 26px 0 6px; }
+.fig-hero .tile { aspect-ratio: auto; height: min(440px, 58vw); }
+.fig-hero .tile { isolation: isolate; background: #0b0f20; }
+.fig-hero .tile::before { content: ""; position: absolute; inset: -30px; z-index: -1; background: var(--src) center / cover; filter: blur(28px) brightness(.5) saturate(1.1); }
+.fig-hero .tile img { object-fit: contain; position: relative; }
+.fig.wide { grid-column: span 2; }
+.fig.wide .tile { aspect-ratio: 8 / 3; }
+@media (max-width: 700px) {
+  .gallery { grid-template-columns: 1fr; }
+  .tile { aspect-ratio: auto; background: transparent; }
+  .tile img { height: auto; }
+  .fig-hero .tile { height: auto; }
+  .fig-hero .tile::before { display: none; }
+  .fig.wide { grid-column: auto; }
+  .fig.wide .tile { aspect-ratio: auto; }
+  .tile::after { display: none; }
+}
+
+/* ---------- Lightbox ---------- */
+body.lb-open { overflow: hidden; }
+.lb { position: fixed; inset: 0; z-index: 100; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  background: rgba(6,8,16,.94); padding: 56px 64px 24px; }
+.lb[hidden] { display: none; }
+.lb figure { margin: 0; max-width: 100%; max-height: 100%; display: flex; flex-direction: column; align-items: center; gap: 12px; min-height: 0; }
+.lb img { max-width: 100%; max-height: calc(100vh - 170px); object-fit: contain; border-radius: 8px; background: var(--bg, #fff); }
+.lb figcaption { font-family: var(--mono); font-size: 13px; line-height: 1.5; color: #c5cbe6; text-align: center; max-width: 760px; }
+.lb button { position: absolute; border: 1px solid var(--line); background: rgba(18,23,49,.85); color: #fff; cursor: pointer; border-radius: 10px; font-size: 22px; line-height: 1; transition: border-color .2s; }
+.lb button:hover, .lb button:focus-visible { border-color: var(--brass); outline: none; }
+.lb-x { top: 14px; right: 16px; width: 40px; height: 40px; }
+.lb-p, .lb-n { top: 50%; width: 44px; height: 56px; margin-top: -28px; }
+.lb-p { left: 12px; } .lb-n { right: 12px; }
+.lb-c { position: absolute; top: 24px; left: 20px; font-family: var(--mono); font-size: 12px; color: var(--muted); }
+@media (max-width: 700px) {
+  .lb { padding: 56px 12px 16px; }
+  .lb-p, .lb-n { top: auto; bottom: 14px; margin-top: 0; width: 48px; height: 44px; }
+  .lb-p { left: 14px; } .lb-n { right: 14px; }
+  .lb img { max-height: calc(100vh - 200px); }
+}

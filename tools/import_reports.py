@@ -25,6 +25,7 @@ Bruk:
 """
 import html
 import json
+from urllib.parse import quote
 import re
 import sys
 from datetime import datetime
@@ -181,6 +182,10 @@ def build_entry(folder):
     links = meta.pop("links", [])
     hero = meta.pop("hero", None)
     figures = meta.pop("figures", [])
+    # Portrett og nesten kvadratiske bilder fungerer dårlig som bredt toppbilde: legg dem først i galleriet
+    if hero and hero.get("w") and hero.get("h") and hero["w"] / hero["h"] < 1.2:
+        figures = [hero] + figures
+        hero = None
     entry.update(meta)
     if skip:
         return None, None
@@ -198,20 +203,25 @@ def build_entry(folder):
 # ---------- Side ----------
 
 def fig_html(e, f, esc, hero=False):
-    """En figur fra reports/<id>/<fil>. Valgfrie felt: caption, alt, w, h."""
+    """En figur som klikkbar rute i galleriet. Valgfrie felt: caption, alt, w, h, fit, bg."""
     url = f"../reports/{e['id']}/{f['file']}"
     w, h = f.get("w"), f.get("h")
     dims = f' width="{w}" height="{h}"' if w and h else ""
-    wide = " wide" if (w and h and w / h > 1.9) else ""
-    cap = f'<figcaption>{esc(f["caption"])}</figcaption>' if f.get("caption") else ""
+    fit = "contain" if hero else f.get("fit", "contain")
+    bg = f.get("bg", "#0b0f20")
+    cap_txt = f.get("caption", "")
+    cap = f'<figcaption>{esc(cap_txt)}</figcaption>' if cap_txt else ""
     lazy = "" if hero else ' loading="lazy"'
-    cls = "fig fig-hero" if hero else "fig" + wide
-    return (f'<figure class="{cls}"><a href="{esc(url)}" target="_blank" rel="noopener">'
-            f'<img src="{esc(url)}" alt="{esc(f.get("alt") or f.get("caption", ""))}"{dims}{lazy}></a>{cap}</figure>')
+    wide = bool(w and h and w / h > 3)
+    cls = "fig fig-hero" if hero else ("fig wide" if wide else "fig")
+    alt = esc(f.get("alt") or cap_txt)
+    src_var = f";--src:url({esc(quote(url))})" if hero else ""
+    return (f'<figure class="{cls}"><a class="tile" href="{esc(url)}" data-caption="{esc(cap_txt)}" '
+            f'style="--bg:{esc(bg)};--fit:{fit}{src_var}"><img src="{esc(url)}" alt="{alt}"{dims}{lazy}></a>{cap}</figure>')
 
 
 def fig_grid(e, figs, esc):
-    return '<div class="fig-grid">' + "".join(fig_html(e, f, esc) for f in figs) + "</div>" if figs else ""
+    return '<div class="gallery">' + "".join(fig_html(e, f, esc) for f in figs) + "</div>" if figs else ""
 
 
 def render_sections(e, esc, pdf_rel):
@@ -299,6 +309,7 @@ def render_page(e):
   <span>håndlaget · ingen rammeverk · servert av GitHub Pages</span>
 </footer>
 <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+<script src="../lightbox.js"></script>
 </body>
 </html>
 """

@@ -24,26 +24,34 @@
     "file": "img/oppkobling.webp",
     "w": 1006,
     "h": 720,
-    "caption": "Oppkobling med AVR128DB48 og Analog Discovery 2."
+    "caption": "Oppkobling med AVR128DB48 og Analog Discovery 2.",
+    "bg": "#13343c",
+    "fit": "cover"
   },
   "figures": [
     {
       "file": "img/blokkskjema.webp",
       "w": 828,
       "h": 477,
-      "caption": "Prinsipiell blokkstruktur for FSK-demodulatoren."
+      "caption": "Prinsipiell blokkstruktur for FSK-demodulatoren.",
+      "bg": "#fefefe",
+      "fit": "contain"
     },
     {
       "file": "img/energi.webp",
       "w": 893,
       "h": 598,
-      "caption": "Energideteksjon for 200 Hz og 300 Hz etter absoluttverdi og glidende middel."
+      "caption": "Energideteksjon for 200 Hz og 300 Hz etter absoluttverdi og glidende middel.",
+      "bg": "#f6f6f6",
+      "fit": "contain"
     },
     {
       "file": "img/bitbeslutning.webp",
       "w": 892,
       "h": 570,
-      "caption": "Bitbeslutning tatt midt i hver bitperiode."
+      "caption": "Bitbeslutning tatt midt i hver bitperiode.",
+      "bg": "#f6f6f6",
+      "fit": "contain"
     }
   ]
 }

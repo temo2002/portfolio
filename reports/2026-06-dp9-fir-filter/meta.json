@@ -24,20 +24,26 @@
     "file": "img/oppkobling.webp",
     "w": 1006,
     "h": 720,
-    "caption": "Oppkobling med AVR128DB48 og Analog Discovery 2."
+    "caption": "Oppkobling med AVR128DB48 og Analog Discovery 2.",
+    "bg": "#13343c",
+    "fit": "cover"
   },
   "figures": [
     {
       "file": "img/frekvensrespons.webp",
       "w": 903,
       "h": 587,
-      "caption": "Frekvens- og faserespons for FIR-lavpassfilteret."
+      "caption": "Frekvens- og faserespons for FIR-lavpassfilteret.",
+      "bg": "#f6f6f6",
+      "fit": "contain"
     },
     {
       "file": "img/psd.webp",
       "w": 887,
       "h": 589,
-      "caption": "Effektspektraltetthet før og etter filtrering."
+      "caption": "Effektspektraltetthet før og etter filtrering.",
+      "bg": "#f6f6f6",
+      "fit": "contain"
     }
   ]
 }

@@ -24,26 +24,34 @@
     "file": "img/oled.webp",
     "w": 342,
     "h": 637,
-    "caption": "Spekteret vist på OLED-skjermen."
+    "caption": "Spekteret vist på OLED-skjermen.",
+    "bg": "#523b31",
+    "fit": "contain"
   },
   "figures": [
     {
       "file": "img/oversikt.webp",
       "w": 866,
       "h": 345,
-      "caption": "Overordnet system for artikulasjonstreneren."
+      "caption": "Overordnet system for artikulasjonstreneren.",
+      "bg": "#fefefe",
+      "fit": "contain"
     },
     {
       "file": "img/losning.webp",
       "w": 881,
       "h": 414,
-      "caption": "Realisert løsning på AVR128DB48."
+      "caption": "Realisert løsning på AVR128DB48.",
+      "bg": "#fefefe",
+      "fit": "contain"
     },
     {
       "file": "img/programflyt.webp",
       "w": 511,
       "h": 600,
-      "caption": "Programflyt for FFT og visning."
+      "caption": "Programflyt for FFT og visning.",
+      "bg": "#fefefe",
+      "fit": "contain"
     }
   ]
 }

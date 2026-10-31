@@ -16,6 +16,24 @@
       "title": "Problemet",
       "paragraphs": [
         "Personer som mister synet som voksne har visuelle minner, men mangler tilgang til informasjon i sanntid. Prosjektet tok utgangspunkt i ett scenario: å lage fruktsalat på egenhånd. Behovet ble kartlagt gjennom samtaler med to fagpersoner."
+      ],
+      "figures": [
+        {
+          "file": "img/persona.webp",
+          "w": 1400,
+          "h": 990,
+          "bg": "#ffffff",
+          "fit": "contain",
+          "caption": "Persona: Petter, 20 år, som har mistet synet senere i livet."
+        },
+        {
+          "file": "img/empatikart.webp",
+          "w": 1400,
+          "h": 990,
+          "bg": "#ffffff",
+          "fit": "contain",
+          "caption": "Empatikart for Petter: hva han sier, tenker, gjør og føler."
+        }
       ]
     },
     {
@@ -25,18 +43,128 @@
         "Posisjonen sendes over UDP til en ESP32-C3 som styrer sju vibrasjonsmotorer i et belte, så brukeren kjenner retningen uten å bruke hørselen.",
         "Norsk talesyntese (Piper) varsler om deteksjoner, og brukeren kan stille spørsmål med en knapp via Whisper og Claude Haiku.",
         "Egenbygd batteripakke av gjenbrukte 18650-celler, og 3D-printede kapslinger."
+      ],
+      "figures": [
+        {
+          "file": "img/systemarkitektur.webp",
+          "w": 1500,
+          "h": 1000,
+          "bg": "#fefefe",
+          "fit": "cover",
+          "caption": "Overordnet systemarkitektur: Raspberry Pi 5, ESP32-C3, PCA9685 og sju vibrasjonsmotorer."
+        },
+        {
+          "file": "img/hardware.webp",
+          "w": 1500,
+          "h": 1000,
+          "bg": "#fbfcfc",
+          "fit": "cover",
+          "caption": "Maskinvareoversikt med spenningsregulering og batteri."
+        },
+        {
+          "file": "img/tilbakemelding.webp",
+          "w": 1500,
+          "h": 1000,
+          "bg": "#fefefe",
+          "fit": "contain",
+          "caption": "Tre parallelle tilbakemeldingskanaler: vibrasjon, tale og talekommando."
+        },
+        {
+          "file": "img/soneinndeling.webp",
+          "w": 1500,
+          "h": 1000,
+          "bg": "#fefefe",
+          "fit": "contain",
+          "caption": "Kamerabildet delt i sju soner, med én vibrasjonsmotor per sone."
+        },
+        {
+          "file": "img/brystmodul.webp",
+          "w": 1300,
+          "h": 1733,
+          "bg": "#c3c3b8",
+          "fit": "contain",
+          "caption": "Brystmodulen med Raspberry Pi 5 og kamera."
+        },
+        {
+          "file": "img/batteripakke.webp",
+          "w": 1300,
+          "h": 1733,
+          "bg": "#a4aaab",
+          "fit": "contain",
+          "caption": "Egenbygd batteripakke i 3D-printet kapsling."
+        },
+        {
+          "file": "img/belte-innside.webp",
+          "w": 1400,
+          "h": 1050,
+          "bg": "#717778",
+          "fit": "cover",
+          "caption": "Innsiden av vibrasjonsbeltet med motorer og ledninger."
+        }
       ]
     },
     {
       "title": "Min rolle",
       "paragraphs": [
         "Jeg hadde ansvaret for programvaren og integrasjonen mellom modulene: objektdeteksjon på Raspberry Pi 5, tale til tekst, tekst til tale, API-kobling og arbeidsflyt med GitHub."
+      ],
+      "figures": [
+        {
+          "file": "img/programflyt.webp",
+          "w": 1024,
+          "h": 1536,
+          "bg": "#fefefe",
+          "fit": "contain",
+          "caption": "Programflyt for deteksjon, vibrasjon, tale og talekommando."
+        },
+        {
+          "file": "img/arbeidsflyt.webp",
+          "w": 1500,
+          "h": 823,
+          "bg": "#fefefe",
+          "fit": "cover",
+          "caption": "Arbeidsflyt for programvaren: lokalt, GitHub og test på Raspberry Pi."
+        }
       ]
     },
     {
       "title": "Iterasjon",
       "paragraphs": [
         "Første konsept var briller med kamera og tale i øret. Samtalene viste at blinde ikke nødvendigvis vender hodet mot det de leter etter, og at stadig tale tar hørselen. Løsningen ble flyttet til brystet med haptisk tilbakemelding."
+      ],
+      "figures": [
+        {
+          "file": "img/briller.webp",
+          "w": 1107,
+          "h": 550,
+          "bg": "#afafaf",
+          "fit": "contain",
+          "caption": "Første konsept: briller med kamera."
+        },
+        {
+          "file": "img/kapsling-v1.webp",
+          "w": 1080,
+          "h": 852,
+          "bg": "#b2b2b2",
+          "fit": "contain",
+          "caption": "Første versjon av brystmontert kapsling."
+        },
+        {
+          "file": "img/kapsling-siste.webp",
+          "w": 1010,
+          "h": 880,
+          "bg": "#b2b2b2",
+          "fit": "contain",
+          "caption": "Siste versjon av kapslingen."
+        },
+        {
+          "file": "img/kapsling-lokk.webp",
+          "w": 834,
+          "h": 770,
+          "bg": "#b2b2b2",
+          "fit": "contain",
+          "caption": "Lokk med kamerafeste."
+        }
       ]
     },
     {
@@ -45,6 +173,16 @@
         "6 til 8 bilder i sekundet, konfidens på 0,7 til 0,9 i godt lys, og svar fra talekommando på 1 til 2 sekunder.",
         "Det ble ikke gjennomført formelle brukertester med målgruppen. Det står som viktigste videre arbeid.",
         "Ingen avstandssensor og ingen AI-akselerator, fordi komponentene manglet."
+      ],
+      "figures": [
+        {
+          "file": "img/teststrategi.webp",
+          "w": 1500,
+          "h": 1000,
+          "bg": "#fefefe",
+          "fit": "contain",
+          "caption": "Teststrategi: komponenttesting før integrasjonstest."
+        }
       ]
     }
   ],
@@ -59,5 +197,13 @@
       "url": "https://www.youtube.com/watch?v=ycoaMnyXRqc"
     }
   ],
-  "noPdf": true
+  "noPdf": true,
+  "hero": {
+    "file": "img/oversikt-moduler.webp",
+    "w": 1771,
+    "h": 640,
+    "bg": "#bfb3a2",
+    "fit": "contain",
+    "caption": "Det ferdige systemet: brystmontert modul, vibrasjonsbelte og batteripakke."
+  }
 }

@@ -23,26 +23,34 @@
     "file": "img/brodbrett.webp",
     "w": 1400,
     "h": 638,
-    "caption": "Reaksjonstreneren på brødbrett med knapper og lysdioder."
+    "caption": "Reaksjonstreneren på brødbrett med knapper og lysdioder.",
+    "bg": "#655958",
+    "fit": "contain"
   },
   "figures": [
     {
       "file": "img/tasks.webp",
       "w": 934,
       "h": 385,
-      "caption": "Oppgavefordeling i sanntidssystemet."
+      "caption": "Oppgavefordeling i sanntidssystemet.",
+      "bg": "#101010",
+      "fit": "contain"
     },
     {
       "file": "img/kretsskjema.webp",
       "w": 1053,
       "h": 782,
-      "caption": "Kretsskjema med lysdioder og knapper."
+      "caption": "Kretsskjema med lysdioder og knapper.",
+      "bg": "#f7f1ee",
+      "fit": "contain"
     },
     {
       "file": "img/programflyt.webp",
       "w": 1500,
       "h": 560,
-      "caption": "Programflyt for spillet."
+      "caption": "Programflyt for spillet.",
+      "bg": "#151515",
+      "fit": "contain"
     }
   ]
 }

@@ -24,32 +24,42 @@
     "file": "img/oppkobling.webp",
     "w": 1006,
     "h": 720,
-    "caption": "Oppkobling med AVR128DB48, Analog Discovery 2 og lyttekort."
+    "caption": "Oppkobling med AVR128DB48, Analog Discovery 2 og lyttekort.",
+    "bg": "#13343c",
+    "fit": "cover"
   },
   "figures": [
     {
       "file": "img/signalflyt.webp",
       "w": 404,
       "h": 220,
-      "caption": "Signalflyt for romklangmodellen."
+      "caption": "Signalflyt for romklangmodellen.",
+      "bg": "#ffffff",
+      "fit": "contain"
     },
     {
       "file": "img/testoppsett.webp",
       "w": 1123,
       "h": 505,
-      "caption": "Blokkskjema for testoppsettet."
+      "caption": "Blokkskjema for testoppsettet.",
+      "bg": "#ffffff",
+      "fit": "contain"
     },
     {
       "file": "img/teori.webp",
       "w": 1489,
       "h": 396,
-      "caption": "Teoretisk impulsrespons for ulike verdier av a, regnet ut i Python."
+      "caption": "Teoretisk impulsrespons for ulike verdier av a, regnet ut i Python.",
+      "bg": "#ffffff",
+      "fit": "contain"
     },
     {
       "file": "img/maling.webp",
       "w": 979,
       "h": 673,
-      "caption": "Målt impulsrespons på oscilloskopet for a = 0,4 og a = 0,7."
+      "caption": "Målt impulsrespons på oscilloskopet for a = 0,4 og a = 0,7.",
+      "bg": "#403f40",
+      "fit": "contain"
     }
   ]
 }

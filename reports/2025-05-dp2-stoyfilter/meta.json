@@ -23,26 +23,34 @@
     "file": "img/oppkobling.webp",
     "w": 1217,
     "h": 686,
-    "caption": "Fysisk oppkobling med Analog Discovery 2."
+    "caption": "Fysisk oppkobling med Analog Discovery 2.",
+    "bg": "#413630",
+    "fit": "cover"
   },
   "figures": [
     {
       "file": "img/ltspice.webp",
       "w": 601,
       "h": 702,
-      "caption": "LTspice-simulering av båndstoppfilteret."
+      "caption": "LTspice-simulering av båndstoppfilteret.",
+      "bg": "#bcc4cd",
+      "fit": "contain"
     },
     {
       "file": "img/spektrum.webp",
       "w": 1500,
       "h": 663,
-      "caption": "Spektrumanalyse før og etter filtrering."
+      "caption": "Spektrumanalyse før og etter filtrering.",
+      "bg": "#8d8c89",
+      "fit": "contain"
     },
     {
       "file": "img/bode.webp",
       "w": 1500,
       "h": 767,
-      "caption": "Målt frekvensrespons med demping rundt 1,66 kHz."
+      "caption": "Målt frekvensrespons med demping rundt 1,66 kHz.",
+      "bg": "#56595a",
+      "fit": "contain"
     }
   ]
 }

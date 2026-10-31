@@ -23,20 +23,26 @@
     "file": "img/kretsskisse.webp",
     "w": 1500,
     "h": 537,
-    "caption": "Kretsskisse med to inverterende operasjonsforsterkere."
+    "caption": "Kretsskisse med to inverterende operasjonsforsterkere.",
+    "bg": "#f9f6e9",
+    "fit": "contain"
   },
   "figures": [
     {
       "file": "img/maks-forsterkning.webp",
       "w": 1500,
       "h": 728,
-      "caption": "Måling av maksimal forsterkning, inngang og utgang."
+      "caption": "Måling av maksimal forsterkning, inngang og utgang.",
+      "bg": "#fdfcfd",
+      "fit": "contain"
     },
     {
       "file": "img/maks-demping.webp",
       "w": 1500,
       "h": 730,
-      "caption": "Måling av maksimal demping, inngang og utgang."
+      "caption": "Måling av maksimal demping, inngang og utgang.",
+      "bg": "#f4f4f5",
+      "fit": "contain"
     }
   ]
 }

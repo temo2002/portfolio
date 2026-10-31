@@ -22,13 +22,17 @@
           "file": "img/dataflyt.webp",
           "w": 883,
           "h": 350,
-          "caption": "Dataflyt fra mikrofon til automasjon."
+          "caption": "Dataflyt fra mikrofon til automasjon.",
+          "bg": "#cccccc",
+          "fit": "contain"
         },
         {
           "file": "img/node-red.webp",
           "w": 1364,
           "h": 799,
-          "caption": "Node-RED-flyt for signalbehandling og automasjoner."
+          "caption": "Node-RED-flyt for signalbehandling og automasjoner.",
+          "bg": "#dddddd",
+          "fit": "contain"
         }
       ]
     },
@@ -44,19 +48,25 @@
           "file": "img/rålyd.webp",
           "w": 1500,
           "h": 938,
-          "caption": "Lydopptak med skurring i Audacity, før offset ble fjernet."
+          "caption": "Lydopptak med skurring i Audacity, før offset ble fjernet.",
+          "bg": "#7f8284",
+          "fit": "contain"
         },
         {
           "file": "img/dft-for.webp",
           "w": 1500,
           "h": 603,
-          "caption": "DFT før filtrering: svært høy amplitude rundt 0 Hz (DC-offset)."
+          "caption": "DFT før filtrering: svært høy amplitude rundt 0 Hz (DC-offset).",
+          "bg": "#ffffff",
+          "fit": "contain"
         },
         {
           "file": "img/dft-etter.webp",
           "w": 1500,
           "h": 751,
-          "caption": "DFT etter digitalt høypassfilter."
+          "caption": "DFT etter digitalt høypassfilter.",
+          "bg": "#fefefe",
+          "fit": "contain"
         }
       ]
     },
@@ -75,6 +85,8 @@
     "file": "img/systemarkitektur.webp",
     "w": 968,
     "h": 503,
-    "caption": "Systemarkitektur: ESP32, Node-RED, Whisper, Home Assistant og smartenheter."
+    "caption": "Systemarkitektur: ESP32, Node-RED, Whisper, Home Assistant og smartenheter.",
+    "bg": "#cccccc",
+    "fit": "contain"
   }
 }

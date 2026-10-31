@@ -23,14 +23,18 @@
     "file": "img/brodbrett.webp",
     "w": 1220,
     "h": 614,
-    "caption": "Terningen realisert på brødbrett med lysdioder og sjusegmentvisning."
+    "caption": "Terningen realisert på brødbrett med lysdioder og sjusegmentvisning.",
+    "bg": "#040203",
+    "fit": "cover"
   },
   "figures": [
     {
       "file": "img/icestudio.webp",
       "w": 1140,
       "h": 916,
-      "caption": "Kretsen tegnet i IceStudio."
+      "caption": "Kretsen tegnet i IceStudio.",
+      "bg": "#ffffff",
+      "fit": "contain"
     }
   ]
 }

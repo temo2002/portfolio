@@ -24,14 +24,18 @@
     "file": "img/spektrum.webp",
     "w": 904,
     "h": 506,
-    "caption": "FFT-spekteret med pipetonen tydelig ved 1680 Hz."
+    "caption": "FFT-spekteret med pipetonen tydelig ved 1680 Hz.",
+    "bg": "#ababab",
+    "fit": "contain"
   },
   "figures": [
     {
       "file": "img/pol-null.webp",
       "w": 1076,
       "h": 864,
-      "caption": "Pol-nullplott for notch-filteret."
+      "caption": "Pol-nullplott for notch-filteret.",
+      "bg": "#121113",
+      "fit": "contain"
     }
   ]
 }

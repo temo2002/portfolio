@@ -24,20 +24,26 @@
     "file": "img/brodbrett.webp",
     "w": 611,
     "h": 655,
-    "caption": "Termometeret på brødbrett med OLED-skjerm."
+    "caption": "Termometeret på brødbrett med OLED-skjerm.",
+    "bg": "#3b2f31",
+    "fit": "contain"
   },
   "figures": [
     {
       "file": "img/blokkskjema.webp",
       "w": 1500,
       "h": 230,
-      "caption": "Blokkskjema fra transduser til display."
+      "caption": "Blokkskjema fra transduser til display.",
+      "bg": "#ffffff",
+      "fit": "contain"
     },
     {
       "file": "img/maling.webp",
       "w": 1500,
       "h": 1125,
-      "caption": "Måling i et vannbad."
+      "caption": "Måling i et vannbad.",
+      "bg": "#9d8b7b",
+      "fit": "cover"
     }
   ]
 }

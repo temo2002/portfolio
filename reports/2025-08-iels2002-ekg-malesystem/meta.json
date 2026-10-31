@@ -22,7 +22,9 @@
           "file": "img/kapsling-3d.webp",
           "w": 1500,
           "h": 564,
-          "caption": "3D-modell av kapslingen til EKG-enheten, med lokk."
+          "caption": "3D-modell av kapslingen til EKG-enheten, med lokk.",
+          "bg": "#b2b2b2",
+          "fit": "contain"
         }
       ]
     },
@@ -38,25 +40,33 @@
           "file": "img/interfacekrets.webp",
           "w": 1500,
           "h": 632,
-          "caption": "Interfacekretsen i tre trinn: instrumenteringsforsterker, høypassfilter og forsterker med lavpassfilter."
+          "caption": "Interfacekretsen i tre trinn: instrumenteringsforsterker, høypassfilter og forsterker med lavpassfilter.",
+          "bg": "#ffffff",
+          "fit": "contain"
         },
         {
           "file": "img/signalflyt.webp",
           "w": 548,
           "h": 253,
-          "caption": "Signalflyt fra interfacekrets via ADS1115 og ESP32 til loggeprogrammet."
+          "caption": "Signalflyt fra interfacekrets via ADS1115 og ESP32 til loggeprogrammet.",
+          "bg": "#ffffff",
+          "fit": "contain"
         },
         {
           "file": "img/brodbrett.webp",
           "w": 1100,
           "h": 710,
-          "caption": "Interfacekretsen først bygget på brødbrett."
+          "caption": "Interfacekretsen først bygget på brødbrett.",
+          "bg": "#7c7d76",
+          "fit": "cover"
         },
         {
           "file": "img/prototypekort-merket.webp",
           "w": 1500,
           "h": 678,
-          "caption": "Prototypekortet delt i interface, strømforsyning og ADC, og digital del."
+          "caption": "Prototypekortet delt i interface, strømforsyning og ADC, og digital del.",
+          "bg": "#b7b8b0",
+          "fit": "contain"
         }
       ]
     },
@@ -72,19 +82,25 @@
           "file": "img/ekg-nettleser.webp",
           "w": 1500,
           "h": 387,
-          "caption": "EKG-signal og pulsberegning i sanntid i nettleseren (67 slag i minuttet)."
+          "caption": "EKG-signal og pulsberegning i sanntid i nettleseren (67 slag i minuttet).",
+          "bg": "#ffffff",
+          "fit": "contain"
         },
         {
           "file": "img/amplituderespons.webp",
           "w": 1112,
           "h": 802,
-          "caption": "Amplituderespons for simulering, brødbrett, prototypekort og PCB."
+          "caption": "Amplituderespons for simulering, brødbrett, prototypekort og PCB.",
+          "bg": "#ffffff",
+          "fit": "contain"
         },
         {
           "file": "img/cmrr.webp",
           "w": 1123,
           "h": 801,
-          "caption": "CMRR for de fire realiseringene."
+          "caption": "CMRR for de fire realiseringene.",
+          "bg": "#ffffff",
+          "fit": "contain"
         }
       ]
     },
@@ -98,13 +114,17 @@
           "file": "img/pcb.webp",
           "w": 1200,
           "h": 900,
-          "caption": "Firelags PCB med ESP32, ADC og batteri."
+          "caption": "Firelags PCB med ESP32, ADC og batteri.",
+          "bg": "#282525",
+          "fit": "cover"
         },
         {
           "file": "img/pcb-layout.webp",
           "w": 1100,
           "h": 1334,
-          "caption": "PCB-layout tegnet i KiCad."
+          "caption": "PCB-layout tegnet i KiCad.",
+          "bg": "#25343b",
+          "fit": "contain"
         }
       ]
     }
@@ -115,6 +135,8 @@
     "file": "img/prototypekort-batteri.webp",
     "w": 1400,
     "h": 1050,
-    "caption": "Prototypekortet med Li-ion-batteri, ADC og ESP32."
+    "caption": "Prototypekortet med Li-ion-batteri, ADC og ESP32.",
+    "bg": "#4a4141",
+    "fit": "cover"
   }
 }

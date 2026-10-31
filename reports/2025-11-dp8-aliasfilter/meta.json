@@ -24,20 +24,26 @@
     "file": "img/amplituderespons.webp",
     "w": 989,
     "h": 507,
-    "caption": "Målt og simulert amplituderespons for anti-alias-filteret."
+    "caption": "Målt og simulert amplituderespons for anti-alias-filteret.",
+    "bg": "#ffffff",
+    "fit": "contain"
   },
   "figures": [
     {
       "file": "img/ltspice.webp",
       "w": 1469,
       "h": 536,
-      "caption": "LTspice-krets med to kaskadekoblede Sallen-Key-trinn."
+      "caption": "LTspice-krets med to kaskadekoblede Sallen-Key-trinn.",
+      "bg": "#c0c0c0",
+      "fit": "contain"
     },
     {
       "file": "img/brodbrett.webp",
       "w": 556,
       "h": 196,
-      "caption": "Filteret bygget på brødbrett."
+      "caption": "Filteret bygget på brødbrett.",
+      "bg": "#756553",
+      "fit": "contain"
     }
   ]
 }
