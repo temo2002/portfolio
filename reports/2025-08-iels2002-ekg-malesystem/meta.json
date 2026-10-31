@@ -138,5 +138,59 @@
     "caption": "Prototypekortet med Li-ion-batteri, ADC og ESP32.",
     "bg": "#4a4141",
     "fit": "cover"
+  },
+  "en": {
+    "title": "IELS2002 ECG measurement system",
+    "shortDescription": "Complete ECG measurement system: analog interface circuit, ADC, ESP32 with heart rate calculation and web-based live display, from breadboard to four-layer PCB.",
+    "tags": [
+      "ECG",
+      "analog design",
+      "KiCad",
+      "ESP32",
+      "PCB"
+    ],
+    "sections": [
+      {
+        "title": "What we built",
+        "paragraphs": [
+          "A group project of two in Engineering Project II. The system amplifies and filters weak biopotentials and shows the ECG and heart rate live in the browser."
+        ]
+      },
+      {
+        "title": "The system",
+        "bullets": [
+          "Analog part: instrumentation amplifier (INA126), a 33.8 mHz high-pass filter and an amplifier stage with TL071 and a 16 Hz low-pass filter. Total gain of about 1000 V/V.",
+          "Digital part: 16-bit ADC (ADS1115) at 860 samples per second, and an ESP32 that finds R peaks, calculates the heart rate and sends data over WebSocket.",
+          "Battery operation with a Li-ion cell, and a 3D-printed enclosure."
+        ]
+      },
+      {
+        "title": "Results",
+        "bullets": [
+          "Clear QRS complexes on the prototype board, and a heart rate that differed by 1 to 3 beats per minute from a Garmin watch.",
+          "Measured cutoff frequencies close to the calculated ones, and a CMRR of almost 100 dB on the PCB.",
+          "Realized in four steps: simulation, breadboard, prototype board and a four-layer PCB drawn in KiCad."
+        ]
+      },
+      {
+        "title": "What did not work",
+        "paragraphs": [
+          "The PCB got an offset problem in stage 2 that drove the next stage into saturation, so it was never used for ECG logging. The report describes the fault openly and proposes a fix for the next revision, while all logging was done on the prototype board."
+        ]
+      }
+    ],
+    "captions": {
+      "img/prototypekort-batteri.webp": "The prototype board with Li-ion battery, ADC and ESP32.",
+      "img/kapsling-3d.webp": "3D model of the ECG unit enclosure, with lid.",
+      "img/interfacekrets.webp": "The interface circuit in three stages: instrumentation amplifier, high-pass filter and amplifier with low-pass filter.",
+      "img/signalflyt.webp": "Signal flow from the interface circuit via the ADS1115 and ESP32 to the logging program.",
+      "img/brodbrett.webp": "The interface circuit first built on a breadboard.",
+      "img/prototypekort-merket.webp": "The prototype board divided into interface, power supply and ADC, and digital part.",
+      "img/ekg-nettleser.webp": "ECG signal and heart rate calculation live in the browser (67 beats per minute).",
+      "img/amplituderespons.webp": "Amplitude response for simulation, breadboard, prototype board and PCB.",
+      "img/cmrr.webp": "CMRR for the four realizations.",
+      "img/pcb.webp": "Four-layer PCB with ESP32, ADC and battery.",
+      "img/pcb-layout.webp": "PCB layout drawn in KiCad."
+    }
   }
 }

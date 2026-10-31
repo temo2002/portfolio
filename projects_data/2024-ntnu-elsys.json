@@ -11,5 +11,13 @@
     "NTNU"
   ],
   "importance": 90,
-  "status": "ongoing"
+  "status": "ongoing",
+  "en": {
+    "title": "Electronic systems design, NTNU",
+    "shortDescription": "Bachelor in electronic systems design in Trondheim, with emphasis on analog electronics, embedded systems and communication.",
+    "tags": [
+      "electronics",
+      "NTNU"
+    ]
+  }
 }

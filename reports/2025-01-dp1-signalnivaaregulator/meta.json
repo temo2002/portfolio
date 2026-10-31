@@ -44,5 +44,29 @@
       "bg": "#f4f4f5",
       "fit": "contain"
     }
-  ]
+  ],
+  "en": {
+    "title": "DP1 Signal level controller",
+    "shortDescription": "Controller that amplifies or attenuates a 237 Hz signal, built with two inverting operational amplifiers and a potentiometer.",
+    "tags": [
+      "operational amplifier",
+      "analog electronics",
+      "measurement"
+    ],
+    "sections": [
+      {
+        "title": "Result",
+        "bullets": [
+          "Maximum gain 20.5 dB (A about 10.5) and maximum attenuation of minus 16.1 dB.",
+          "Signal-to-noise ratio of 28.45 dB.",
+          "Built with an LF353P and a 10 kΩ potentiometer, measured with Analog Discovery 2."
+        ]
+      }
+    ],
+    "captions": {
+      "img/kretsskisse.webp": "Circuit sketch with two inverting op-amps.",
+      "img/maks-forsterkning.webp": "Measurement of maximum gain, input and output.",
+      "img/maks-demping.webp": "Measurement of maximum attenuation, input and output."
+    }
+  }
 }

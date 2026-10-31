@@ -15,5 +15,16 @@
   "importance": 65,
   "projectPage": "projects/2025-04-iels2001-stemmestyrt-assistent",
   "generated": true,
-  "end": "2025-06"
+  "end": "2025-06",
+  "en": {
+    "title": "IELS2001 Voice-controlled assistant",
+    "shortDescription": "Local voice assistant for smart homes: an ESP32 with an I2S microphone streams audio to Node-RED and Whisper, which controls lights through Home Assistant, with no cloud services.",
+    "tags": [
+      "ESP32",
+      "Whisper",
+      "Node-RED",
+      "Home Assistant",
+      "DSP"
+    ]
+  }
 }

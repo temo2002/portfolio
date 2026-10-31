@@ -88,5 +88,48 @@
     "caption": "Systemarkitektur: ESP32, Node-RED, Whisper, Home Assistant og smartenheter.",
     "bg": "#cccccc",
     "fit": "contain"
+  },
+  "en": {
+    "title": "IELS2001 Voice-controlled assistant",
+    "shortDescription": "Local voice assistant for smart homes: an ESP32 with an I2S microphone streams audio to Node-RED and Whisper, which controls lights through Home Assistant, with no cloud services.",
+    "tags": [
+      "ESP32",
+      "Whisper",
+      "Node-RED",
+      "Home Assistant",
+      "DSP"
+    ],
+    "sections": [
+      {
+        "title": "What we built",
+        "paragraphs": [
+          "A group project of two in Engineering Project I. An ESP32 collects audio from a digital I2S microphone and sends it over WebSocket to Node-RED. There a WAV file is created and transcribed locally by Whisper (faster-whisper in Docker), and the text triggers automations in Home Assistant, such as switching an IKEA Trådfri bulb on and off."
+        ]
+      },
+      {
+        "title": "Challenges and solutions",
+        "bullets": [
+          "The original goal was a smart speaker, but ordering problems at the supplier meant the project was changed to a voice assistant without audio playback.",
+          "The audio crackled because of DC offset. After a DFT analysis it was solved with a digital high-pass filter.",
+          "MQTT was replaced with WebSocket to avoid base64 encoding and reduce latency."
+        ]
+      },
+      {
+        "title": "Results",
+        "bullets": [
+          "Response time of 3.2 to 5.1 seconds, against a requirement of under 5 seconds in quiet surroundings.",
+          "Hit rate of 90 percent in a quiet room, and 40 to 70 percent with background noise. Common misinterpretations were added as alternative commands.",
+          "The whole system runs locally, with no cloud services."
+        ]
+      }
+    ],
+    "captions": {
+      "img/systemarkitektur.webp": "System architecture: ESP32, Node-RED, Whisper, Home Assistant and smart devices.",
+      "img/dataflyt.webp": "Data flow from microphone to automation.",
+      "img/node-red.webp": "Node-RED flow for signal processing and automations.",
+      "img/rålyd.webp": "Audio recording with crackling in Audacity, before the offset was removed.",
+      "img/dft-for.webp": "DFT before filtering: very high amplitude around 0 Hz (DC offset).",
+      "img/dft-etter.webp": "DFT after the digital high-pass filter."
+    }
   }
 }

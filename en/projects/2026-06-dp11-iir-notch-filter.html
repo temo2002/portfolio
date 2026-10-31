@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- generated:import_reports -->
+<!-- Denne siden er laget av tools/import_reports.py. Fjern merket over for å redigere den selv. -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DP11 IIR notch filter · Temmam Nabil Altaie</title>
+<meta name="description" content="Second-order IIR notch filter that removes a 1680 Hz beep from audio sampled at 44.1 kHz, implemented in Q15 on the AVR128DB48.">
+<meta name="theme-color" content="#0a0d18">
+<link rel="icon" href="../../icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css">
+<!-- seo:start -->
+<link rel="canonical" href="https://temo2002.github.io/portfolio/en/projects/2026-06-dp11-iir-notch-filter.html">
+<link rel="alternate" hreflang="nb" href="https://temo2002.github.io/portfolio/projects/2026-06-dp11-iir-notch-filter.html">
+<link rel="alternate" hreflang="en" href="https://temo2002.github.io/portfolio/en/projects/2026-06-dp11-iir-notch-filter.html">
+<link rel="alternate" hreflang="x-default" href="https://temo2002.github.io/portfolio/projects/2026-06-dp11-iir-notch-filter.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="nb_NO">
+<meta property="og:site_name" content="Temmam Nabil Altaie">
+<meta property="og:title" content="DP11 IIR notch filter · Temmam Nabil Altaie">
+<meta property="og:description" content="Second-order IIR notch filter that removes a 1680 Hz beep from audio sampled at 44.1 kHz, implemented in Q15 on the AVR128DB48.">
+<meta property="og:url" content="https://temo2002.github.io/portfolio/en/projects/2026-06-dp11-iir-notch-filter.html">
+<meta property="og:image" content="https://temo2002.github.io/portfolio/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<!-- seo:end -->
+</head>
+<body>
+
+<header class="nav">
+  <a class="logo" href="../#top"><span class="logo-mark">TA</span> <span class="logo-text">temmam.altaie</span></a>
+  <nav class="open-static">
+    <a href="../#work">Work</a>
+    <a href="../#timeline">Timeline</a>
+    <a href="../#about">About</a>
+    <a href="../#contact">Contact</a>
+    <a class="lang-switch" href="../../projects/2026-06-dp11-iir-notch-filter.html" hreflang="nb" lang="nb" title="Norsk versjon">NO</a>
+  </nav>
+</header>
+
+<main class="project-page">
+  <a class="back" href="../#timeline">← back to the timeline</a>
+
+  <div class="project-meta-row"><span class="cat-tag">school</span> <span class="project-year">2026</span></div>
+
+  <h1 class="project-title">DP11 IIR notch filter</h1>
+  <p class="project-lede">Second-order IIR notch filter that removes a 1680 Hz beep from audio sampled at 44.1 kHz, implemented in Q15 on the AVR128DB48.</p>
+  <ul class="tags"><li>IIR</li><li>notch filter</li><li>MATLAB</li><li>Q15</li></ul>
+  <figure class="fig fig-hero"><a class="tile" href="../../reports/2026-06-dp11-iir-notch-filter/img/spektrum.webp" data-caption="FFT spectrum with the beep clearly visible at 1680 Hz." style="--bg:#ababab;--fit:contain;--src:url(../../reports/2026-06-dp11-iir-notch-filter/img/spektrum.webp)"><img src="../../reports/2026-06-dp11-iir-notch-filter/img/spektrum.webp" alt="FFT spectrum with the beep clearly visible at 1680 Hz." width="904" height="506"></a><figcaption>FFT spectrum with the beep clearly visible at 1680 Hz.</figcaption></figure>
+
+  <section class="project-section">
+    <h2>Result</h2>
+    <ul><li>Around 45 dB attenuation at the beep with minimal effect on the rest of the audio.</li><li>The filter needs only four state variables and five coefficients, against 165 taps in the FIR solution from DP9.</li><li>Verified in MATLAB before implementation in C.</li></ul>
+  </section>
+
+  <section class="project-section">
+    <h2>Figures</h2>
+    <div class="gallery"><figure class="fig"><a class="tile" href="../../reports/2026-06-dp11-iir-notch-filter/img/pol-null.webp" data-caption="Pole-zero plot for the notch filter." style="--bg:#121113;--fit:contain"><img src="../../reports/2026-06-dp11-iir-notch-filter/img/pol-null.webp" alt="Pole-zero plot for the notch filter." width="1076" height="864" loading="lazy"></a><figcaption>Pole-zero plot for the notch filter.</figcaption></figure></div>
+  </section>
+
+  <section class="project-section">
+    <h2>The report</h2>
+    <p class="project-links"><a class="btn primary" href="../../reports/2026-06-dp11-iir-notch-filter/main.pdf" target="_blank" rel="noopener">Open PDF ↗</a></p>
+    <object class="pdf-view" data="../../reports/2026-06-dp11-iir-notch-filter/main.pdf#view=FitH" type="application/pdf" aria-label="Report as PDF">
+      <p class="muted">Your browser cannot display PDFs directly. <a href="../../reports/2026-06-dp11-iir-notch-filter/main.pdf">Download the report here</a>.</p>
+    </object>
+  </section>
+
+  <a class="back" href="../#timeline">← back to the timeline</a>
+</main>
+
+<footer>
+  <span>© <span id="year">2026</span> Temmam Nabil Altaie</span>
+  <span>handmade · no framework · served by GitHub Pages</span>
+</footer>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+<script src="../../lightbox.js"></script>
+</body>
+</html>

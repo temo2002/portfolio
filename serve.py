@@ -26,7 +26,7 @@ class Quiet(http.server.SimpleHTTPRequestHandler):
 
 
 if __name__ == "__main__":
-    for step in ("import_reports.py", "build.py"):
+    for step in ("build_pages.py", "import_reports.py", "build.py"):
         subprocess.run([sys.executable, str(ROOT / "tools" / step)], check=False)
     handler = functools.partial(Quiet, directory=str(ROOT))
     # Bare localhost, så andre på nettverket ikke når siden

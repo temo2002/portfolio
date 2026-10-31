@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="{{lang}}" data-root="{{root}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{title}}</title>
+<meta name="description" content="{{description}}">
+<meta name="theme-color" content="#0a0d18">
+<link rel="icon" href="{{root}}icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{root}}style.css">
+<!-- seo:start -->
+<!-- seo:end -->
+</head>
+<body>
+
+<header class="nav">
+  <a class="logo" href="#top"><span class="logo-mark">TA</span> <span class="logo-text">temmam.altaie</span></a>
+  <button class="burger" id="burger" aria-label="{{menu_label}}" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+  <nav id="menu">
+    <a href="#{{id_work}}">{{nav_work}}</a>
+    <a href="#{{id_timeline}}">{{nav_timeline}}</a>
+    <a href="#{{id_about}}">{{nav_about}}</a>
+    <a href="#{{id_tools}}">{{nav_tools}}</a>
+    <a href="#{{id_contact}}">{{nav_contact}}</a>
+    <a class="lang-switch" href="{{alt_href}}" hreflang="{{alt_lang}}" lang="{{alt_lang}}" title="{{alt_title}}">{{alt_label}}</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <section class="hero fade-in">
+    <div class="hero-text">
+      <p class="eyebrow">{{hero_eyebrow}}</p>
+      <h1>Temmam Nabil Altaie</h1>
+      <p class="lead">{{hero_lead}}</p>
+      <p class="typed-line">{{typed_prefix}}<span id="typed" class="typed" data-phrases='{{typed_phrases}}'>{{typed_first}}</span><span class="caret" aria-hidden="true"></span></p>
+      <div class="cta">
+        <a class="btn primary" href="#{{id_work}}">{{btn_work}}</a>
+        <a class="btn" href="#{{id_contact}}">{{btn_contact}}</a>
+      </div>
+    </div>
+
+    <aside class="card now">
+      <h2 class="card-title">{{now_title}}</h2>
+      <dl>
+        <dt>{{now_studying_label}}</dt><dd>{{now_studying}}</dd>
+        <dt>{{now_teaching_label}}</dt><dd>{{now_teaching}}</dd>
+        <dt>{{now_leads_label}}</dt><dd>{{now_leads}}</dd>
+        <dt>{{now_plays_label}}</dt><dd>{{now_plays}}</dd>
+        <dt>{{now_from_label}}</dt><dd>{{now_from}}</dd>
+      </dl>
+      <canvas id="scope" width="520" height="120" aria-label="{{scope_aria}}"></canvas>
+      <p class="scope-label">{{scope_label}}</p>
+    </aside>
+  </section>
+
+  <section id="{{id_work}}" class="fade-in">
+    <h2 class="sec"><span>01</span> {{sec_work}}</h2>
+    <div class="grid3">
+      <article class="card project">
+        <p class="status">{{c1_status}}</p>
+        <h3>{{c1_title}}</h3>
+        <p>{{c1_text}}</p>
+        <ul class="tags"><li>{{c1_t1}}</li><li>{{c1_t2}}</li><li>{{c1_t3}}</li><li>{{c1_t4}}</li></ul>
+      </article>
+      <article class="card project">
+        <p class="status">{{c2_status}}</p>
+        <h3>{{c2_title}}</h3>
+        <p>{{c2_text}}</p>
+        <ul class="tags"><li>{{c2_t1}}</li><li>{{c2_t2}}</li><li>{{c2_t3}}</li><li>{{c2_t4}}</li></ul>
+      </article>
+      <article class="card project">
+        <p class="status">{{c3_status}}</p>
+        <h3>{{c3_title}}</h3>
+        <p>{{c3_text}}</p>
+        <ul class="tags"><li>{{c3_t1}}</li><li>{{c3_t2}}</li><li>{{c3_t3}}</li></ul>
+      </article>
+    </div>
+  </section>
+
+  <section id="verktoy-demo" class="fade-in">
+    <h2 class="sec"><span>·</span> {{sec_demo}}</h2>
+    <div class="card demo">
+      <div class="demo-info">
+        <h3>{{demo_title}}</h3>
+        <p>{{demo_text}}</p>
+        <label>R <output id="rOut"></output>
+          <input type="range" id="r" min="2" max="5" step="0.01" value="3.2"></label>
+        <label>C <output id="cOut"></output>
+          <input type="range" id="c" min="-9" max="-5" step="0.01" value="-7"></label>
+        <p class="fc">f<sub>c</sub> = <strong id="fcOut"></strong></p>
+      </div>
+      <canvas id="bode" width="640" height="320" aria-label="{{bode_aria}}"></canvas>
+    </div>
+  </section>
+
+  <section id="{{id_timeline}}" class="fade-in">
+    <h2 class="sec"><span>02</span> {{sec_timeline}}</h2>
+    <p class="muted">{{tl_intro}}</p>
+    <div class="filters" id="filters" role="group" aria-label="{{filter_aria}}">
+      <button class="filter-chip on" data-filter="all">{{f_all}}</button>
+      <button class="filter-chip" data-filter="project">{{f_project}}</button>
+      <button class="filter-chip" data-filter="work">{{f_work}}</button>
+      <button class="filter-chip" data-filter="school">{{f_school}}</button>
+      <button class="filter-chip" data-filter="hobby">{{f_hobby}}</button>
+    </div>
+    <div class="swimlane"><div class="swimlane-scroll" id="laneWrap"><div class="swimlane-inner" id="swimInner"><div class="year-axis" id="yearAxis"></div><div class="lane" id="lane"></div></div></div></div>
+    <div class="tl-list" id="tlList"></div>
+    <p class="muted" id="tlError" hidden>{{tl_error}}</p>
+    <div class="tip" id="tip" role="tooltip" hidden></div>
+  </section>
+
+  <section id="{{id_about}}" class="fade-in">
+    <h2 class="sec"><span>03</span> {{sec_about}}</h2>
+    <div class="about">
+      <div class="about-text">
+        <p>{{about_p1}}</p>
+        <p>{{about_p2}}</p>
+        <p>{{about_p3}}</p>
+      </div>
+      <div class="facts">
+        <div class="fact"><strong id="yearsBiz">8</strong><span>{{fact_biz}}</span></div>
+        <div class="fact"><strong>200+</strong><span>{{fact_athletes}}</span></div>
+        <div class="fact"><strong>14</strong><span>{{fact_coaches}}</span></div>
+        <div class="fact"><strong>3</strong><span>{{fact_langs}}</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="{{id_tools}}" class="fade-in">
+    <h2 class="sec"><span>04</span> {{sec_tools}}</h2>
+    <div class="chain">
+      <div class="card step"><span class="num">1</span><h3>{{step1_t}}</h3><p>{{step1_d}}</p></div>
+      <div class="card step"><span class="num">2</span><h3>{{step2_t}}</h3><p>{{step2_d}}</p></div>
+      <div class="card step"><span class="num">3</span><h3>{{step3_t}}</h3><p>{{step3_d}}</p></div>
+      <div class="card step"><span class="num">4</span><h3>{{step4_t}}</h3><p>{{step4_d}}</p></div>
+    </div>
+  </section>
+
+  <section id="{{id_contact}}" class="fade-in">
+    <h2 class="sec"><span>05</span> {{sec_contact}}</h2>
+    <div class="card contact">
+      <p>{{contact_text}}</p>
+      <p class="links">
+        <a class="btn primary" href="mailto:temmam.nabil@gmail.com">temmam.nabil@gmail.com</a>
+        <a class="btn" href="https://github.com/temo2002">GitHub ↗</a>
+        <a class="btn" href="https://www.linkedin.com/in/temmam-altaie-23918329b/">LinkedIn ↗</a>
+      </p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span>© <span id="year">2026</span> Temmam Nabil Altaie</span>
+  <span>{{footer_right}}</span>
+</footer>
+
+<script src="{{root}}script.js"></script>
+</body>
+</html>

@@ -72,15 +72,28 @@ def build_manifest():
 
 
 def page_list():
-    pages = [ROOT / "index.html"]
-    pages += sorted(p for p in (ROOT / "projects").glob("*.html") if not p.name.startswith("_"))
-    return pages
+    pages = [ROOT / "index.html", ROOT / "en" / "index.html"]
+    for d in ("projects", "en/projects"):
+        pages += sorted(p for p in (ROOT / d).glob("*.html") if not p.name.startswith("_"))
+    return [p for p in pages if p.exists()]
 
 
 def url_for(site, page):
     base = site["siteUrl"].rstrip("/")
     rel = page.relative_to(ROOT).as_posix()
-    return base + "/" if rel == "index.html" else f"{base}/{rel}"
+    if rel == "index.html":
+        return base + "/"
+    if rel == "en/index.html":
+        return base + "/en/"
+    return f"{base}/{rel}"
+
+
+def alternates(site, page):
+    """(norsk url, engelsk url) for en side og dens språkmotstykke."""
+    rel = page.relative_to(ROOT).as_posix()
+    no_rel = rel[3:] if rel.startswith("en/") else rel
+    en_rel = rel if rel.startswith("en/") else "en/" + rel
+    return url_for(site, ROOT / no_rel), url_for(site, ROOT / en_rel)
 
 
 def meta_of(text, pattern, default=""):
@@ -90,14 +103,22 @@ def meta_of(text, pattern, default=""):
 
 def seo_block(site, page, text):
     url = url_for(site, page)
+    no_url, en_url = alternates(site, page)
+    lang = meta_of(text, r'<html lang="(\w+)"', "nb")
+    is_en = lang == "en"
     title = meta_of(text, r"<title>(.*?)</title>", site["title"])
     desc = meta_of(text, r'<meta name="description" content="(.*?)"', site["description"])
     img = site["siteUrl"].rstrip("/") + "/" + site["image"]
     e = lambda s: html.escape(s, quote=True)
+    is_index = page.name == "index.html"
     lines = [
         f'<link rel="canonical" href="{e(url)}">',
-        f'<meta property="og:type" content="{"website" if page.name == "index.html" else "article"}">',
-        f'<meta property="og:locale" content="{site["locale"]}">',
+        f'<link rel="alternate" hreflang="nb" href="{e(no_url)}">',
+        f'<link rel="alternate" hreflang="en" href="{e(en_url)}">',
+        f'<link rel="alternate" hreflang="x-default" href="{e(no_url)}">',
+        f'<meta property="og:type" content="{"website" if is_index else "article"}">',
+        f'<meta property="og:locale" content="{"en_US" if is_en else site["locale"]}">',
+        f'<meta property="og:locale:alternate" content="{site["locale"] if is_en else "en_US"}">',
         f'<meta property="og:site_name" content="{e(site["name"])}">',
         f'<meta property="og:title" content="{e(title)}">',
         f'<meta property="og:description" content="{e(desc)}">',
@@ -105,15 +126,16 @@ def seo_block(site, page, text):
         f'<meta property="og:image" content="{e(img)}">',
         '<meta name="twitter:card" content="summary_large_image">',
     ]
-    if page.name == "index.html":
+    if is_index:
         ld = {
             "@context": "https://schema.org",
             "@type": "Person",
             "name": site["name"],
-            "url": site["siteUrl"],
-            "jobTitle": site["jobTitle"],
+            "url": url,
+            "jobTitle": site.get("jobTitleEn", site["jobTitle"]) if is_en else site["jobTitle"],
             "alumniOf": site["university"],
             "image": img,
+            "inLanguage": lang,
         }
         lines.append('<script type="application/ld+json">' + json.dumps(ld, ensure_ascii=False) + "</script>")
     return "\n".join(lines)

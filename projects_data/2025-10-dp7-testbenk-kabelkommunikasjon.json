@@ -13,5 +13,15 @@
   ],
   "importance": 50,
   "projectPage": "projects/2025-10-dp7-testbenk-kabelkommunikasjon",
-  "generated": true
+  "generated": true,
+  "en": {
+    "title": "DP7 Test bench for cable communication",
+    "shortDescription": "Test bench that models a cable between two buildings and measures bit error rate and packet loss in UART communication.",
+    "tags": [
+      "UART",
+      "bit error rate",
+      "SNR",
+      "AVR"
+    ]
+  }
 }

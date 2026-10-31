@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- generated:import_reports -->
+<!-- Denne siden er laget av tools/import_reports.py. Fjern merket over for å redigere den selv. -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IELS2001 Voice-controlled assistant · Temmam Nabil Altaie</title>
+<meta name="description" content="Local voice assistant for smart homes: an ESP32 with an I2S microphone streams audio to Node-RED and Whisper, which controls lights through Home Assistant, with no cloud services.">
+<meta name="theme-color" content="#0a0d18">
+<link rel="icon" href="../../icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css">
+<!-- seo:start -->
+<link rel="canonical" href="https://temo2002.github.io/portfolio/en/projects/2025-04-iels2001-stemmestyrt-assistent.html">
+<link rel="alternate" hreflang="nb" href="https://temo2002.github.io/portfolio/projects/2025-04-iels2001-stemmestyrt-assistent.html">
+<link rel="alternate" hreflang="en" href="https://temo2002.github.io/portfolio/en/projects/2025-04-iels2001-stemmestyrt-assistent.html">
+<link rel="alternate" hreflang="x-default" href="https://temo2002.github.io/portfolio/projects/2025-04-iels2001-stemmestyrt-assistent.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="nb_NO">
+<meta property="og:site_name" content="Temmam Nabil Altaie">
+<meta property="og:title" content="IELS2001 Voice-controlled assistant · Temmam Nabil Altaie">
+<meta property="og:description" content="Local voice assistant for smart homes: an ESP32 with an I2S microphone streams audio to Node-RED and Whisper, which controls lights through Home Assistant, with no cloud services.">
+<meta property="og:url" content="https://temo2002.github.io/portfolio/en/projects/2025-04-iels2001-stemmestyrt-assistent.html">
+<meta property="og:image" content="https://temo2002.github.io/portfolio/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<!-- seo:end -->
+</head>
+<body>
+
+<header class="nav">
+  <a class="logo" href="../#top"><span class="logo-mark">TA</span> <span class="logo-text">temmam.altaie</span></a>
+  <nav class="open-static">
+    <a href="../#work">Work</a>
+    <a href="../#timeline">Timeline</a>
+    <a href="../#about">About</a>
+    <a href="../#contact">Contact</a>
+    <a class="lang-switch" href="../../projects/2025-04-iels2001-stemmestyrt-assistent.html" hreflang="nb" lang="nb" title="Norsk versjon">NO</a>
+  </nav>
+</header>
+
+<main class="project-page">
+  <a class="back" href="../#timeline">← back to the timeline</a>
+
+  <div class="project-meta-row"><span class="cat-tag">school</span> <span class="project-year">2025</span></div>
+
+  <h1 class="project-title">IELS2001 Voice-controlled assistant</h1>
+  <p class="project-lede">Local voice assistant for smart homes: an ESP32 with an I2S microphone streams audio to Node-RED and Whisper, which controls lights through Home Assistant, with no cloud services.</p>
+  <ul class="tags"><li>ESP32</li><li>Whisper</li><li>Node-RED</li><li>Home Assistant</li><li>DSP</li></ul>
+  <figure class="fig fig-hero"><a class="tile" href="../../reports/2025-04-iels2001-stemmestyrt-assistent/img/systemarkitektur.webp" data-caption="System architecture: ESP32, Node-RED, Whisper, Home Assistant and smart devices." style="--bg:#cccccc;--fit:contain;--src:url(../../reports/2025-04-iels2001-stemmestyrt-assistent/img/systemarkitektur.webp)"><img src="../../reports/2025-04-iels2001-stemmestyrt-assistent/img/systemarkitektur.webp" alt="System architecture: ESP32, Node-RED, Whisper, Home Assistant and smart devices." width="968" height="503"></a><figcaption>System architecture: ESP32, Node-RED, Whisper, Home Assistant and smart devices.</figcaption></figure>
+
+  <section class="project-section">
+    <h2>What we built</h2>
+    <p>A group project of two in Engineering Project I. An ESP32 collects audio from a digital I2S microphone and sends it over WebSocket to Node-RED. There a WAV file is created and transcribed locally by Whisper (faster-whisper in Docker), and the text triggers automations in Home Assistant, such as switching an IKEA Trådfri bulb on and off.</p><div class="gallery"><figure class="fig"><a class="tile" href="../../reports/2025-04-iels2001-stemmestyrt-assistent/img/dataflyt.webp" data-caption="Data flow from microphone to automation." style="--bg:#cccccc;--fit:contain"><img src="../../reports/2025-04-iels2001-stemmestyrt-assistent/img/dataflyt.webp" alt="Data flow from microphone to automation." width="883" height="350" loading="lazy"></a><figcaption>Data flow from microphone to automation.</figcaption></figure><figure class="fig"><a class="tile" href="../../reports/2025-04-iels2001-stemmestyrt-assistent/img/node-red.webp" data-caption="Node-RED flow for signal processing and automations." style="--bg:#dddddd;--fit:contain"><img src="../../reports/2025-04-iels2001-stemmestyrt-assistent/img/node-red.webp" alt="Node-RED flow for signal processing and automations." width="1364" height="799" loading="lazy"></a><figcaption>Node-RED flow for signal processing and automations.</figcaption></figure></div>
+  </section>
+
+  <section class="project-section">
+    <h2>Challenges and solutions</h2>
+    <ul><li>The original goal was a smart speaker, but ordering problems at the supplier meant the project was changed to a voice assistant without audio playback.</li><li>The audio crackled because of DC offset. After a DFT analysis it was solved with a digital high-pass filter.</li><li>MQTT was replaced with WebSocket to avoid base64 encoding and reduce latency.</li></ul><div class="gallery"><figure class="fig"><a class="tile" href="../../reports/2025-04-iels2001-stemmestyrt-assistent/img/rålyd.webp" data-caption="Audio recording with crackling in Audacity, before the offset was removed." style="--bg:#7f8284;--fit:contain"><img src="../../reports/2025-04-iels2001-stemmestyrt-assistent/img/rålyd.webp" alt="Audio recording with crackling in Audacity, before the offset was removed." width="1500" height="938" loading="lazy"></a><figcaption>Audio recording with crackling in Audacity, before the offset was removed.</figcaption></figure><figure class="fig"><a class="tile" href="../../reports/2025-04-iels2001-stemmestyrt-assistent/img/dft-for.webp" data-caption="DFT before filtering: very high amplitude around 0 Hz (DC offset)." style="--bg:#ffffff;--fit:contain"><img src="../../reports/2025-04-iels2001-stemmestyrt-assistent/img/dft-for.webp" alt="DFT before filtering: very high amplitude around 0 Hz (DC offset)." width="1500" height="603" loading="lazy"></a><figcaption>DFT before filtering: very high amplitude around 0 Hz (DC offset).</figcaption></figure><figure class="fig"><a class="tile" href="../../reports/2025-04-iels2001-stemmestyrt-assistent/img/dft-etter.webp" data-caption="DFT after the digital high-pass filter." style="--bg:#fefefe;--fit:contain"><img src="../../reports/2025-04-iels2001-stemmestyrt-assistent/img/dft-etter.webp" alt="DFT after the digital high-pass filter." width="1500" height="751" loading="lazy"></a><figcaption>DFT after the digital high-pass filter.</figcaption></figure></div>
+  </section>
+
+  <section class="project-section">
+    <h2>Results</h2>
+    <ul><li>Response time of 3.2 to 5.1 seconds, against a requirement of under 5 seconds in quiet surroundings.</li><li>Hit rate of 90 percent in a quiet room, and 40 to 70 percent with background noise. Common misinterpretations were added as alternative commands.</li><li>The whole system runs locally, with no cloud services.</li></ul>
+  </section>
+
+  <a class="back" href="../#timeline">← back to the timeline</a>
+</main>
+
+<footer>
+  <span>© <span id="year">2026</span> Temmam Nabil Altaie</span>
+  <span>handmade · no framework · served by GitHub Pages</span>
+</footer>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+<script src="../../lightbox.js"></script>
+</body>
+</html>

@@ -15,5 +15,14 @@
   "status": "ongoing",
   "types": [
     "ledelse"
-  ]
+  ],
+  "en": {
+    "title": "Vice president, NTNUI Calisthenics",
+    "shortDescription": "Vice president of a group with over 200 athletes. Coordinates a team of 14 coaches.",
+    "tags": [
+      "leadership",
+      "coordination",
+      "200+ athletes"
+    ]
+  }
 }

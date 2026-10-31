@@ -52,5 +52,30 @@
       "bg": "#151515",
       "fit": "contain"
     }
-  ]
+  ],
+  "en": {
+    "title": "DP6 Reaction trainer",
+    "shortDescription": "Reaction game with buttons and LEDs, built as a real-time system with FreeRTOS and increasing difficulty.",
+    "tags": [
+      "FreeRTOS",
+      "interrupts",
+      "real time"
+    ],
+    "sections": [
+      {
+        "title": "How it works",
+        "bullets": [
+          "Tasks for LED control, game logic and display run in parallel, and the buttons are read through interrupts.",
+          "The reaction window shrinks and more LEDs light up at once the better the player does.",
+          "All functional tests (correct press, wrong press, timeout and increased difficulty) gave the expected result."
+        ]
+      }
+    ],
+    "captions": {
+      "img/brodbrett.webp": "The reaction trainer on a breadboard with buttons and LEDs.",
+      "img/tasks.webp": "Task distribution in the real-time system.",
+      "img/kretsskjema.webp": "Circuit diagram with LEDs and buttons.",
+      "img/programflyt.webp": "Program flow for the game."
+    }
+  }
 }

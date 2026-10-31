@@ -45,5 +45,30 @@
       "bg": "#756553",
       "fit": "contain"
     }
-  ]
+  ],
+  "en": {
+    "title": "DP8 Anti-aliasing filter",
+    "shortDescription": "Fourth-order Butterworth anti-aliasing filter with two cascaded Sallen-Key stages, for an ADC with a 7.1 kHz sampling frequency.",
+    "tags": [
+      "Butterworth",
+      "Sallen-Key",
+      "anti-aliasing",
+      "LTspice"
+    ],
+    "sections": [
+      {
+        "title": "Result",
+        "bullets": [
+          "Calculated cutoff frequency 2.66 kHz, measured about 2.6 kHz.",
+          "Around 10 dB attenuation at the Nyquist frequency of 3.55 kHz, which meets the requirement.",
+          "Realized component values were within 4 percent of the calculated ones, and simulation and measurement agreed well."
+        ]
+      }
+    ],
+    "captions": {
+      "img/amplituderespons.webp": "Measured and simulated amplitude response of the anti-aliasing filter.",
+      "img/ltspice.webp": "LTspice circuit with two cascaded Sallen-Key stages.",
+      "img/brodbrett.webp": "The filter built on a breadboard."
+    }
+  }
 }

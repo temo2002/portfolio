@@ -53,5 +53,31 @@
       "bg": "#f6f6f6",
       "fit": "contain"
     }
-  ]
+  ],
+  "en": {
+    "title": "DP10 FSK demodulator",
+    "shortDescription": "Digital demodulator for UART over FSK (200 and 300 Hz, 20 bit/s), with two parallel FIR filters and energy comparison on the AVR128DB48.",
+    "tags": [
+      "FSK",
+      "FIR",
+      "Q15",
+      "AVR"
+    ],
+    "sections": [
+      {
+        "title": "How it works",
+        "bullets": [
+          "Two FIR filters, one per frequency, followed by energy estimation and a decision in the middle of each bit period.",
+          "Real-time solution with a 1 kHz sampling frequency, Q15 coefficients and 32-bit accumulation.",
+          "The algorithm was verified in MATLAB. Full verification with a physical signal from Analog Discovery 2 is described as further work."
+        ]
+      }
+    ],
+    "captions": {
+      "img/oppkobling.webp": "Setup with AVR128DB48 and Analog Discovery 2.",
+      "img/blokkskjema.webp": "Principle block structure of the FSK demodulator.",
+      "img/energi.webp": "Energy detection for 200 Hz and 300 Hz after absolute value and moving average.",
+      "img/bitbeslutning.webp": "Bit decision made in the middle of each bit period."
+    }
+  }
 }

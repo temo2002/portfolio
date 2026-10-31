@@ -36,5 +36,28 @@
       "bg": "#ffffff",
       "fit": "contain"
     }
-  ]
+  ],
+  "en": {
+    "title": "DP3 Electronic die",
+    "shortDescription": "Digital die showing numbers from 1 to 6, built as digital logic in an FPGA with IceStudio.",
+    "tags": [
+      "FPGA",
+      "IceStudio",
+      "digital logic"
+    ],
+    "sections": [
+      {
+        "title": "How it works",
+        "bullets": [
+          "A counter, two multiplexers, a register and a decoder control which number is shown.",
+          "The result is shown on seven LEDs (four yellow, two green and one red), each with 120 Ω in series from 3.3 V.",
+          "The report includes a power calculation for the LEDs."
+        ]
+      }
+    ],
+    "captions": {
+      "img/brodbrett.webp": "The die built on a breadboard with LEDs and a seven-segment display.",
+      "img/icestudio.webp": "The circuit drawn in IceStudio."
+    }
+  }
 }

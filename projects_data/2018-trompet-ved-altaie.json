@@ -15,5 +15,14 @@
   "status": "ongoing",
   "types": [
     "musikk"
-  ]
+  ],
+  "en": {
+    "title": "Trompet ved Altaie",
+    "shortDescription": "Own business playing the trumpet at funerals, weddings and church services.",
+    "tags": [
+      "music",
+      "founder",
+      "ceremonies"
+    ]
+  }
 }

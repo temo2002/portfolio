@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- generated:import_reports -->
+<!-- Denne siden er laget av tools/import_reports.py. Fjern merket over for å redigere den selv. -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IELS2003 Object detection for the blind and visually impaired · Temmam Nabil Altaie</title>
+<meta name="description" content="Wearable aid that finds fruit with camera-based object detection and shows the direction with a vibration belt and Norwegian speech. Group project of three.">
+<meta name="theme-color" content="#0a0d18">
+<link rel="icon" href="../../icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css">
+<!-- seo:start -->
+<link rel="canonical" href="https://temo2002.github.io/portfolio/en/projects/2026-01-iels2003-objektdeteksjon-blinde.html">
+<link rel="alternate" hreflang="nb" href="https://temo2002.github.io/portfolio/projects/2026-01-iels2003-objektdeteksjon-blinde.html">
+<link rel="alternate" hreflang="en" href="https://temo2002.github.io/portfolio/en/projects/2026-01-iels2003-objektdeteksjon-blinde.html">
+<link rel="alternate" hreflang="x-default" href="https://temo2002.github.io/portfolio/projects/2026-01-iels2003-objektdeteksjon-blinde.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="nb_NO">
+<meta property="og:site_name" content="Temmam Nabil Altaie">
+<meta property="og:title" content="IELS2003 Object detection for the blind and visually impaired · Temmam Nabil Altaie">
+<meta property="og:description" content="Wearable aid that finds fruit with camera-based object detection and shows the direction with a vibration belt and Norwegian speech. Group project of three.">
+<meta property="og:url" content="https://temo2002.github.io/portfolio/en/projects/2026-01-iels2003-objektdeteksjon-blinde.html">
+<meta property="og:image" content="https://temo2002.github.io/portfolio/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<!-- seo:end -->
+</head>
+<body>
+
+<header class="nav">
+  <a class="logo" href="../#top"><span class="logo-mark">TA</span> <span class="logo-text">temmam.altaie</span></a>
+  <nav class="open-static">
+    <a href="../#work">Work</a>
+    <a href="../#timeline">Timeline</a>
+    <a href="../#about">About</a>
+    <a href="../#contact">Contact</a>
+    <a class="lang-switch" href="../../projects/2026-01-iels2003-objektdeteksjon-blinde.html" hreflang="nb" lang="nb" title="Norsk versjon">NO</a>
+  </nav>
+</header>
+
+<main class="project-page">
+  <a class="back" href="../#timeline">← back to the timeline</a>
+
+  <div class="project-meta-row"><span class="cat-tag">school</span> <span class="project-year">2026</span></div>
+
+  <h1 class="project-title">IELS2003 Object detection for the blind and visually impaired</h1>
+  <p class="project-lede">Wearable aid that finds fruit with camera-based object detection and shows the direction with a vibration belt and Norwegian speech. Group project of three.</p>
+  <ul class="tags"><li>YOLOv8</li><li>Raspberry Pi 5</li><li>ESP32</li><li>Whisper</li><li>haptics</li></ul>
+  <figure class="fig fig-hero"><a class="tile" href="../../reports/2026-01-iels2003-objektdeteksjon-blinde/img/oversikt-moduler.webp" data-caption="The finished system: chest-mounted module, vibration belt and battery pack." style="--bg:#bfb3a2;--fit:contain;--src:url(../../reports/2026-01-iels2003-objektdeteksjon-blinde/img/oversikt-moduler.webp)"><img src="../../reports/2026-01-iels2003-objektdeteksjon-blinde/img/oversikt-moduler.webp" alt="The finished system: chest-mounted module, vibration belt and battery pack." width="1771" height="640"></a><figcaption>The finished system: chest-mounted module, vibration belt and battery pack.</figcaption></figure>
+
+  <section class="project-section">
+    <h2>The problem</h2>
+    <p>People who lose their sight as adults have visual memories but lack access to information in real time. The project started from one scenario: making a fruit salad on your own. The need was mapped through conversations with two experts.</p><div class="gallery"><figure class="fig"><a class="tile" href="../../reports/2026-01-iels2003-objektdeteksjon-blinde/img/persona.webp" data-caption="Persona: Petter, 20, who has lost his sight later in life." style="--bg:#ffffff;--fit:contain"><img src="../../reports/2026-01-iels2003-objektdeteksjon-blinde/img/persona.webp" alt="Persona: Petter, 20, who has lost his sight later in life." width="1400" height="990" loading="lazy"></a><figcaption>Persona: Petter, 20, who has lost his sight later in life.</figcaption></figure><figure class="fig"><a class="tile" href="../../reports/2026-01-iels2003-objektdeteksjon-blinde/img/empatikart.webp" data-caption="Empathy map for Petter: what he says, thinks, does and feels." style="--bg:#ffffff;--fit:contain"><img src="../../reports/2026-01-iels2003-objektdeteksjon-blinde/img/empatikart.webp" alt="Empathy map for Petter: what he says, thinks, does and feels." width="1400" height="990" loading="lazy"></a><figcaption>Empathy map for Petter: what he says, thinks, does and feels.</figcaption></figure></div>
+  </section>
+
+  <section class="project-section">
+    <h2>The solution</h2>
+    <ul><li>A Raspberry Pi 5 runs YOLOv8n, which recognizes apple, banana and orange in real time.</li><li>The position is sent over UDP to an ESP32-C3 that drives seven vibration motors in a belt, so the user feels the direction without using their hearing.</li><li>Norwegian speech synthesis (Piper) announces detections, and the user can ask questions with a button via Whisper and Claude Haiku.</li><li>Home-built battery pack from reused 18650 cells, and 3D-printed enclosures.</li></ul><div class="gallery"><figure class="fig"><a class="tile" href="../../reports/2026-01-iels2003-objektdeteksjon-blinde/img/systemarkitektur.webp" data-caption="Overall system architecture: Raspberry Pi 5, ESP32-C3, PCA9685 and seven vibration motors." style="--bg:#fefefe;--fit:cover"><img src="../../reports/2026-01-iels2003-objektdeteksjon-blinde/img/systemarkitektur.webp" alt="Overall system architecture: Raspberry Pi 5, ESP32-C3, PCA9685 and seven vibration motors." width="1500" height="1000" loading="lazy"></a><figcaption>Overall system architecture: Raspberry Pi 5, ESP32-C3, PCA9685 and seven vibration motors.</figcaption></figure><figure class="fig"><a class="tile" href="../../reports/2026-01-iels2003-objektdeteksjon-blinde/img/hardware.webp" data-caption="Hardware overview with voltage regulation and battery." style="--bg:#fbfcfc;--fit:cover"><img src="../../reports/2026-01-iels2003-objektdeteksjon-blinde/img/hardware.webp" alt="Hardware overview with voltage regulation and battery." width="1500" height="1000" loading="lazy"></a><figcaption>Hardware overview with voltage regulation and battery.</figcaption></figure><figure class="fig"><a class="tile" href="../../reports/2026-01-iels2003-objektdeteksjon-blinde/img/tilbakemelding.webp" data-caption="Three parallel feedback channels: vibration, speech and voice command." style="--bg:#fefefe;--fit:contain"><img src="../../reports/2026-01-iels2003-objektdeteksjon-blinde/img/tilbakemelding.webp" alt="Three parallel feedback channels: vibration, speech and voice command." width="1500" height="1000" loading="lazy"></a><figcaption>Three parallel feedback channels: vibration, speech and voice command.</figcaption></figure><figure class="fig"><a class="tile" href="../../reports/2026-01-iels2003-objektdeteksjon-blinde/img/soneinndeling.webp" data-caption="The camera image divided into seven zones, with one vibration motor per zone." style="--bg:#fefefe;--fit:contain"><img src="../../reports/2026-01-iels2003-objektdeteksjon-blinde/img/soneinndeling.webp" alt="The camera image divided into seven zones, with one vibration motor per zone." width="1500" height="1000" loading="lazy"></a><figcaption>The camera image divided into seven zones, with one vibration motor per zone.</figcaption></figure><figure class="fig"><a class="tile" href="../../reports/2026-01-iels2003-objektdeteksjon-blinde/img/brystmodul.webp" data-caption="The chest module with Raspberry Pi 5 and camera." style="--bg:#c3c3b8;--fit:contain"><img src="../../reports/2026-01-iels2003-objektdeteksjon-blinde/img/brystmodul.webp" alt="The chest module with Raspberry Pi 5 and camera." width="1300" height="1733" loading="lazy"></a><figcaption>The chest module with Raspberry Pi 5 and camera.</figcaption></figure><figure class="fig"><a class="tile" href="../../reports/2026-01-iels2003-objektdeteksjon-blinde/img/batteripakke.webp" data-caption="Home-built battery pack in a 3D-printed enclosure." style="--bg:#a4aaab;--fit:contain"><img src="../../reports/2026-01-iels2003-objektdeteksjon-blinde/img/batteripakke.webp" alt="Home-built battery pack in a 3D-printed enclosure." width="1300" height="1733" loading="lazy"></a><figcaption>Home-built battery pack in a 3D-printed enclosure.</figcaption></figure><figure class="fig"><a class="tile" href="../../reports/2026-01-iels2003-objektdeteksjon-blinde/img/belte-innside.webp" data-caption="Inside the vibration belt with motors and wiring." style="--bg:#717778;--fit:cover"><img src="../../reports/2026-01-iels2003-objektdeteksjon-blinde/img/belte-innside.webp" alt="Inside the vibration belt with motors and wiring." width="1400" height="1050" loading="lazy"></a><figcaption>Inside the vibration belt with motors and wiring.</figcaption></figure></div>
+  </section>
+
+  <section class="project-section">
+    <h2>My role</h2>
+    <p>I was responsible for the software and the integration between the modules: object detection on the Raspberry Pi 5, speech to text, text to speech, API connection and workflow with GitHub.</p><div class="gallery"><figure class="fig"><a class="tile" href="../../reports/2026-01-iels2003-objektdeteksjon-blinde/img/programflyt.webp" data-caption="Program flow for detection, vibration, speech and voice commands." style="--bg:#fefefe;--fit:contain"><img src="../../reports/2026-01-iels2003-objektdeteksjon-blinde/img/programflyt.webp" alt="Program flow for detection, vibration, speech and voice commands." width="1024" height="1536" loading="lazy"></a><figcaption>Program flow for detection, vibration, speech and voice commands.</figcaption></figure><figure class="fig"><a class="tile" href="../../reports/2026-01-iels2003-objektdeteksjon-blinde/img/arbeidsflyt.webp" data-caption="Software workflow: local, GitHub and testing on the Raspberry Pi." style="--bg:#fefefe;--fit:cover"><img src="../../reports/2026-01-iels2003-objektdeteksjon-blinde/img/arbeidsflyt.webp" alt="Software workflow: local, GitHub and testing on the Raspberry Pi." width="1500" height="823" loading="lazy"></a><figcaption>Software workflow: local, GitHub and testing on the Raspberry Pi.</figcaption></figure></div>
+  </section>
+
+  <section class="project-section">
+    <h2>Iteration</h2>
+    <p>The first concept was glasses with a camera and speech in the ear. The conversations showed that blind people do not necessarily turn their head toward what they are looking for, and that constant speech takes up their hearing. The solution was moved to the chest with haptic feedback.</p><div class="gallery"><figure class="fig"><a class="tile" href="../../reports/2026-01-iels2003-objektdeteksjon-blinde/img/briller.webp" data-caption="First concept: glasses with a camera." style="--bg:#afafaf;--fit:contain"><img src="../../reports/2026-01-iels2003-objektdeteksjon-blinde/img/briller.webp" alt="First concept: glasses with a camera." width="1107" height="550" loading="lazy"></a><figcaption>First concept: glasses with a camera.</figcaption></figure><figure class="fig"><a class="tile" href="../../reports/2026-01-iels2003-objektdeteksjon-blinde/img/kapsling-v1.webp" data-caption="First version of the chest-mounted enclosure." style="--bg:#b2b2b2;--fit:contain"><img src="../../reports/2026-01-iels2003-objektdeteksjon-blinde/img/kapsling-v1.webp" alt="First version of the chest-mounted enclosure." width="1080" height="852" loading="lazy"></a><figcaption>First version of the chest-mounted enclosure.</figcaption></figure><figure class="fig"><a class="tile" href="../../reports/2026-01-iels2003-objektdeteksjon-blinde/img/kapsling-siste.webp" data-caption="Final version of the enclosure." style="--bg:#b2b2b2;--fit:contain"><img src="../../reports/2026-01-iels2003-objektdeteksjon-blinde/img/kapsling-siste.webp" alt="Final version of the enclosure." width="1010" height="880" loading="lazy"></a><figcaption>Final version of the enclosure.</figcaption></figure><figure class="fig"><a class="tile" href="../../reports/2026-01-iels2003-objektdeteksjon-blinde/img/kapsling-lokk.webp" data-caption="Lid with camera mount." style="--bg:#b2b2b2;--fit:contain"><img src="../../reports/2026-01-iels2003-objektdeteksjon-blinde/img/kapsling-lokk.webp" alt="Lid with camera mount." width="834" height="770" loading="lazy"></a><figcaption>Lid with camera mount.</figcaption></figure></div>
+  </section>
+
+  <section class="project-section">
+    <h2>Results and limitations</h2>
+    <ul><li>6 to 8 frames per second, confidence of 0.7 to 0.9 in good light, and answers to voice commands in 1 to 2 seconds.</li><li>No formal user tests with the target group were carried out. That is the most important further work.</li><li>No distance sensor and no AI accelerator, because the components were missing.</li></ul><div class="gallery"><figure class="fig"><a class="tile" href="../../reports/2026-01-iels2003-objektdeteksjon-blinde/img/teststrategi.webp" data-caption="Test strategy: component testing before integration testing." style="--bg:#fefefe;--fit:contain"><img src="../../reports/2026-01-iels2003-objektdeteksjon-blinde/img/teststrategi.webp" alt="Test strategy: component testing before integration testing." width="1500" height="1000" loading="lazy"></a><figcaption>Test strategy: component testing before integration testing.</figcaption></figure></div>
+  </section>
+
+  <section class="project-section">
+    <h2>Links</h2>
+    <p class="project-links"><a class="btn" href="https://github.com/temo2002/IELS2003_BlindeProsjekt" target="_blank" rel="noopener">GitHub ↗</a> <a class="btn" href="https://www.youtube.com/watch?v=ycoaMnyXRqc" target="_blank" rel="noopener">Video on YouTube ↗</a></p>
+  </section>
+
+  <a class="back" href="../#timeline">← back to the timeline</a>
+</main>
+
+<footer>
+  <span>© <span id="year">2026</span> Temmam Nabil Altaie</span>
+  <span>handmade · no framework · served by GitHub Pages</span>
+</footer>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+<script src="../../lightbox.js"></script>
+</body>
+</html>

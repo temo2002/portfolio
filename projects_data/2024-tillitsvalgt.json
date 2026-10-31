@@ -14,5 +14,13 @@
   "status": "ongoing",
   "types": [
     "ledelse"
-  ]
+  ],
+  "en": {
+    "title": "Class representative and reference groups",
+    "shortDescription": "The class's voice towards the department, with seats in several reference groups and a role in the student association.",
+    "tags": [
+      "class representative",
+      "reference group"
+    ]
+  }
 }

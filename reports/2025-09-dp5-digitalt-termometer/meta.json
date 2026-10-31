@@ -45,5 +45,30 @@
       "bg": "#9d8b7b",
       "fit": "cover"
     }
-  ]
+  ],
+  "en": {
+    "title": "DP5 Digital thermometer",
+    "shortDescription": "Thermometer with a K-type thermocouple, analog amplifier, 10-bit ADC on the AVR128DB48 and an OLED display.",
+    "tags": [
+      "thermocouple",
+      "ADC",
+      "OLED",
+      "I2C"
+    ],
+    "sections": [
+      {
+        "title": "Result",
+        "bullets": [
+          "Gain of about 1027, an RC low-pass filter at 1.61 Hz and averaging over 100 samples.",
+          "Deviation from the expected temperature of 0.10, 0.61 and 0.09 °C at three test points, so under 1 °C in the range 0 to 40 °C.",
+          "Limitation: the ADC is used single-ended, so the system cannot measure below the reference temperature."
+        ]
+      }
+    ],
+    "captions": {
+      "img/brodbrett.webp": "The thermometer on a breadboard with an OLED display.",
+      "img/blokkskjema.webp": "Block diagram from transducer to display.",
+      "img/maling.webp": "Measurement in a water bath."
+    }
+  }
 }

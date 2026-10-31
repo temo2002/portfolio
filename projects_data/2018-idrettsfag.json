@@ -9,5 +9,12 @@
   "tags": [
     "idrett"
   ],
-  "importance": 40
+  "importance": 40,
+  "en": {
+    "title": "Sports studies, Vest-Lofoten upper secondary",
+    "shortDescription": "Upper secondary school with sports studies. This is where the interest in training and teamwork started.",
+    "tags": [
+      "sport"
+    ]
+  }
 }

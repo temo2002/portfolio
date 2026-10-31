@@ -61,5 +61,32 @@
       "bg": "#403f40",
       "fit": "contain"
     }
-  ]
+  ],
+  "en": {
+    "title": "DP4 Artificial reverb",
+    "shortDescription": "Real-time digital reverb on the AVR128DB48: one difference equation with a ring buffer, fixed-point arithmetic and a 30 µs sampling time.",
+    "tags": [
+      "DSP",
+      "AVR",
+      "ring buffer",
+      "real time"
+    ],
+    "sections": [
+      {
+        "title": "Result",
+        "bullets": [
+          "The requirement was a reverberation time of 0.8 s. Measured time was 0.78 s with a = 0.4 and 0.81 s with a = 0.7.",
+          "The signal processing runs in an interrupt routine with integer arithmetic to meet the real-time requirement.",
+          "The theoretical impulse response was calculated in Python and compared with oscilloscope measurements."
+        ]
+      }
+    ],
+    "captions": {
+      "img/oppkobling.webp": "Setup with AVR128DB48, Analog Discovery 2 and a listening card.",
+      "img/signalflyt.webp": "Signal flow of the reverb model.",
+      "img/testoppsett.webp": "Block diagram of the test setup.",
+      "img/teori.webp": "Theoretical impulse response for different values of a, calculated in Python.",
+      "img/maling.webp": "Measured impulse response on the oscilloscope for a = 0.4 and a = 0.7."
+    }
+  }
 }

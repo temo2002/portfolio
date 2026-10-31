@@ -9,5 +9,12 @@
   "tags": [
     "realfag"
   ],
-  "importance": 40
+  "importance": 40,
+  "en": {
+    "title": "Preparatory science course",
+    "shortDescription": "A preparatory course that opened the door to engineering studies.",
+    "tags": [
+      "science"
+    ]
+  }
 }

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- generated:import_reports -->
+<!-- Denne siden er laget av tools/import_reports.py. Fjern merket over for å redigere den selv. -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DP4 Artificial reverb · Temmam Nabil Altaie</title>
+<meta name="description" content="Real-time digital reverb on the AVR128DB48: one difference equation with a ring buffer, fixed-point arithmetic and a 30 µs sampling time.">
+<meta name="theme-color" content="#0a0d18">
+<link rel="icon" href="../../icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css">
+<!-- seo:start -->
+<link rel="canonical" href="https://temo2002.github.io/portfolio/en/projects/2025-05-dp4-kunstig-romklang.html">
+<link rel="alternate" hreflang="nb" href="https://temo2002.github.io/portfolio/projects/2025-05-dp4-kunstig-romklang.html">
+<link rel="alternate" hreflang="en" href="https://temo2002.github.io/portfolio/en/projects/2025-05-dp4-kunstig-romklang.html">
+<link rel="alternate" hreflang="x-default" href="https://temo2002.github.io/portfolio/projects/2025-05-dp4-kunstig-romklang.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="nb_NO">
+<meta property="og:site_name" content="Temmam Nabil Altaie">
+<meta property="og:title" content="DP4 Artificial reverb · Temmam Nabil Altaie">
+<meta property="og:description" content="Real-time digital reverb on the AVR128DB48: one difference equation with a ring buffer, fixed-point arithmetic and a 30 µs sampling time.">
+<meta property="og:url" content="https://temo2002.github.io/portfolio/en/projects/2025-05-dp4-kunstig-romklang.html">
+<meta property="og:image" content="https://temo2002.github.io/portfolio/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<!-- seo:end -->
+</head>
+<body>
+
+<header class="nav">
+  <a class="logo" href="../#top"><span class="logo-mark">TA</span> <span class="logo-text">temmam.altaie</span></a>
+  <nav class="open-static">
+    <a href="../#work">Work</a>
+    <a href="../#timeline">Timeline</a>
+    <a href="../#about">About</a>
+    <a href="../#contact">Contact</a>
+    <a class="lang-switch" href="../../projects/2025-05-dp4-kunstig-romklang.html" hreflang="nb" lang="nb" title="Norsk versjon">NO</a>
+  </nav>
+</header>
+
+<main class="project-page">
+  <a class="back" href="../#timeline">← back to the timeline</a>
+
+  <div class="project-meta-row"><span class="cat-tag">school</span> <span class="project-year">2025</span></div>
+
+  <h1 class="project-title">DP4 Artificial reverb</h1>
+  <p class="project-lede">Real-time digital reverb on the AVR128DB48: one difference equation with a ring buffer, fixed-point arithmetic and a 30 µs sampling time.</p>
+  <ul class="tags"><li>DSP</li><li>AVR</li><li>ring buffer</li><li>real time</li></ul>
+  <figure class="fig fig-hero"><a class="tile" href="../../reports/2025-05-dp4-kunstig-romklang/img/oppkobling.webp" data-caption="Setup with AVR128DB48, Analog Discovery 2 and a listening card." style="--bg:#13343c;--fit:contain;--src:url(../../reports/2025-05-dp4-kunstig-romklang/img/oppkobling.webp)"><img src="../../reports/2025-05-dp4-kunstig-romklang/img/oppkobling.webp" alt="Setup with AVR128DB48, Analog Discovery 2 and a listening card." width="1006" height="720"></a><figcaption>Setup with AVR128DB48, Analog Discovery 2 and a listening card.</figcaption></figure>
+
+  <section class="project-section">
+    <h2>Result</h2>
+    <ul><li>The requirement was a reverberation time of 0.8 s. Measured time was 0.78 s with a = 0.4 and 0.81 s with a = 0.7.</li><li>The signal processing runs in an interrupt routine with integer arithmetic to meet the real-time requirement.</li><li>The theoretical impulse response was calculated in Python and compared with oscilloscope measurements.</li></ul>
+  </section>
+
+  <section class="project-section">
+    <h2>Figures</h2>
+    <div class="gallery"><figure class="fig"><a class="tile" href="../../reports/2025-05-dp4-kunstig-romklang/img/signalflyt.webp" data-caption="Signal flow of the reverb model." style="--bg:#ffffff;--fit:contain"><img src="../../reports/2025-05-dp4-kunstig-romklang/img/signalflyt.webp" alt="Signal flow of the reverb model." width="404" height="220" loading="lazy"></a><figcaption>Signal flow of the reverb model.</figcaption></figure><figure class="fig"><a class="tile" href="../../reports/2025-05-dp4-kunstig-romklang/img/testoppsett.webp" data-caption="Block diagram of the test setup." style="--bg:#ffffff;--fit:contain"><img src="../../reports/2025-05-dp4-kunstig-romklang/img/testoppsett.webp" alt="Block diagram of the test setup." width="1123" height="505" loading="lazy"></a><figcaption>Block diagram of the test setup.</figcaption></figure><figure class="fig wide"><a class="tile" href="../../reports/2025-05-dp4-kunstig-romklang/img/teori.webp" data-caption="Theoretical impulse response for different values of a, calculated in Python." style="--bg:#ffffff;--fit:contain"><img src="../../reports/2025-05-dp4-kunstig-romklang/img/teori.webp" alt="Theoretical impulse response for different values of a, calculated in Python." width="1489" height="396" loading="lazy"></a><figcaption>Theoretical impulse response for different values of a, calculated in Python.</figcaption></figure><figure class="fig"><a class="tile" href="../../reports/2025-05-dp4-kunstig-romklang/img/maling.webp" data-caption="Measured impulse response on the oscilloscope for a = 0.4 and a = 0.7." style="--bg:#403f40;--fit:contain"><img src="../../reports/2025-05-dp4-kunstig-romklang/img/maling.webp" alt="Measured impulse response on the oscilloscope for a = 0.4 and a = 0.7." width="979" height="673" loading="lazy"></a><figcaption>Measured impulse response on the oscilloscope for a = 0.4 and a = 0.7.</figcaption></figure></div>
+  </section>
+
+  <section class="project-section">
+    <h2>The report</h2>
+    <p class="project-links"><a class="btn primary" href="../../reports/2025-05-dp4-kunstig-romklang/main.pdf" target="_blank" rel="noopener">Open PDF ↗</a></p>
+    <object class="pdf-view" data="../../reports/2025-05-dp4-kunstig-romklang/main.pdf#view=FitH" type="application/pdf" aria-label="Report as PDF">
+      <p class="muted">Your browser cannot display PDFs directly. <a href="../../reports/2025-05-dp4-kunstig-romklang/main.pdf">Download the report here</a>.</p>
+    </object>
+  </section>
+
+  <a class="back" href="../#timeline">← back to the timeline</a>
+</main>
+
+<footer>
+  <span>© <span id="year">2026</span> Temmam Nabil Altaie</span>
+  <span>handmade · no framework · served by GitHub Pages</span>
+</footer>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+<script src="../../lightbox.js"></script>
+</body>
+</html>

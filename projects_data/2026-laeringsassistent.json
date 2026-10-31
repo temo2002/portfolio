@@ -11,5 +11,13 @@
     "elektronikk"
   ],
   "importance": 75,
-  "status": "ongoing"
+  "status": "ongoing",
+  "en": {
+    "title": "Learning assistant, IELS2021 and IELS2022",
+    "shortDescription": "Guides students in electronics courses at NTNU, also in IELS2031.",
+    "tags": [
+      "teaching",
+      "electronics"
+    ]
+  }
 }

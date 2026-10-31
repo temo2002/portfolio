@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- generated:import_reports -->
+<!-- Denne siden er laget av tools/import_reports.py. Fjern merket over for å redigere den selv. -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IELS2002 ECG measurement system · Temmam Nabil Altaie</title>
+<meta name="description" content="Complete ECG measurement system: analog interface circuit, ADC, ESP32 with heart rate calculation and web-based live display, from breadboard to four-layer PCB.">
+<meta name="theme-color" content="#0a0d18">
+<link rel="icon" href="../../icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css">
+<!-- seo:start -->
+<link rel="canonical" href="https://temo2002.github.io/portfolio/en/projects/2025-08-iels2002-ekg-malesystem.html">
+<link rel="alternate" hreflang="nb" href="https://temo2002.github.io/portfolio/projects/2025-08-iels2002-ekg-malesystem.html">
+<link rel="alternate" hreflang="en" href="https://temo2002.github.io/portfolio/en/projects/2025-08-iels2002-ekg-malesystem.html">
+<link rel="alternate" hreflang="x-default" href="https://temo2002.github.io/portfolio/projects/2025-08-iels2002-ekg-malesystem.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="nb_NO">
+<meta property="og:site_name" content="Temmam Nabil Altaie">
+<meta property="og:title" content="IELS2002 ECG measurement system · Temmam Nabil Altaie">
+<meta property="og:description" content="Complete ECG measurement system: analog interface circuit, ADC, ESP32 with heart rate calculation and web-based live display, from breadboard to four-layer PCB.">
+<meta property="og:url" content="https://temo2002.github.io/portfolio/en/projects/2025-08-iels2002-ekg-malesystem.html">
+<meta property="og:image" content="https://temo2002.github.io/portfolio/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<!-- seo:end -->
+</head>
+<body>
+
+<header class="nav">
+  <a class="logo" href="../#top"><span class="logo-mark">TA</span> <span class="logo-text">temmam.altaie</span></a>
+  <nav class="open-static">
+    <a href="../#work">Work</a>
+    <a href="../#timeline">Timeline</a>
+    <a href="../#about">About</a>
+    <a href="../#contact">Contact</a>
+    <a class="lang-switch" href="../../projects/2025-08-iels2002-ekg-malesystem.html" hreflang="nb" lang="nb" title="Norsk versjon">NO</a>
+  </nav>
+</header>
+
+<main class="project-page">
+  <a class="back" href="../#timeline">← back to the timeline</a>
+
+  <div class="project-meta-row"><span class="cat-tag">school</span> <span class="project-year">2025</span></div>
+
+  <h1 class="project-title">IELS2002 ECG measurement system</h1>
+  <p class="project-lede">Complete ECG measurement system: analog interface circuit, ADC, ESP32 with heart rate calculation and web-based live display, from breadboard to four-layer PCB.</p>
+  <ul class="tags"><li>ECG</li><li>analog design</li><li>KiCad</li><li>ESP32</li><li>PCB</li></ul>
+  <figure class="fig fig-hero"><a class="tile" href="../../reports/2025-08-iels2002-ekg-malesystem/img/prototypekort-batteri.webp" data-caption="The prototype board with Li-ion battery, ADC and ESP32." style="--bg:#4a4141;--fit:contain;--src:url(../../reports/2025-08-iels2002-ekg-malesystem/img/prototypekort-batteri.webp)"><img src="../../reports/2025-08-iels2002-ekg-malesystem/img/prototypekort-batteri.webp" alt="The prototype board with Li-ion battery, ADC and ESP32." width="1400" height="1050"></a><figcaption>The prototype board with Li-ion battery, ADC and ESP32.</figcaption></figure>
+
+  <section class="project-section">
+    <h2>What we built</h2>
+    <p>A group project of two in Engineering Project II. The system amplifies and filters weak biopotentials and shows the ECG and heart rate live in the browser.</p><div class="gallery"><figure class="fig"><a class="tile" href="../../reports/2025-08-iels2002-ekg-malesystem/img/kapsling-3d.webp" data-caption="3D model of the ECG unit enclosure, with lid." style="--bg:#b2b2b2;--fit:contain"><img src="../../reports/2025-08-iels2002-ekg-malesystem/img/kapsling-3d.webp" alt="3D model of the ECG unit enclosure, with lid." width="1500" height="564" loading="lazy"></a><figcaption>3D model of the ECG unit enclosure, with lid.</figcaption></figure></div>
+  </section>
+
+  <section class="project-section">
+    <h2>The system</h2>
+    <ul><li>Analog part: instrumentation amplifier (INA126), a 33.8 mHz high-pass filter and an amplifier stage with TL071 and a 16 Hz low-pass filter. Total gain of about 1000 V/V.</li><li>Digital part: 16-bit ADC (ADS1115) at 860 samples per second, and an ESP32 that finds R peaks, calculates the heart rate and sends data over WebSocket.</li><li>Battery operation with a Li-ion cell, and a 3D-printed enclosure.</li></ul><div class="gallery"><figure class="fig"><a class="tile" href="../../reports/2025-08-iels2002-ekg-malesystem/img/interfacekrets.webp" data-caption="The interface circuit in three stages: instrumentation amplifier, high-pass filter and amplifier with low-pass filter." style="--bg:#ffffff;--fit:contain"><img src="../../reports/2025-08-iels2002-ekg-malesystem/img/interfacekrets.webp" alt="The interface circuit in three stages: instrumentation amplifier, high-pass filter and amplifier with low-pass filter." width="1500" height="632" loading="lazy"></a><figcaption>The interface circuit in three stages: instrumentation amplifier, high-pass filter and amplifier with low-pass filter.</figcaption></figure><figure class="fig"><a class="tile" href="../../reports/2025-08-iels2002-ekg-malesystem/img/signalflyt.webp" data-caption="Signal flow from the interface circuit via the ADS1115 and ESP32 to the logging program." style="--bg:#ffffff;--fit:contain"><img src="../../reports/2025-08-iels2002-ekg-malesystem/img/signalflyt.webp" alt="Signal flow from the interface circuit via the ADS1115 and ESP32 to the logging program." width="548" height="253" loading="lazy"></a><figcaption>Signal flow from the interface circuit via the ADS1115 and ESP32 to the logging program.</figcaption></figure><figure class="fig"><a class="tile" href="../../reports/2025-08-iels2002-ekg-malesystem/img/brodbrett.webp" data-caption="The interface circuit first built on a breadboard." style="--bg:#7c7d76;--fit:cover"><img src="../../reports/2025-08-iels2002-ekg-malesystem/img/brodbrett.webp" alt="The interface circuit first built on a breadboard." width="1100" height="710" loading="lazy"></a><figcaption>The interface circuit first built on a breadboard.</figcaption></figure><figure class="fig"><a class="tile" href="../../reports/2025-08-iels2002-ekg-malesystem/img/prototypekort-merket.webp" data-caption="The prototype board divided into interface, power supply and ADC, and digital part." style="--bg:#b7b8b0;--fit:contain"><img src="../../reports/2025-08-iels2002-ekg-malesystem/img/prototypekort-merket.webp" alt="The prototype board divided into interface, power supply and ADC, and digital part." width="1500" height="678" loading="lazy"></a><figcaption>The prototype board divided into interface, power supply and ADC, and digital part.</figcaption></figure></div>
+  </section>
+
+  <section class="project-section">
+    <h2>Results</h2>
+    <ul><li>Clear QRS complexes on the prototype board, and a heart rate that differed by 1 to 3 beats per minute from a Garmin watch.</li><li>Measured cutoff frequencies close to the calculated ones, and a CMRR of almost 100 dB on the PCB.</li><li>Realized in four steps: simulation, breadboard, prototype board and a four-layer PCB drawn in KiCad.</li></ul><div class="gallery"><figure class="fig wide"><a class="tile" href="../../reports/2025-08-iels2002-ekg-malesystem/img/ekg-nettleser.webp" data-caption="ECG signal and heart rate calculation live in the browser (67 beats per minute)." style="--bg:#ffffff;--fit:contain"><img src="../../reports/2025-08-iels2002-ekg-malesystem/img/ekg-nettleser.webp" alt="ECG signal and heart rate calculation live in the browser (67 beats per minute)." width="1500" height="387" loading="lazy"></a><figcaption>ECG signal and heart rate calculation live in the browser (67 beats per minute).</figcaption></figure><figure class="fig"><a class="tile" href="../../reports/2025-08-iels2002-ekg-malesystem/img/amplituderespons.webp" data-caption="Amplitude response for simulation, breadboard, prototype board and PCB." style="--bg:#ffffff;--fit:contain"><img src="../../reports/2025-08-iels2002-ekg-malesystem/img/amplituderespons.webp" alt="Amplitude response for simulation, breadboard, prototype board and PCB." width="1112" height="802" loading="lazy"></a><figcaption>Amplitude response for simulation, breadboard, prototype board and PCB.</figcaption></figure><figure class="fig"><a class="tile" href="../../reports/2025-08-iels2002-ekg-malesystem/img/cmrr.webp" data-caption="CMRR for the four realizations." style="--bg:#ffffff;--fit:contain"><img src="../../reports/2025-08-iels2002-ekg-malesystem/img/cmrr.webp" alt="CMRR for the four realizations." width="1123" height="801" loading="lazy"></a><figcaption>CMRR for the four realizations.</figcaption></figure></div>
+  </section>
+
+  <section class="project-section">
+    <h2>What did not work</h2>
+    <p>The PCB got an offset problem in stage 2 that drove the next stage into saturation, so it was never used for ECG logging. The report describes the fault openly and proposes a fix for the next revision, while all logging was done on the prototype board.</p><div class="gallery"><figure class="fig"><a class="tile" href="../../reports/2025-08-iels2002-ekg-malesystem/img/pcb.webp" data-caption="Four-layer PCB with ESP32, ADC and battery." style="--bg:#282525;--fit:cover"><img src="../../reports/2025-08-iels2002-ekg-malesystem/img/pcb.webp" alt="Four-layer PCB with ESP32, ADC and battery." width="1200" height="900" loading="lazy"></a><figcaption>Four-layer PCB with ESP32, ADC and battery.</figcaption></figure><figure class="fig"><a class="tile" href="../../reports/2025-08-iels2002-ekg-malesystem/img/pcb-layout.webp" data-caption="PCB layout drawn in KiCad." style="--bg:#25343b;--fit:contain"><img src="../../reports/2025-08-iels2002-ekg-malesystem/img/pcb-layout.webp" alt="PCB layout drawn in KiCad." width="1100" height="1334" loading="lazy"></a><figcaption>PCB layout drawn in KiCad.</figcaption></figure></div>
+  </section>
+
+  <a class="back" href="../#timeline">← back to the timeline</a>
+</main>
+
+<footer>
+  <span>© <span id="year">2026</span> Temmam Nabil Altaie</span>
+  <span>handmade · no framework · served by GitHub Pages</span>
+</footer>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+<script src="../../lightbox.js"></script>
+</body>
+</html>

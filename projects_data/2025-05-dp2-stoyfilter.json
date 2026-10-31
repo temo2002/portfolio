@@ -12,5 +12,14 @@
   ],
   "importance": 50,
   "projectPage": "projects/2025-05-dp2-stoyfilter",
-  "generated": true
+  "generated": true,
+  "en": {
+    "title": "DP2 Noise filter",
+    "shortDescription": "Two cascaded LC band-stop filters with a buffer remove a 1.68 kHz beep from an audio signal.",
+    "tags": [
+      "band-stop filter",
+      "LC filter",
+      "LTspice"
+    ]
+  }
 }

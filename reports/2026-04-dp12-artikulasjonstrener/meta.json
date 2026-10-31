@@ -53,5 +53,31 @@
       "bg": "#fefefe",
       "fit": "contain"
     }
-  ]
+  ],
+  "en": {
+    "title": "DP12 Articulation trainer",
+    "shortDescription": "Spectrum analyzer on the AVR128DB48: 256-point FFT with kissFFT, display of the spectrum on an OLED and measurement of run time.",
+    "tags": [
+      "FFT",
+      "spectrum analysis",
+      "OLED",
+      "kissFFT"
+    ],
+    "sections": [
+      {
+        "title": "Status",
+        "bullets": [
+          "FFT computation, display on the OLED and run-time measurement work.",
+          "Integration with a pre-recorded audio file was not completed, and the report says so clearly.",
+          "Further work: convert the audio file to PCM, better scaling of the spectrum and real-time sampling from the ADC."
+        ]
+      }
+    ],
+    "captions": {
+      "img/oled.webp": "The spectrum shown on the OLED display.",
+      "img/oversikt.webp": "Overall system for the articulation trainer.",
+      "img/losning.webp": "Realized solution on the AVR128DB48.",
+      "img/programflyt.webp": "Program flow for FFT and display."
+    }
+  }
 }

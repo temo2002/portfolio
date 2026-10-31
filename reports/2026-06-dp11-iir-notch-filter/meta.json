@@ -37,5 +37,29 @@
       "bg": "#121113",
       "fit": "contain"
     }
-  ]
+  ],
+  "en": {
+    "title": "DP11 IIR notch filter",
+    "shortDescription": "Second-order IIR notch filter that removes a 1680 Hz beep from audio sampled at 44.1 kHz, implemented in Q15 on the AVR128DB48.",
+    "tags": [
+      "IIR",
+      "notch filter",
+      "MATLAB",
+      "Q15"
+    ],
+    "sections": [
+      {
+        "title": "Result",
+        "bullets": [
+          "Around 45 dB attenuation at the beep with minimal effect on the rest of the audio.",
+          "The filter needs only four state variables and five coefficients, against 165 taps in the FIR solution from DP9.",
+          "Verified in MATLAB before implementation in C."
+        ]
+      }
+    ],
+    "captions": {
+      "img/spektrum.webp": "FFT spectrum with the beep clearly visible at 1680 Hz.",
+      "img/pol-null.webp": "Pole-zero plot for the notch filter."
+    }
+  }
 }

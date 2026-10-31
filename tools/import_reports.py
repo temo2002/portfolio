@@ -180,6 +180,7 @@ def build_entry(folder):
     lede = meta.pop("lede", "")
     sections = meta.pop("sections", [])
     links = meta.pop("links", [])
+    en = meta.pop("en", None)
     hero = meta.pop("hero", None)
     figures = meta.pop("figures", [])
     # Portrett og nesten kvadratiske bilder fungerer dårlig som bredt toppbilde: legg dem først i galleriet
@@ -195,16 +196,68 @@ def build_entry(folder):
     entry["_sections"] = sections
     entry["_links"] = links
     entry["_hero"] = hero
+    entry["_en"] = en or {}
+    if en:  # tittel, beskrivelse og tagger leses av tidslinjen på engelsk
+        entry["en"] = {k: en[k] for k in ("title", "shortDescription", "tags") if k in en}
     entry["_figures"] = figures
     entry["_macros"] = macros
     return entry, "; ".join(notes) or None
 
 
 # ---------- Side ----------
+UI = {
+    "no": {"html": "nb", "back": "← tilbake til tidslinjen", "ids": {"work": "arbeid", "timeline": "tidslinje", "about": "om", "contact": "kontakt"},
+           "nav": {"work": "Arbeid", "timeline": "Tidslinje", "about": "Om meg", "contact": "Kontakt"},
+           "cats": {"work": "jobb", "school": "skole", "hobby": "hobby"}, "version": "versjon", "report": "Rapporten", "open_pdf": "Åpne PDF",
+           "no_pdf": "Nettleseren din viser ikke PDF direkte.", "download": "Last ned rapporten her", "links": "Lenker", "figures": "Figurer",
+           "footer": "håndlaget · ingen rammeverk · servert av GitHub Pages", "pdf_aria": "Rapport som PDF", "alt_label": "EN", "alt_title": "English version",
+           "locale": "nb"},
+    "en": {"html": "en", "back": "← back to the timeline", "ids": {"work": "work", "timeline": "timeline", "about": "about", "contact": "contact"},
+           "nav": {"work": "Work", "timeline": "Timeline", "about": "About", "contact": "Contact"},
+           "cats": {"work": "work", "school": "school", "hobby": "hobby"}, "version": "version", "report": "The report", "open_pdf": "Open PDF",
+           "no_pdf": "Your browser cannot display PDFs directly.", "download": "Download the report here", "links": "Links", "figures": "Figures",
+           "footer": "handmade · no framework · served by GitHub Pages", "pdf_aria": "Report as PDF", "alt_label": "NO", "alt_title": "Norsk versjon",
+           "locale": "en"},
+}
 
-def fig_html(e, f, esc, hero=False):
+
+def localize(e, lang):
+    """Returnerer en kopi av oppføringen med tekster på valgt språk (norsk er standard)."""
+    L = dict(e)
+    en = e.get("_en") or {}
+    caps = en.get("captions", {}) if lang == "en" else {}
+
+    def cap(f):
+        g = dict(f)
+        if f["file"] in caps:
+            g["caption"] = caps[f["file"]]
+        return g
+
+    secs = []
+    for i, sec in enumerate(e["_sections"]):
+        s2 = dict(sec)
+        if lang == "en" and i < len(en.get("sections", [])):
+            for k in ("title", "paragraphs", "bullets"):
+                if k in en["sections"][i]:
+                    s2[k] = en["sections"][i][k]
+        s2["figures"] = [cap(f) for f in sec.get("figures", [])]
+        secs.append(s2)
+    L["_sections"] = secs
+    L["_hero"] = cap(e["_hero"]) if e["_hero"] else None
+    L["_figures"] = [cap(f) for f in e["_figures"]]
+    if lang == "en":
+        L["title"] = en.get("title", e["title"])
+        L["shortDescription"] = en.get("shortDescription", e["shortDescription"])
+        L["tags"] = en.get("tags", e.get("tags", []))
+        L["_lede"] = en.get("lede") or (en.get("shortDescription") if en else "") or e["_lede"]
+        labels = en.get("links", [])
+        L["_links"] = [dict(l, label=labels[i]) if i < len(labels) else l for i, l in enumerate(e["_links"])]
+    return L
+
+
+def fig_html(e, f, esc, up, hero=False):
     """En figur som klikkbar rute i galleriet. Valgfrie felt: caption, alt, w, h, fit, bg."""
-    url = f"../reports/{e['id']}/{f['file']}"
+    url = f"{up}reports/{e['id']}/{f['file']}"
     w, h = f.get("w"), f.get("h")
     dims = f' width="{w}" height="{h}"' if w and h else ""
     fit = "contain" if hero else f.get("fit", "contain")
@@ -220,48 +273,54 @@ def fig_html(e, f, esc, hero=False):
             f'style="--bg:{esc(bg)};--fit:{fit}{src_var}"><img src="{esc(url)}" alt="{alt}"{dims}{lazy}></a>{cap}</figure>')
 
 
-def fig_grid(e, figs, esc):
-    return '<div class="gallery">' + "".join(fig_html(e, f, esc) for f in figs) + "</div>" if figs else ""
+def fig_grid(e, figs, esc, up):
+    return '<div class="gallery">' + "".join(fig_html(e, f, esc, up) for f in figs) + "</div>" if figs else ""
 
 
-def render_sections(e, esc, pdf_rel):
+def render_sections(e, esc, pdf_rel, up, ui):
     out = []
     for sec in e["_sections"]:
         body = "".join(f"<p>{esc(p)}</p>" for p in sec.get("paragraphs", []))
         if sec.get("bullets"):
             body += "<ul>" + "".join(f"<li>{esc(b)}</li>" for b in sec["bullets"]) + "</ul>"
-        body += fig_grid(e, sec.get("figures", []), esc)
+        body += fig_grid(e, sec.get("figures", []), esc, up)
         out.append(f'  <section class="project-section">\n    <h2>{esc(sec["title"])}</h2>\n    {body}\n  </section>')
     if e["_figures"]:
-        out.append(f'  <section class="project-section">\n    <h2>Figurer</h2>\n    {fig_grid(e, e["_figures"], esc)}\n  </section>')
-    links = list(e["_links"])
+        out.append(f'  <section class="project-section">\n    <h2>{ui["figures"]}</h2>\n    {fig_grid(e, e["_figures"], esc, up)}\n  </section>')
     if pdf_rel:
-        out.append(f'''  <section class="project-section">
-    <h2>Rapporten</h2>
-    <p class="project-links"><a class="btn primary" href="{esc(pdf_rel)}" target="_blank" rel="noopener">Åpne PDF ↗</a></p>
-    <object class="pdf-view" data="{esc(pdf_rel)}#view=FitH" type="application/pdf" aria-label="Rapport som PDF">
-      <p class="muted">Nettleseren din viser ikke PDF direkte. <a href="{esc(pdf_rel)}">Last ned rapporten her</a>.</p>
+        out.append(f"""  <section class="project-section">
+    <h2>{ui["report"]}</h2>
+    <p class="project-links"><a class="btn primary" href="{esc(pdf_rel)}" target="_blank" rel="noopener">{ui["open_pdf"]} ↗</a></p>
+    <object class="pdf-view" data="{esc(pdf_rel)}#view=FitH" type="application/pdf" aria-label="{ui["pdf_aria"]}">
+      <p class="muted">{ui["no_pdf"]} <a href="{esc(pdf_rel)}">{ui["download"]}</a>.</p>
     </object>
-  </section>''')
-    if links:
-        btns = " ".join(f'<a class="btn" href="{esc(l["url"])}" target="_blank" rel="noopener">{esc(l["label"])} ↗</a>' for l in links)
-        out.append(f'  <section class="project-section">\n    <h2>Lenker</h2>\n    <p class="project-links">{btns}</p>\n  </section>')
+  </section>""")
+    if e["_links"]:
+        btns = " ".join(f'<a class="btn" href="{esc(l["url"])}" target="_blank" rel="noopener">{esc(l["label"])} ↗</a>' for l in e["_links"])
+        out.append(f'  <section class="project-section">\n    <h2>{ui["links"]}</h2>\n    <p class="project-links">{btns}</p>\n  </section>')
     return "\n\n".join(out)
 
-def render_page(e):
+
+def render_page(e0, lang="no"):
+    e = localize(e0, lang)
+    ui = UI[lang]
+    up = "../" if lang == "no" else "../../"
     esc = lambda s: html.escape(str(s), quote=True)
     m = e["_macros"]
-    meta_bits = [f'<span class="cat-tag">{esc({"work": "jobb", "school": "skole", "hobby": "hobby"}.get(e["category"], e["category"]))}</span>',
+    meta_bits = [f'<span class="cat-tag">{esc(ui["cats"].get(e["category"], e["category"]))}</span>',
                  f'<span class="project-year">{esc(e["start"][:4])}</span>']
     if m.get("versjon"):
-        meta_bits.append(f'<span class="project-year">versjon {esc(m["versjon"])}</span>')
+        meta_bits.append(f'<span class="project-year">{ui["version"]} {esc(m["versjon"])}</span>')
     lede = e["_lede"] or e["_summary"] or e["shortDescription"]
     tags = "".join(f"<li>{esc(t)}</li>" for t in e.get("tags", []))
-    pdf_rel = "../" + e["_pdf"] if e["_pdf"] else None
-    extra_sections = render_sections(e, esc, pdf_rel)
-    hero_html = fig_html(e, e["_hero"], esc, hero=True) if e["_hero"] else ""
+    pdf_rel = up + e["_pdf"] if e["_pdf"] else None
+    extra_sections = render_sections(e, esc, pdf_rel, up, ui)
+    hero_html = fig_html(e, e["_hero"], esc, up, hero=True) if e["_hero"] else ""
+    ids = ui["ids"]
+    alt_href = f"../en/projects/{e['id']}.html" if lang == "no" else f"../../projects/{e['id']}.html"
+    alt_lang = "en" if lang == "no" else "nb"
     return f"""<!DOCTYPE html>
-<html lang="nb">
+<html lang="{ui["html"]}">
 <head>
 {MARK}
 <!-- Denne siden er laget av tools/import_reports.py. Fjern merket over for å redigere den selv. -->
@@ -270,11 +329,11 @@ def render_page(e):
 <title>{esc(e["title"])} · Temmam Nabil Altaie</title>
 <meta name="description" content="{esc(e["shortDescription"])}">
 <meta name="theme-color" content="#0a0d18">
-<link rel="icon" href="../icon.png">
+<link rel="icon" href="{up}icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="{up}style.css">
 <!-- seo:start -->
 <!-- seo:end -->
 </head>
@@ -283,15 +342,16 @@ def render_page(e):
 <header class="nav">
   <a class="logo" href="../#top"><span class="logo-mark">TA</span> <span class="logo-text">temmam.altaie</span></a>
   <nav class="open-static">
-    <a href="../#arbeid">Arbeid</a>
-    <a href="../#tidslinje">Tidslinje</a>
-    <a href="../#om">Om meg</a>
-    <a href="../#kontakt">Kontakt</a>
+    <a href="../#{ids["work"]}">{ui["nav"]["work"]}</a>
+    <a href="../#{ids["timeline"]}">{ui["nav"]["timeline"]}</a>
+    <a href="../#{ids["about"]}">{ui["nav"]["about"]}</a>
+    <a href="../#{ids["contact"]}">{ui["nav"]["contact"]}</a>
+    <a class="lang-switch" href="{alt_href}" hreflang="{alt_lang}" lang="{alt_lang}" title="{ui["alt_title"]}">{ui["alt_label"]}</a>
   </nav>
 </header>
 
 <main class="project-page">
-  <a class="back" href="../#tidslinje">← tilbake til tidslinjen</a>
+  <a class="back" href="../#{ids["timeline"]}">{ui["back"]}</a>
 
   <div class="project-meta-row">{" ".join(meta_bits)}</div>
 
@@ -301,15 +361,16 @@ def render_page(e):
   {hero_html}
 
 {extra_sections}
-  <a class="back" href="../#tidslinje">← tilbake til tidslinjen</a>
+
+  <a class="back" href="../#{ids["timeline"]}">{ui["back"]}</a>
 </main>
 
 <footer>
   <span>© <span id="year">2026</span> Temmam Nabil Altaie</span>
-  <span>håndlaget · ingen rammeverk · servert av GitHub Pages</span>
+  <span>{ui["footer"]}</span>
 </footer>
 <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
-<script src="../lightbox.js"></script>
+<script src="{up}lightbox.js"></script>
 </body>
 </html>
 """
@@ -331,12 +392,16 @@ def write_if_changed(path, content):
     return True
 
 
+def page_path(entry_id, lang):
+    return ROOT / ("projects" if lang == "no" else "en/projects") / f"{entry_id}.html"
+
+
 def main():
     reports = ROOT / "reports"
     if not reports.is_dir():
         print("Ingen reports/-mappe, ingenting å importere.")
         return
-    data, pages = ROOT / "projects_data", ROOT / "projects"
+    data = ROOT / "projects_data"
     current, log = set(), []
     for folder in sorted(p for p in reports.iterdir() if p.is_dir() and not p.name.startswith(("_", "."))):
         entry, note = build_entry(folder)
@@ -345,25 +410,27 @@ def main():
         if not entry:
             continue
         current.add(entry["id"])
-        jpath, hpath = data / f"{entry['id']}.json", pages / f"{entry['id']}.html"
-        page = render_page(entry)
+        jpath = data / f"{entry['id']}.json"
         public = {k: v for k, v in entry.items() if not k.startswith("_")}
         if jpath.exists() and not is_generated_json(jpath):
             log.append(f"{entry['id']}: JSON er redigert for hånd, ikke overskrevet")
         elif write_if_changed(jpath, json.dumps(public, ensure_ascii=False, indent=2) + "\n"):
             log.append(f"{entry['id']}: oppdaterte {jpath.relative_to(ROOT)}")
-        if hpath.exists() and MARK not in hpath.read_text(encoding="utf-8"):
-            log.append(f"{entry['id']}: siden er redigert for hånd, ikke overskrevet")
-        elif write_if_changed(hpath, page):
-            log.append(f"{entry['id']}: oppdaterte {hpath.relative_to(ROOT)}")
+        for lang in ("no", "en"):
+            hpath = page_path(entry["id"], lang)
+            if hpath.exists() and MARK not in hpath.read_text(encoding="utf-8"):
+                log.append(f"{entry['id']} ({lang}): siden er redigert for hånd, ikke overskrevet")
+            elif write_if_changed(hpath, render_page(entry, lang)):
+                log.append(f"{entry['id']} ({lang}): oppdaterte {hpath.relative_to(ROOT)}")
 
     # Rydd bort det vi laget selv for rapporter som er fjernet
     for jpath in sorted(data.glob("*.json")):
         if jpath.name != "manifest.json" and is_generated_json(jpath) and jpath.stem not in current:
-            hpath = pages / f"{jpath.stem}.html"
             jpath.unlink()
-            if hpath.exists() and MARK in hpath.read_text(encoding="utf-8"):
-                hpath.unlink()
+            for lang in ("no", "en"):
+                hpath = page_path(jpath.stem, lang)
+                if hpath.exists() and MARK in hpath.read_text(encoding="utf-8"):
+                    hpath.unlink()
             log.append(f"{jpath.stem}: rapporten er fjernet, ryddet bort")
 
     print(f"{len(current)} rapport(er) funnet." + ("\n  - " + "\n  - ".join(log) if log else " Ingen endringer."))

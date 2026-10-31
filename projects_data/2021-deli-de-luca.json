@@ -10,5 +10,12 @@
     "service"
   ],
   "importance": 30,
-  "status": "ongoing"
+  "status": "ongoing",
+  "en": {
+    "title": "Deli de Luca, Leknes",
+    "shortDescription": "Part-time and seasonal job at the Esso station in Leknes.",
+    "tags": [
+      "service"
+    ]
+  }
 }

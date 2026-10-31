@@ -11,5 +11,14 @@
     "filterdesign",
     "undervisning"
   ],
-  "importance": 50
+  "importance": 50,
+  "en": {
+    "title": "Crash courses in C and analog electronics",
+    "shortDescription": "Held own courses for fellow students in C programming and filter design.",
+    "tags": [
+      "C",
+      "filter design",
+      "teaching"
+    ]
+  }
 }

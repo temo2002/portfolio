@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="nb">
+<html lang="nb" data-root="">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,15 +13,19 @@
 <link rel="stylesheet" href="style.css">
 <!-- seo:start -->
 <link rel="canonical" href="https://temo2002.github.io/portfolio/">
+<link rel="alternate" hreflang="nb" href="https://temo2002.github.io/portfolio/">
+<link rel="alternate" hreflang="en" href="https://temo2002.github.io/portfolio/en/">
+<link rel="alternate" hreflang="x-default" href="https://temo2002.github.io/portfolio/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="nb_NO">
+<meta property="og:locale:alternate" content="en_US">
 <meta property="og:site_name" content="Temmam Nabil Altaie">
 <meta property="og:title" content="Temmam Nabil Altaie · Elektronisk systemingeniør">
 <meta property="og:description" content="Temmam Nabil Altaie, elektronikkstudent ved NTNU, læringsassistent, nestleder i NTNUI Calisthenics og trompetist.">
 <meta property="og:url" content="https://temo2002.github.io/portfolio/">
 <meta property="og:image" content="https://temo2002.github.io/portfolio/og.png">
 <meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Temmam Nabil Altaie", "url": "https://temo2002.github.io/portfolio", "jobTitle": "Elektronikkstudent", "alumniOf": "NTNU", "image": "https://temo2002.github.io/portfolio/og.png"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Temmam Nabil Altaie", "url": "https://temo2002.github.io/portfolio/", "jobTitle": "Elektronikkstudent", "alumniOf": "NTNU", "image": "https://temo2002.github.io/portfolio/og.png", "inLanguage": "nb"}</script>
 <!-- seo:end -->
 </head>
 <body>
@@ -35,6 +39,7 @@
     <a href="#om">Om meg</a>
     <a href="#verktoy">Verktøy</a>
     <a href="#kontakt">Kontakt</a>
+    <a class="lang-switch" href="en/" hreflang="en" lang="en" title="English version">EN</a>
   </nav>
 </header>
 
@@ -45,7 +50,7 @@
       <p class="eyebrow">elektronisk systemdesign · NTNU Trondheim</p>
       <h1>Temmam Nabil Altaie</h1>
       <p class="lead">Elektronikkstudent som liker å forklare det som er vanskelig, bygge det som er nyttig og spille trompet når det betyr noe.</p>
-      <p class="typed-line">Akkurat nå tenker jeg på <span id="typed" class="typed">elektronikk</span><span class="caret" aria-hidden="true"></span></p>
+      <p class="typed-line">Akkurat nå tenker jeg på <span id="typed" class="typed" data-phrases='["elektronikk","filterdesign","å forklare ting","ledelse og lagarbeid","trompet","sommerjobb 2027"]'>elektronikk</span><span class="caret" aria-hidden="true"></span></p>
       <div class="cta">
         <a class="btn primary" href="#arbeid">utvalgt arbeid ↓</a>
         <a class="btn" href="#kontakt">ta kontakt →</a>
@@ -116,7 +121,7 @@
       <button class="filter-chip" data-filter="school">Skole</button>
       <button class="filter-chip" data-filter="hobby">Hobby</button>
     </div>
-    <div class="lane-wrap" id="laneWrap"><div class="lane" id="lane"></div></div>
+    <div class="swimlane"><div class="swimlane-scroll" id="laneWrap"><div class="swimlane-inner" id="swimInner"><div class="year-axis" id="yearAxis"></div><div class="lane" id="lane"></div></div></div></div>
     <div class="tl-list" id="tlList"></div>
     <p class="muted" id="tlError" hidden>Klarte ikke å laste tidslinjen akkurat nå. Prøv å laste siden på nytt.</p>
     <div class="tip" id="tip" role="tooltip" hidden></div>

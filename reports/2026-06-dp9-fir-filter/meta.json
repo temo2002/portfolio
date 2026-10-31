@@ -45,5 +45,30 @@
       "bg": "#f6f6f6",
       "fit": "contain"
     }
-  ]
+  ],
+  "en": {
+    "title": "DP9 FIR filter",
+    "shortDescription": "FIR low-pass filter for noise reduction in audio: verified in MATLAB, with spectrum analysis and implementation on a microcontroller.",
+    "tags": [
+      "FIR",
+      "MATLAB",
+      "DSP",
+      "linear phase"
+    ],
+    "sections": [
+      {
+        "title": "Contents",
+        "bullets": [
+          "Theory on LTI systems, convolution, frequency response and linear phase.",
+          "The filter was verified in MATLAB, both as frequency response and as power spectrum before and after filtering.",
+          "Implemented on a microcontroller, with an assessment of filter order against processing time."
+        ]
+      }
+    ],
+    "captions": {
+      "img/oppkobling.webp": "Setup with AVR128DB48 and Analog Discovery 2.",
+      "img/frekvensrespons.webp": "Magnitude and phase response of the FIR low-pass filter.",
+      "img/psd.webp": "Power spectral density before and after filtering."
+    }
+  }
 }

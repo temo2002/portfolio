@@ -2,12 +2,17 @@
 
 const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
 const $ = (id) => document.getElementById(id);
+const LANG = document.documentElement.lang === "en" ? "en" : "no";
+const ROOT = document.documentElement.dataset.root || "";
+const STR = {
+  no: { ongoing: "pågår", today: "i dag", to: "til", more: "til", go: "klikk for å lese mer →", cats: { work: "Jobb", school: "Skole", hobby: "Hobby" }, empty: "Ingen treff i dette filteret." },
+  en: { ongoing: "ongoing", today: "present", to: "to", more: "more", go: "click to read more →", cats: { work: "Work", school: "School", hobby: "Hobby" }, empty: "No entries match this filter." },
+}[LANG];
 
 // ---------- Små automatikker ----------
 $("year").textContent = new Date().getFullYear();
 $("yearsBiz").textContent = new Date().getFullYear() - 2018; // bedriften startet i 2018
 
-// Meny på mobil
 const burger = $("burger"), menu = $("menu");
 burger.addEventListener("click", () => {
   const open = menu.classList.toggle("open");
@@ -15,17 +20,17 @@ burger.addEventListener("click", () => {
 });
 menu.addEventListener("click", (e) => { if (e.target.tagName === "A") { menu.classList.remove("open"); burger.setAttribute("aria-expanded", false); } });
 
-// Fade inn ved scrolling
 const io = new IntersectionObserver((entries) => {
   entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.add("is-revealed"); io.unobserve(en.target); } });
 }, { threshold: 0.08 });
 document.querySelectorAll(".fade-in").forEach((el) => reduceMotion ? el.classList.add("is-revealed") : io.observe(el));
 
-// Skrivemaskin
+// Skrivemaskin: fraser ligger i data-phrases på elementet, så de kan oversettes
 (function typewriter() {
   const el = $("typed");
-  const phrases = ["elektronikk", "filterdesign", "å forklare ting", "ledelse og lagarbeid", "trompet", "sommerjobb 2027"];
-  if (reduceMotion) return;
+  let phrases;
+  try { phrases = JSON.parse(el.dataset.phrases); } catch (e) { phrases = [el.textContent]; }
+  if (reduceMotion || !phrases.length) return;
   let i = 0, j = 0, del = false;
   (function tick() {
     const full = phrases[i];
@@ -39,95 +44,126 @@ document.querySelectorAll(".fade-in").forEach((el) => reduceMotion ? el.classLis
 })();
 
 // ---------- Tidslinje ----------
-const MOBILE_BREAK = 900, PX_PER_YEAR = 170, ROW_H = 58, ROW_GAP = 10, HEAD_H = 34, LABEL_MIN = 190;
-const CAT_LABEL = { work: "Jobb", school: "Skole", hobby: "Hobby" };
+const MOBILE_BREAK = 900, PX_PER_YEAR = 270, ROWS = 15, ROW_H = 36, PAD_T = 12, RANGE_MIN_YEARS = 0.25;
 const nowYear = () => { const d = new Date(); return d.getFullYear() + d.getMonth() / 12; };
 const toYear = (s) => {
   if (s === "present") return nowYear();
   const [y, m] = String(s).split("-").map(Number);
   return y + ((m || 1) - 1) / 12;
 };
+const loc = (e, k) => (LANG === "en" && e.en && e.en[k]) || e[k];
 const fmtDate = (e) => {
-  const end = e.end === "present" ? "i dag" : e.end;
-  return !e.end || e.end === e.start ? e.start : `${e.start} til ${end}`;
+  const end = e.end === "present" ? STR.today : e.end;
+  return !e.end || e.end === e.start ? e.start : `${e.start} ${STR.to} ${end}`;
 };
 const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const pageUrl = (e) => e.projectPage + ".html";
 
 function normalize(raw) {
   const start = toYear(raw.start);
   const end = raw.end ? toYear(raw.end) : start;
   const importance = Math.min(100, Math.max(1, raw.importance ?? 40));
-  return { ...raw, startVal: start, endVal: Math.max(end, start), importance, types: raw.types || [] };
+  const endVal = Math.max(end, start);
+  return { ...raw, startVal: start, endVal, importance, imp: importance / 100, isRange: endVal - start >= RANGE_MIN_YEARS, types: raw.types || [] };
 }
 const matches = (e, f) => f === "all" || (f === "project" ? e.isProject : e.category === f || e.types.includes(f));
 
 let entries = [], activeFilter = "all";
 
 async function loadEntries() {
-  const manifest = await (await fetch("projects_data/manifest.json")).json();
+  const manifest = await (await fetch(ROOT + "projects_data/manifest.json")).json();
   const loaded = await Promise.all(manifest.map(async (f) => {
-    try { return normalize(await (await fetch("projects_data/" + f)).json()); }
+    try { return normalize(await (await fetch(ROOT + "projects_data/" + f)).json()); }
     catch (err) { console.warn("Hoppet over", f, err); return null; }
   }));
   return loaded.filter(Boolean).sort((a, b) => a.startVal - b.startVal);
 }
 
-function renderLane() {
-  const lane = $("lane");
-  lane.innerHTML = "";
+// Plassering: tyngst først, fra midtraden og utover. Etiketter som ikke får plass skjules.
+function layout(items, minYear) {
+  const mid = Math.floor(ROWS / 2), order = [];
+  for (let d = 0; order.length < ROWS; d++) {
+    if (d === 0) order.push(mid);
+    else { if (mid - d >= 0) order.push(mid - d); if (mid + d < ROWS) order.push(mid + d); }
+  }
+  const used = Array.from({ length: ROWS }, () => []);
+  const free = (r, a, b) => used[r].every(([x, y]) => b + 6 <= x || a >= y + 6);
+  items.forEach((it) => {
+    it.x = (it.startVal - minYear) * PX_PER_YEAR;
+    it.title_ = loc(it, "title");
+    if (it.isRange) {
+      it.w = Math.max((it.endVal - it.startVal) * PX_PER_YEAR, 150);
+      it.wMin = it.wFull = it.w;
+    } else {
+      it.marker = Math.round(6 + it.imp * 12);
+      const lab = Math.min(230, Math.round(it.title_.length * 7 + 20));
+      it.wMin = it.marker + 6;
+      it.wFull = it.marker + 8 + lab;
+    }
+  });
+  [...items].sort((a, b) => b.importance - a.importance).forEach((it) => {
+    let row = order.find((r) => free(r, it.x, it.x + it.wFull));
+    it.hideLabel = false;
+    if (row === undefined) { row = order.find((r) => free(r, it.x, it.x + it.wMin)); it.hideLabel = !it.isRange; }
+    if (row === undefined) { row = order[0]; it.hideLabel = !it.isRange; }
+    used[row].push([it.x, it.x + (it.hideLabel ? it.wMin : it.wFull)]);
+    it.row = row;
+  });
+  const rows = items.map((i) => i.row), lo = Math.min(...rows), hi = Math.max(...rows);
+  items.forEach((i) => { i.row -= lo; });
+  return hi - lo + 1;
+}
+
+function renderSwimlane() {
+  const lane = $("lane"), axis = $("yearAxis"), inner = $("swimInner");
+  lane.innerHTML = ""; axis.innerHTML = "";
   const minYear = Math.floor(Math.min(...entries.map((e) => e.startVal)));
   const maxYear = Math.ceil(Math.max(...entries.map((e) => e.endVal)) + 0.01);
+  const rowsUsed = layout(entries, minYear);
+  const right = Math.max(...entries.map((e) => e.x + e.wFull));
+  const total = Math.max((maxYear - minYear) * PX_PER_YEAR, right) + 30;
+  inner.style.width = total + "px";
+  lane.style.height = PAD_T * 2 + rowsUsed * ROW_H + "px";
 
-  // Plasser tyngste først; første rad uten overlapp
-  const rows = [];
-  const placed = [...entries].sort((a, b) => b.importance - a.importance).map((e) => {
-    const left = (e.startVal - minYear) * PX_PER_YEAR;
-    const width = Math.max((e.endVal - e.startVal) * PX_PER_YEAR, LABEL_MIN);
-    let r = rows.findIndex((used) => used.every(([a, b]) => left + width + 8 <= a || left >= b + 8));
-    if (r === -1) { rows.push([]); r = rows.length - 1; }
-    rows[r].push([left, left + width]);
-    return { e, left, width, r };
-  });
-  const totalW = Math.max((maxYear - minYear) * PX_PER_YEAR, ...placed.map((p) => p.left + p.width)) + 24;
-  const totalH = HEAD_H + rows.length * (ROW_H + ROW_GAP) + 8;
-  lane.style.width = totalW + "px";
-  lane.style.height = totalH + "px";
-
+  const cur = Math.floor(nowYear());
   for (let y = minYear; y <= maxYear; y++) {
     const t = document.createElement("div");
-    t.className = "yr";
-    t.style.left = (y - minYear) * PX_PER_YEAR + "px";
-    t.innerHTML = `<span>${y}</span>`;
-    lane.appendChild(t);
+    t.className = "year-tick" + (y === cur ? " current" : "");
+    t.style.left = (y - minYear) * PX_PER_YEAR + "px"; t.style.width = PX_PER_YEAR + "px";
+    t.textContent = y; axis.appendChild(t);
+    const g = document.createElement("div");
+    g.className = "year-guide"; g.style.left = (y - minYear) * PX_PER_YEAR + "px"; lane.appendChild(g);
   }
-  placed.forEach(({ e, left, width, r }) => {
+
+  entries.forEach((e) => {
     const b = document.createElement("button");
-    b.className = `bar cat-${e.category}` + (e.importance >= 70 ? " big" : e.importance < 45 ? " small" : "") + (e.projectPage ? " link" : "");
+    b.type = "button";
+    b.className = `entry ${e.isRange ? "range" : "point"} cat-${e.category}` + (e.projectPage ? " clickable" : "") + (e.hideLabel ? " label-hidden" : "") + (e.status === "ongoing" && e.isRange ? " ongoing" : "");
     b.dataset.id = e.id;
-    b.style.cssText = `left:${left}px;top:${HEAD_H + r * (ROW_H + ROW_GAP)}px;width:${width}px;height:${ROW_H}px`;
-    b.innerHTML = `<span class="bar-title">${esc(e.title)}</span><span class="bar-date">${fmtDate(e)}${e.status === "ongoing" ? " · pågår" : ""}</span>`;
+    b.style.cssText = `left:${e.x}px;top:${PAD_T + e.row * ROW_H}px;height:${ROW_H}px;--imp:${e.imp};z-index:${Math.round(1 + e.imp * 10)};` + (e.isRange ? `width:${e.w}px;` : "");
+    b.innerHTML = e.isRange
+      ? `<span class="bar">${esc(e.title_)}</span>${e.status === "ongoing" ? '<span class="ongoing-arrow"></span>' : ""}`
+      : `<span class="marker"></span><span class="label">${esc(e.title_)}</span>`;
+    b.setAttribute("aria-label", `${e.title_}, ${fmtDate(e)}`);
     b.addEventListener("mouseenter", () => showTip(e, b));
     b.addEventListener("focus", () => showTip(e, b));
     b.addEventListener("mouseleave", hideTip);
     b.addEventListener("blur", hideTip);
-    if (e.projectPage) b.addEventListener("click", () => { location.href = e.projectPage + ".html"; });
-    b._left = left; b._width = width;
+    if (e.projectPage) b.addEventListener("click", () => { location.href = pageUrl(e); });
     lane.appendChild(b);
   });
-  const wrap = $("laneWrap");
-  wrap.scrollLeft = wrap.scrollWidth;
-  keepLabelsVisible();
+  const sc = $("laneWrap");
+  // Åpne med dagens dato i synsfeltet, og la tittelen i lange barer følge med når man scroller
+  sc.scrollLeft = Math.max(0, (nowYear() - minYear) * PX_PER_YEAR - sc.clientWidth * 0.7);
+  const follow = () => {
+    const edge = sc.scrollLeft - 24;
+    lane.querySelectorAll(".entry.range").forEach((b) => {
+      const x = parseFloat(b.style.left), w = parseFloat(b.style.width);
+      b.firstChild.style.paddingLeft = Math.min(Math.max(10, edge - x + 10), Math.max(10, w - 130)) + "px";
+    });
+  };
+  sc.onscroll = follow; follow();
 }
-
-// Lange rader: la tittelen følge med når man scroller, så den aldri havner utenfor synsfeltet
-function keepLabelsVisible() {
-  const sl = $("laneWrap").scrollLeft;
-  document.querySelectorAll(".bar").forEach((b) => {
-    const pad = Math.min(Math.max(14, sl - b._left + 14), Math.max(14, b._width - 170));
-    b.style.paddingLeft = pad + "px";
-  });
-}
-$("laneWrap").addEventListener("scroll", keepLabelsVisible, { passive: true });
 
 function renderList() {
   const list = $("tlList");
@@ -139,17 +175,19 @@ function renderList() {
     byYear.get(y).push(e);
   });
   const card = (e) => `<article class="tl cat-${e.category}" data-id="${e.id}">
-      <span class="when">${fmtDate(e)}${e.status === "ongoing" ? " · pågår" : ""} · ${CAT_LABEL[e.category]}</span>
-      <h3>${e.projectPage ? `<a href="${e.projectPage}.html">${esc(e.title)}</a>` : esc(e.title)}</h3>
-      <p>${esc(e.shortDescription)}</p></article>`;
+      <span class="when">${fmtDate(e)}${e.status === "ongoing" ? " · " + STR.ongoing : ""} · ${STR.cats[e.category]}</span>
+      <h3>${e.projectPage ? `<a href="${pageUrl(e)}">${esc(loc(e, "title"))}</a>` : esc(loc(e, "title"))}</h3>
+      <p>${esc(loc(e, "shortDescription"))}</p></article>`;
   byYear.forEach((items, y) => {
     const major = items.filter((e) => e.importance >= 50), minor = items.filter((e) => e.importance < 50);
     const g = document.createElement("div");
     g.className = "tl-year";
     g.innerHTML = `<h4>${y}</h4>${major.map(card).join("")}` +
-      (minor.length ? `<details><summary>${minor.length} til</summary>${minor.map(card).join("")}</details>` : "");
+      (minor.length ? `<details><summary>${minor.length} ${STR.more}</summary>${minor.map(card).join("")}</details>` : "");
     list.appendChild(g);
   });
+  const empty = document.createElement("p");
+  empty.className = "muted"; empty.id = "tlEmpty"; empty.hidden = true; empty.textContent = STR.empty; list.appendChild(empty);
 }
 
 function applyFilter() {
@@ -161,26 +199,29 @@ function applyFilter() {
   });
   document.querySelectorAll(".tl-year").forEach((g) => { g.hidden = !g.querySelector(".tl:not([hidden])"); });
   document.querySelectorAll(".tl-year details").forEach((d) => { d.hidden = !d.querySelector(".tl:not([hidden])"); });
+  const any = entries.some((e) => matches(e, activeFilter));
+  const emp = $("tlEmpty"); if (emp) emp.hidden = any;
 }
 
-// Tooltip
+// Tooltip (kun på desktop)
 const tip = $("tip");
 function showTip(e, el) {
   if (innerWidth < MOBILE_BREAK) return;
-  tip.innerHTML = `<span class="tip-cat">${CAT_LABEL[e.category]} · ${fmtDate(e)}</span><strong>${esc(e.title)}</strong>
-    <p>${esc(e.shortDescription)}</p>
-    ${e.tags?.length ? `<span class="tip-tags">${e.tags.map((t) => `<i>${esc(t)}</i>`).join("")}</span>` : ""}
-    ${e.projectPage ? `<span class="tip-go">klikk for å lese mer →</span>` : ""}`;
+  const tags = loc(e, "tags") || [];
+  tip.innerHTML = `<span class="tt-cat">${STR.cats[e.category]} · ${fmtDate(e)}${e.status === "ongoing" ? ` · <i class="dot"></i>${STR.ongoing}` : ""}</span>
+    <strong class="tt-title">${esc(loc(e, "title"))}</strong>
+    <p>${esc(loc(e, "shortDescription"))}</p>
+    ${tags.length ? `<span class="tip-tags">${tags.map((t) => `<i>${esc(t)}</i>`).join("")}</span>` : ""}
+    ${e.projectPage ? `<span class="tip-go">${STR.go}</span>` : ""}`;
   tip.hidden = false;
   const r = el.getBoundingClientRect(), tr = tip.getBoundingClientRect();
   const left = Math.min(Math.max(8, r.left + r.width / 2 - tr.width / 2), innerWidth - tr.width - 8);
-  const top = r.top - tr.height - 10 > 8 ? r.top - tr.height - 10 : r.bottom + 10;
-  tip.style.left = left + "px";
-  tip.style.top = top + "px";
+  const top = r.top - tr.height - 12 > 8 ? r.top - tr.height - 12 : r.bottom + 12;
+  tip.style.left = left + "px"; tip.style.top = top + "px";
 }
 const hideTip = () => { tip.hidden = true; };
 
-document.getElementById("filters").addEventListener("click", (ev) => {
+$("filters").addEventListener("click", (ev) => {
   const b = ev.target.closest(".filter-chip");
   if (!b) return;
   activeFilter = b.dataset.filter;
@@ -191,13 +232,8 @@ document.getElementById("filters").addEventListener("click", (ev) => {
 loadEntries().then((list) => {
   entries = list;
   if (!entries.length) throw new Error("ingen oppføringer");
-  renderLane();
-  renderList();
-  applyFilter();
-}).catch((err) => {
-  console.error(err);
-  $("tlError").hidden = false;
-});
+  renderSwimlane(); renderList(); applyFilter();
+}).catch((err) => { console.error(err); $("tlError").hidden = false; });
 
 // ---------- Oscilloskop i hero ----------
 const scope = $("scope"), sctx = scope.getContext("2d");

@@ -205,5 +205,76 @@
     "bg": "#bfb3a2",
     "fit": "contain",
     "caption": "Det ferdige systemet: brystmontert modul, vibrasjonsbelte og batteripakke."
+  },
+  "en": {
+    "title": "IELS2003 Object detection for the blind and visually impaired",
+    "shortDescription": "Wearable aid that finds fruit with camera-based object detection and shows the direction with a vibration belt and Norwegian speech. Group project of three.",
+    "tags": [
+      "YOLOv8",
+      "Raspberry Pi 5",
+      "ESP32",
+      "Whisper",
+      "haptics"
+    ],
+    "sections": [
+      {
+        "title": "The problem",
+        "paragraphs": [
+          "People who lose their sight as adults have visual memories but lack access to information in real time. The project started from one scenario: making a fruit salad on your own. The need was mapped through conversations with two experts."
+        ]
+      },
+      {
+        "title": "The solution",
+        "bullets": [
+          "A Raspberry Pi 5 runs YOLOv8n, which recognizes apple, banana and orange in real time.",
+          "The position is sent over UDP to an ESP32-C3 that drives seven vibration motors in a belt, so the user feels the direction without using their hearing.",
+          "Norwegian speech synthesis (Piper) announces detections, and the user can ask questions with a button via Whisper and Claude Haiku.",
+          "Home-built battery pack from reused 18650 cells, and 3D-printed enclosures."
+        ]
+      },
+      {
+        "title": "My role",
+        "paragraphs": [
+          "I was responsible for the software and the integration between the modules: object detection on the Raspberry Pi 5, speech to text, text to speech, API connection and workflow with GitHub."
+        ]
+      },
+      {
+        "title": "Iteration",
+        "paragraphs": [
+          "The first concept was glasses with a camera and speech in the ear. The conversations showed that blind people do not necessarily turn their head toward what they are looking for, and that constant speech takes up their hearing. The solution was moved to the chest with haptic feedback."
+        ]
+      },
+      {
+        "title": "Results and limitations",
+        "bullets": [
+          "6 to 8 frames per second, confidence of 0.7 to 0.9 in good light, and answers to voice commands in 1 to 2 seconds.",
+          "No formal user tests with the target group were carried out. That is the most important further work.",
+          "No distance sensor and no AI accelerator, because the components were missing."
+        ]
+      }
+    ],
+    "links": [
+      "GitHub",
+      "Video on YouTube"
+    ],
+    "captions": {
+      "img/oversikt-moduler.webp": "The finished system: chest-mounted module, vibration belt and battery pack.",
+      "img/persona.webp": "Persona: Petter, 20, who has lost his sight later in life.",
+      "img/empatikart.webp": "Empathy map for Petter: what he says, thinks, does and feels.",
+      "img/systemarkitektur.webp": "Overall system architecture: Raspberry Pi 5, ESP32-C3, PCA9685 and seven vibration motors.",
+      "img/hardware.webp": "Hardware overview with voltage regulation and battery.",
+      "img/tilbakemelding.webp": "Three parallel feedback channels: vibration, speech and voice command.",
+      "img/soneinndeling.webp": "The camera image divided into seven zones, with one vibration motor per zone.",
+      "img/brystmodul.webp": "The chest module with Raspberry Pi 5 and camera.",
+      "img/batteripakke.webp": "Home-built battery pack in a 3D-printed enclosure.",
+      "img/belte-innside.webp": "Inside the vibration belt with motors and wiring.",
+      "img/programflyt.webp": "Program flow for detection, vibration, speech and voice commands.",
+      "img/arbeidsflyt.webp": "Software workflow: local, GitHub and testing on the Raspberry Pi.",
+      "img/briller.webp": "First concept: glasses with a camera.",
+      "img/kapsling-v1.webp": "First version of the chest-mounted enclosure.",
+      "img/kapsling-siste.webp": "Final version of the enclosure.",
+      "img/kapsling-lokk.webp": "Lid with camera mount.",
+      "img/teststrategi.webp": "Test strategy: component testing before integration testing."
+    }
   }
 }

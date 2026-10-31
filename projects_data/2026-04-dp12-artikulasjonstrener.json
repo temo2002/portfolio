@@ -13,5 +13,15 @@
   ],
   "importance": 50,
   "projectPage": "projects/2026-04-dp12-artikulasjonstrener",
-  "generated": true
+  "generated": true,
+  "en": {
+    "title": "DP12 Articulation trainer",
+    "shortDescription": "Spectrum analyzer on the AVR128DB48: 256-point FFT with kissFFT, display of the spectrum on an OLED and measurement of run time.",
+    "tags": [
+      "FFT",
+      "spectrum analysis",
+      "OLED",
+      "kissFFT"
+    ]
+  }
 }

@@ -5,11 +5,14 @@ Statisk nettside uten rammeverk og uten byggesteg for nettleseren. Hostes på Gi
 ## Filstruktur
 
 ```
-index.html            forsiden
+index.template.html   mal for forsidene (struktur)
+i18n/no.json, en.json tekstene på norsk og engelsk
+index.html, en/       genererte forsider (rediger ikke direkte)
 style.css             alle stiler, også for prosjektsidene
 script.js             tidslinje, filter, tooltip, skrivemaskin, demo
 site.json             adresse, tittel og beskrivelse som brukes til SEO
 serve.py              lokal server (bygger først)
+tools/build_pages.py  lager index.html og en/index.html fra mal og språkfiler
 tools/build.py        genererer manifest, sitemap, robots.txt og SEO-tagger
 tools/import_reports.py  lager oppføring og side fra Overleaf-rapporter i reports/
 projects_data/        én JSON-fil per tidslinjeoppføring + manifest.json (generert)
@@ -24,6 +27,10 @@ python serve.py
 ```
 
 Bygger først, og åpner siden på http://localhost:8080. Serveren lytter bare på din egen maskin.
+
+## Språk
+
+Siden finnes på norsk (rotmappa) og engelsk (`en/`). Forsidetekstene ligger i `i18n/no.json` og `i18n/en.json`, og strukturen i `index.template.html`. Kjør `python tools/build_pages.py` etter endringer. Rapportsidene får engelsk tekst fra feltet `"en"` i `reports/<mappe>/meta.json` (tittel, beskrivelse, tagger, seksjoner og bildetekster). Mangler `"en"`, vises norsk tekst på begge språk. For oppføringer du skriver for hånd i `projects_data/` legger du `"en": {"title", "shortDescription", "tags"}` i JSON-filen.
 
 ## Legge til noe på tidslinjen
 

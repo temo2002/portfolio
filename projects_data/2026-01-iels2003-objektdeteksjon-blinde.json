@@ -15,5 +15,16 @@
   "importance": 85,
   "projectPage": "projects/2026-01-iels2003-objektdeteksjon-blinde",
   "generated": true,
-  "end": "2026-06"
+  "end": "2026-06",
+  "en": {
+    "title": "IELS2003 Object detection for the blind and visually impaired",
+    "shortDescription": "Wearable aid that finds fruit with camera-based object detection and shows the direction with a vibration belt and Norwegian speech. Group project of three.",
+    "tags": [
+      "YOLOv8",
+      "Raspberry Pi 5",
+      "ESP32",
+      "Whisper",
+      "haptics"
+    ]
+  }
 }

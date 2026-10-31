@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- generated:import_reports -->
+<!-- Denne siden er laget av tools/import_reports.py. Fjern merket over for å redigere den selv. -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DP7 Test bench for cable communication · Temmam Nabil Altaie</title>
+<meta name="description" content="Test bench that models a cable between two buildings and measures bit error rate and packet loss in UART communication.">
+<meta name="theme-color" content="#0a0d18">
+<link rel="icon" href="../../icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css">
+<!-- seo:start -->
+<link rel="canonical" href="https://temo2002.github.io/portfolio/en/projects/2025-10-dp7-testbenk-kabelkommunikasjon.html">
+<link rel="alternate" hreflang="nb" href="https://temo2002.github.io/portfolio/projects/2025-10-dp7-testbenk-kabelkommunikasjon.html">
+<link rel="alternate" hreflang="en" href="https://temo2002.github.io/portfolio/en/projects/2025-10-dp7-testbenk-kabelkommunikasjon.html">
+<link rel="alternate" hreflang="x-default" href="https://temo2002.github.io/portfolio/projects/2025-10-dp7-testbenk-kabelkommunikasjon.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="nb_NO">
+<meta property="og:site_name" content="Temmam Nabil Altaie">
+<meta property="og:title" content="DP7 Test bench for cable communication · Temmam Nabil Altaie">
+<meta property="og:description" content="Test bench that models a cable between two buildings and measures bit error rate and packet loss in UART communication.">
+<meta property="og:url" content="https://temo2002.github.io/portfolio/en/projects/2025-10-dp7-testbenk-kabelkommunikasjon.html">
+<meta property="og:image" content="https://temo2002.github.io/portfolio/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<!-- seo:end -->
+</head>
+<body>
+
+<header class="nav">
+  <a class="logo" href="../#top"><span class="logo-mark">TA</span> <span class="logo-text">temmam.altaie</span></a>
+  <nav class="open-static">
+    <a href="../#work">Work</a>
+    <a href="../#timeline">Timeline</a>
+    <a href="../#about">About</a>
+    <a href="../#contact">Contact</a>
+    <a class="lang-switch" href="../../projects/2025-10-dp7-testbenk-kabelkommunikasjon.html" hreflang="nb" lang="nb" title="Norsk versjon">NO</a>
+  </nav>
+</header>
+
+<main class="project-page">
+  <a class="back" href="../#timeline">← back to the timeline</a>
+
+  <div class="project-meta-row"><span class="cat-tag">school</span> <span class="project-year">2025</span></div>
+
+  <h1 class="project-title">DP7 Test bench for cable communication</h1>
+  <p class="project-lede">Test bench that models a cable between two buildings and measures bit error rate and packet loss in UART communication.</p>
+  <ul class="tags"><li>UART</li><li>bit error rate</li><li>SNR</li><li>AVR</li></ul>
+  
+
+  <section class="project-section">
+    <h2>Problem statement</h2>
+    <p>How is the bit error rate in cable-based UART communication affected by baud rate and signal-to-noise ratio? Since the cable did not exist yet, a test bench was built that models attenuation and noise.</p>
+  </section>
+
+  <section class="project-section">
+    <h2>Scope</h2>
+    <ul><li>Channel model for attenuation and noise, with bit error rate and packet loss as targets.</li><li>Own driver and test program in C for the microcontroller.</li></ul>
+  </section>
+
+  <section class="project-section">
+    <h2>Figures</h2>
+    <div class="gallery"><figure class="fig"><a class="tile" href="../../reports/2025-10-dp7-testbenk-kabelkommunikasjon/img/oppkobling.webp" data-caption="The test bench on a breadboard." style="--bg:#7c6f64;--fit:cover"><img src="../../reports/2025-10-dp7-testbenk-kabelkommunikasjon/img/oppkobling.webp" alt="The test bench on a breadboard." width="624" height="579" loading="lazy"></a><figcaption>The test bench on a breadboard.</figcaption></figure><figure class="fig"><a class="tile" href="../../reports/2025-10-dp7-testbenk-kabelkommunikasjon/img/blokkskjema.webp" data-caption="Block diagram of the test bench with channel model and noise source." style="--bg:#111111;--fit:contain"><img src="../../reports/2025-10-dp7-testbenk-kabelkommunikasjon/img/blokkskjema.webp" alt="Block diagram of the test bench with channel model and noise source." width="1040" height="647" loading="lazy"></a><figcaption>Block diagram of the test bench with channel model and noise source.</figcaption></figure><figure class="fig"><a class="tile" href="../../reports/2025-10-dp7-testbenk-kabelkommunikasjon/img/kretsskjema.webp" data-caption="Circuit diagram for the channel model and noise amplifier." style="--bg:#f5f3ef;--fit:contain"><img src="../../reports/2025-10-dp7-testbenk-kabelkommunikasjon/img/kretsskjema.webp" alt="Circuit diagram for the channel model and noise amplifier." width="1500" height="707" loading="lazy"></a><figcaption>Circuit diagram for the channel model and noise amplifier.</figcaption></figure><figure class="fig"><a class="tile" href="../../reports/2025-10-dp7-testbenk-kabelkommunikasjon/img/ber-baudrate.webp" data-caption="Bit error rate as a function of baud rate." style="--bg:#ffffff;--fit:contain"><img src="../../reports/2025-10-dp7-testbenk-kabelkommunikasjon/img/ber-baudrate.webp" alt="Bit error rate as a function of baud rate." width="689" height="490" loading="lazy"></a><figcaption>Bit error rate as a function of baud rate.</figcaption></figure><figure class="fig"><a class="tile" href="../../reports/2025-10-dp7-testbenk-kabelkommunikasjon/img/ber-snr.webp" data-caption="Bit error rate as a function of signal-to-noise ratio." style="--bg:#ffffff;--fit:contain"><img src="../../reports/2025-10-dp7-testbenk-kabelkommunikasjon/img/ber-snr.webp" alt="Bit error rate as a function of signal-to-noise ratio." width="690" height="490" loading="lazy"></a><figcaption>Bit error rate as a function of signal-to-noise ratio.</figcaption></figure></div>
+  </section>
+
+  <section class="project-section">
+    <h2>The report</h2>
+    <p class="project-links"><a class="btn primary" href="../../reports/2025-10-dp7-testbenk-kabelkommunikasjon/main.pdf" target="_blank" rel="noopener">Open PDF ↗</a></p>
+    <object class="pdf-view" data="../../reports/2025-10-dp7-testbenk-kabelkommunikasjon/main.pdf#view=FitH" type="application/pdf" aria-label="Report as PDF">
+      <p class="muted">Your browser cannot display PDFs directly. <a href="../../reports/2025-10-dp7-testbenk-kabelkommunikasjon/main.pdf">Download the report here</a>.</p>
+    </object>
+  </section>
+
+  <a class="back" href="../#timeline">← back to the timeline</a>
+</main>
+
+<footer>
+  <span>© <span id="year">2026</span> Temmam Nabil Altaie</span>
+  <span>handmade · no framework · served by GitHub Pages</span>
+</footer>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+<script src="../../lightbox.js"></script>
+</body>
+</html>

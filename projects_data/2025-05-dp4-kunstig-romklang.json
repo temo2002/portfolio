@@ -13,5 +13,15 @@
   ],
   "importance": 55,
   "projectPage": "projects/2025-05-dp4-kunstig-romklang",
-  "generated": true
+  "generated": true,
+  "en": {
+    "title": "DP4 Artificial reverb",
+    "shortDescription": "Real-time digital reverb on the AVR128DB48: one difference equation with a ring buffer, fixed-point arithmetic and a 30 µs sampling time.",
+    "tags": [
+      "DSP",
+      "AVR",
+      "ring buffer",
+      "real time"
+    ]
+  }
 }
