@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Temmam Nabil Altaie · Elektronisk systemingeniør</title>
+<meta name="description" content="Temmam Nabil Altaie, elektronikkstudent ved NTNU, læringsassistent, nestleder i NTNUI Calisthenics og trompetist.">
+<meta name="theme-color" content="#0a0d18">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="nav">
+  <a class="logo" href="#top"><span class="logo-mark">TA</span> temmam.altaie</a>
+  <nav>
+    <a href="#arbeid">Arbeid</a>
+    <a href="#tidslinje">Tidslinje</a>
+    <a href="#om">Om meg</a>
+    <a href="#verktoy">Verktøy</a>
+    <a href="#kontakt">Kontakt</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-text">
+      <p class="eyebrow">elektronisk systemdesign · NTNU Trondheim</p>
+      <h1>Temmam Nabil Altaie</h1>
+      <p class="lead">Elektronikkstudent som liker å forklare det som er vanskelig, bygge det som er nyttig og spille trompet når det betyr noe.</p>
+      <div class="cta">
+        <a class="btn primary" href="#arbeid">utvalgt arbeid ↓</a>
+        <a class="btn" href="#kontakt">ta kontakt →</a>
+      </div>
+    </div>
+
+    <aside class="card now">
+      <h2 class="card-title">jeg er nå</h2>
+      <dl>
+        <dt>studerer</dt><dd>Elektronisk systemdesign, bachelor 2024 til 2027</dd>
+        <dt>underviser</dt><dd>Læringsassistent i IELS2021 og IELS2022</dd>
+        <dt>leder</dt><dd>Nestleder i NTNUI Calisthenics</dd>
+        <dt>spiller</dt><dd>Trompet ved begravelser, bryllup og gudstjenester</dd>
+        <dt>fra</dt><dd>Lofoten, bor i Trondheim</dd>
+      </dl>
+      <canvas id="scope" width="520" height="120" aria-label="Animert signal"></canvas>
+      <p class="scope-label" id="scopeLabel">f = 1.0 kHz · sinus + støy</p>
+    </aside>
+  </section>
+
+  <!-- 01 HIGHLIGHTS -->
+  <section id="arbeid">
+    <h2 class="sec"><span>01</span> Utvalgt arbeid</h2>
+    <div class="grid3">
+      <article class="card project">
+        <p class="status">pågår nå · 2024 til i dag</p>
+        <h3>Læringsassistent</h3>
+        <p>Veileder medstudenter i elektronikkfag ved NTNU, blant annet IELS2031, IELS2021 og IELS2022. Har også holdt egne lynkurs i C-programmering og analog elektronikk med filterdesign.</p>
+        <ul class="tags"><li>undervisning</li><li>analog elektronikk</li><li>C</li><li>filterdesign</li></ul>
+      </article>
+      <article class="card project">
+        <p class="status">pågår nå · nestleder siden jan 2025</p>
+        <h3>NTNUI Calisthenics</h3>
+        <p>Nestleder i en gruppe med over 200 utøvere. Koordinerer et team på 14 trenere og holder samfunnet i gang, fra planlegging til det praktiske rundt treningene.</p>
+        <ul class="tags"><li>ledelse</li><li>koordinering</li><li>200+ utøvere</li><li>14 trenere</li></ul>
+      </article>
+      <article class="card project">
+        <p class="status">egen bedrift · siden 2018</p>
+        <h3>Trompet ved Altaie</h3>
+        <p>Trompetist for begravelser, bryllup og gudstjenester. Små seremonier der timing, ro og lytting er det som teller.</p>
+        <ul class="tags"><li>musikk</li><li>gründer</li><li>seremonier</li></ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- DEMO -->
+  <section id="verktoy-demo">
+    <h2 class="sec"><span>·</span> Prøv selv</h2>
+    <div class="card demo">
+      <div class="demo-info">
+        <h3>RC-lavpassfilter</h3>
+        <p>Justér motstand og kondensator og se hvordan knekkfrekvensen flytter seg. Dette er den typen intuisjon jeg prøver å gi videre som læringsassistent.</p>
+        <label>R <output id="rOut"></output>
+          <input type="range" id="r" min="2" max="5" step="0.01" value="3.2"></label>
+        <label>C <output id="cOut"></output>
+          <input type="range" id="c" min="-9" max="-5" step="0.01" value="-7"></label>
+        <p class="fc">f<sub>c</sub> = <strong id="fcOut"></strong></p>
+      </div>
+      <canvas id="bode" width="640" height="320" aria-label="Bodediagram for RC-filter"></canvas>
+    </div>
+  </section>
+
+  <!-- 02 TIDSLINJE -->
+  <section id="tidslinje">
+    <h2 class="sec"><span>02</span> Tidslinje</h2>
+    <p class="muted">Størrelsen på kortet viser hvor mye det betydde. Filtrer for å se én ting om gangen.</p>
+    <div class="filters" id="filters"></div>
+    <ol class="timeline" id="timeline"></ol>
+  </section>
+
+  <!-- 03 OM MEG -->
+  <section id="om">
+    <h2 class="sec"><span>03</span> Om meg</h2>
+    <div class="about">
+      <div class="about-text">
+        <p>Jeg vokste opp i Lofoten og tok en litt krokete vei til elektronikk: idrettsfag på videregående, så realfag-forkurs, så bachelor i elektronisk systemdesign på NTNU. Jeg tror den veien er grunnen til at jeg er god til å forklare. Jeg husker godt hvordan det er å ikke forstå det ennå.</p>
+        <p>Ved siden av studiene har jeg vært tillitsvalgt, sittet i referansegrupper og tatt lederroller. Jeg liker å få ting til å gå rundt for andre, enten det er et kurs, en treningsgruppe eller en gudstjeneste.</p>
+        <p>Jeg snakker norsk, engelsk og arabisk, og har tilknytning til arabisk språk og irakisk kultur.</p>
+      </div>
+      <div class="facts">
+        <div class="fact"><strong>2018</strong><span>startet egen bedrift</span></div>
+        <div class="fact"><strong>200+</strong><span>utøvere i NTNUI Calisthenics</span></div>
+        <div class="fact"><strong>14</strong><span>trenere å koordinere</span></div>
+        <div class="fact"><strong>3</strong><span>språk: norsk, engelsk, arabisk</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 VERKTØY -->
+  <section id="verktoy">
+    <h2 class="sec"><span>04</span> Verktøy</h2>
+    <div class="chain">
+      <div class="card step"><span class="num">1</span><h3>Måle</h3><p>Oscilloskop, signalgenerator og multimeter</p></div>
+      <div class="card step"><span class="num">2</span><h3>Designe</h3><p>Analog elektronikk, filterdesign, radiokommunikasjon</p></div>
+      <div class="card step"><span class="num">3</span><h3>Programmere</h3><p>C og innebygde systemer</p></div>
+      <div class="card step"><span class="num">4</span><h3>Dokumentere</h3><p>LaTeX og Overleaf</p></div>
+    </div>
+    <p class="muted small">Tips: bytt ut denne listen med verktøyene du faktisk bruker, og legg gjerne til nivåinndeling (ekspert, erfaren).</p>
+  </section>
+
+  <!-- 05 KONTAKT -->
+  <section id="kontakt">
+    <h2 class="sec"><span>05</span> Kontakt</h2>
+    <div class="card contact">
+      <p>Jeg ser etter sommerjobb i 2027 innen elektronikk og innebygde systemer. Si gjerne fra om du har noe på hjertet.</p>
+      <p class="links">
+        <a class="btn primary" href="mailto:DIN-EPOST@example.com">DIN-EPOST@example.com</a>
+        <a class="btn" href="https://github.com/temo2002">GitHub ↗</a>
+        <a class="btn" href="https://www.linkedin.com/in/DIN-PROFIL">LinkedIn ↗</a>
+      </p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span>© 2026 Temmam Nabil Altaie</span>
+  <span>håndlaget · ingen rammeverk · hostet på GitHub Pages</span>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
