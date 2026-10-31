@@ -1,0 +1,63 @@
+{
+  "title": "IELS2003 Objektdeteksjon for blinde og svaksynte",
+  "start": "2026-01",
+  "shortDescription": "Bærbart hjelpemiddel som finner frukt med kamerabasert objektdeteksjon og viser retningen med et vibrasjonsbelte og norsk tale. Gruppeprosjekt på tre.",
+  "tags": [
+    "YOLOv8",
+    "Raspberry Pi 5",
+    "ESP32",
+    "Whisper",
+    "haptikk"
+  ],
+  "importance": 85,
+  "isProject": true,
+  "sections": [
+    {
+      "title": "Problemet",
+      "paragraphs": [
+        "Personer som mister synet som voksne har visuelle minner, men mangler tilgang til informasjon i sanntid. Prosjektet tok utgangspunkt i ett scenario: å lage fruktsalat på egenhånd. Behovet ble kartlagt gjennom samtaler med to fagpersoner."
+      ]
+    },
+    {
+      "title": "Løsningen",
+      "bullets": [
+        "Raspberry Pi 5 kjører YOLOv8n som gjenkjenner eple, banan og appelsin i sanntid.",
+        "Posisjonen sendes over UDP til en ESP32-C3 som styrer sju vibrasjonsmotorer i et belte, så brukeren kjenner retningen uten å bruke hørselen.",
+        "Norsk talesyntese (Piper) varsler om deteksjoner, og brukeren kan stille spørsmål med en knapp via Whisper og Claude Haiku.",
+        "Egenbygd batteripakke av gjenbrukte 18650-celler, og 3D-printede kapslinger."
+      ]
+    },
+    {
+      "title": "Min rolle",
+      "paragraphs": [
+        "Jeg hadde ansvaret for programvaren og integrasjonen mellom modulene: objektdeteksjon på Raspberry Pi 5, tale til tekst, tekst til tale, API-kobling og arbeidsflyt med GitHub."
+      ]
+    },
+    {
+      "title": "Iterasjon",
+      "paragraphs": [
+        "Første konsept var briller med kamera og tale i øret. Samtalene viste at blinde ikke nødvendigvis vender hodet mot det de leter etter, og at stadig tale tar hørselen. Løsningen ble flyttet til brystet med haptisk tilbakemelding."
+      ]
+    },
+    {
+      "title": "Resultater og begrensninger",
+      "bullets": [
+        "6 til 8 bilder i sekundet, konfidens på 0,7 til 0,9 i godt lys, og svar fra talekommando på 1 til 2 sekunder.",
+        "Det ble ikke gjennomført formelle brukertester med målgruppen. Det står som viktigste videre arbeid.",
+        "Ingen avstandssensor og ingen AI-akselerator, fordi komponentene manglet."
+      ]
+    }
+  ],
+  "end": "2026-06",
+  "links": [
+    {
+      "label": "GitHub",
+      "url": "https://github.com/temo2002/IELS2003_BlindeProsjekt"
+    },
+    {
+      "label": "Video på YouTube",
+      "url": "https://www.youtube.com/watch?v=ycoaMnyXRqc"
+    }
+  ],
+  "noPdf": true
+}

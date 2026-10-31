@@ -133,14 +133,22 @@ def parse_start(folder_name, pdf):
     m = re.match(r"^(\d{4})(?:-(\d{2}))?-", folder_name)
     if m:
         return m.group(1) + (f"-{m.group(2)}" if m.group(2) else ""), True
-    return datetime.fromtimestamp(pdf.stat().st_mtime).strftime("%Y-%m"), False
+    ref = pdf if pdf is not None else ROOT
+    return datetime.fromtimestamp(ref.stat().st_mtime).strftime("%Y-%m"), False
 
 
 def build_entry(folder):
+    meta, notes = {}, []
+    meta_path = folder / "meta.json"
+    if meta_path.exists():
+        try:
+            meta = json.loads(meta_path.read_text(encoding="utf-8"))
+        except json.JSONDecodeError as ex:
+            notes.append(f"{folder.name}/meta.json er ugyldig JSON ({ex}), ignorert")
     pdfs = [folder / "main.pdf"] if (folder / "main.pdf").exists() else sorted(folder.glob("*.pdf"))
-    if not pdfs:
-        return None, f"{folder.name}: fant ingen PDF, hoppet over"
-    pdf = pdfs[0]
+    pdf = pdfs[0] if pdfs else None
+    if pdf is None and not meta.get("noPdf"):
+        return None, f"{folder.name}: fant ingen PDF, hoppet over (bruk noPdf: true i meta.json for en side uten PDF)"
     macros = {}
     if (folder / "main.tex").exists():
         macros = read_macros((folder / "main.tex").read_text(encoding="utf-8", errors="ignore"))
@@ -164,27 +172,48 @@ def build_entry(folder):
         "projectPage": f"projects/{folder.name}",
         "generated": True,
     }
-    notes = []
     if not from_name:
         notes.append(f"{folder.name}: mappenavnet starter ikke med ÅÅÅÅ-MM-, brukte filens dato ({start})")
-    meta_path = folder / "meta.json"
-    skip = False
-    if meta_path.exists():
-        try:
-            meta = json.loads(meta_path.read_text(encoding="utf-8"))
-            skip = bool(meta.pop("skip", False))
-            entry.update(meta)
-        except json.JSONDecodeError as ex:
-            notes.append(f"{folder.name}/meta.json er ugyldig JSON ({ex}), ignorert")
+    skip = bool(meta.pop("skip", False))
+    meta.pop("noPdf", None)
+    lede = meta.pop("lede", "")
+    sections = meta.pop("sections", [])
+    links = meta.pop("links", [])
+    entry.update(meta)
     if skip:
         return None, None
-    entry["_pdf"] = f"reports/{folder.name}/{pdf.name}"
+    entry["_pdf"] = f"reports/{folder.name}/{pdf.name}" if pdf is not None else None
     entry["_summary"] = shorten(summary, 700)
+    entry["_lede"] = lede
+    entry["_sections"] = sections
+    entry["_links"] = links
     entry["_macros"] = macros
     return entry, "; ".join(notes) or None
 
 
 # ---------- Side ----------
+
+def render_sections(e, esc, pdf_rel):
+    out = []
+    for sec in e["_sections"]:
+        body = "".join(f"<p>{esc(p)}</p>" for p in sec.get("paragraphs", []))
+        if sec.get("bullets"):
+            body += "<ul>" + "".join(f"<li>{esc(b)}</li>" for b in sec["bullets"]) + "</ul>"
+        out.append(f'  <section class="project-section">\n    <h2>{esc(sec["title"])}</h2>\n    {body}\n  </section>')
+    links = list(e["_links"])
+    if pdf_rel:
+        out.append(f'''  <section class="project-section">
+    <h2>Rapporten</h2>
+    <p class="project-links"><a class="btn primary" href="{esc(pdf_rel)}" target="_blank" rel="noopener">Åpne PDF ↗</a></p>
+    <object class="pdf-view" data="{esc(pdf_rel)}#view=FitH" type="application/pdf" aria-label="Rapport som PDF">
+      <p class="muted">Nettleseren din viser ikke PDF direkte. <a href="{esc(pdf_rel)}">Last ned rapporten her</a>.</p>
+    </object>
+  </section>''')
+    if links:
+        btns = " ".join(f'<a class="btn" href="{esc(l["url"])}" target="_blank" rel="noopener">{esc(l["label"])} ↗</a>' for l in links)
+        out.append(f'  <section class="project-section">\n    <h2>Lenker</h2>\n    <p class="project-links">{btns}</p>\n  </section>')
+    return "\n\n".join(out)
+
 def render_page(e):
     esc = lambda s: html.escape(str(s), quote=True)
     m = e["_macros"]
@@ -192,9 +221,10 @@ def render_page(e):
                  f'<span class="project-year">{esc(e["start"][:4])}</span>']
     if m.get("versjon"):
         meta_bits.append(f'<span class="project-year">versjon {esc(m["versjon"])}</span>')
-    lede = e["_summary"] or e["shortDescription"]
+    lede = e["_lede"] or e["_summary"] or e["shortDescription"]
     tags = "".join(f"<li>{esc(t)}</li>" for t in e.get("tags", []))
-    pdf_rel = "../" + e["_pdf"]
+    pdf_rel = "../" + e["_pdf"] if e["_pdf"] else None
+    extra_sections = render_sections(e, esc, pdf_rel)
     return f"""<!DOCTYPE html>
 <html lang="nb">
 <head>
@@ -234,14 +264,7 @@ def render_page(e):
   <p class="project-lede">{esc(lede)}</p>
   <ul class="tags">{tags}</ul>
 
-  <section class="project-section">
-    <h2>Rapporten</h2>
-    <p class="project-links"><a class="btn primary" href="{esc(pdf_rel)}" target="_blank" rel="noopener">Åpne PDF ↗</a></p>
-    <object class="pdf-view" data="{esc(pdf_rel)}#view=FitH" type="application/pdf" aria-label="Rapport som PDF">
-      <p class="muted">Nettleseren din viser ikke PDF direkte. <a href="{esc(pdf_rel)}">Last ned rapporten her</a>.</p>
-    </object>
-  </section>
-
+{extra_sections}
   <a class="back" href="../#tidslinje">← tilbake til tidslinjen</a>
 </main>
 

@@ -1,0 +1,23 @@
+{
+  "title": "DP4 Kunstig romklang",
+  "start": "2025-05",
+  "shortDescription": "Digital romklang i sanntid på AVR128DB48: ett differanseledd med ringbuffer, fastpunktaritmetikk og 30 µs samplingstid.",
+  "tags": [
+    "DSP",
+    "AVR",
+    "ringbuffer",
+    "sanntid"
+  ],
+  "importance": 55,
+  "isProject": true,
+  "sections": [
+    {
+      "title": "Resultat",
+      "bullets": [
+        "Kravet var en etterklangstid på 0,8 s. Målt tid var 0,78 s med a = 0,4 og 0,81 s med a = 0,7.",
+        "Signalbehandlingen kjører i en avbruddsrutine med heltallsaritmetikk for å holde sanntidskravet.",
+        "Teoretisk impulsrespons ble regnet ut i Python og sammenlignet med målinger fra oscilloskopet."
+      ]
+    }
+  ]
+}

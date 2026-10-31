@@ -1,0 +1,19 @@
+{
+  "id": "2025-08-iels2002-ekg-malesystem",
+  "title": "IELS2002 EKG-målesystem",
+  "category": "school",
+  "isProject": true,
+  "start": "2025-08",
+  "shortDescription": "Komplett EKG-målesystem: analog interfacekrets, ADC, ESP32 med pulsberegning og nettbasert sanntidsvisning, fra brødbrett til firelags PCB.",
+  "tags": [
+    "EKG",
+    "analog design",
+    "KiCad",
+    "ESP32",
+    "PCB"
+  ],
+  "importance": 80,
+  "projectPage": "projects/2025-08-iels2002-ekg-malesystem",
+  "generated": true,
+  "end": "2025-11"
+}

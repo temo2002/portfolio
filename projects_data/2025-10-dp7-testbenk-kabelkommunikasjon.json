@@ -1,0 +1,17 @@
+{
+  "id": "2025-10-dp7-testbenk-kabelkommunikasjon",
+  "title": "DP7 Testbenk for kabelkommunikasjon",
+  "category": "school",
+  "isProject": true,
+  "start": "2025-10",
+  "shortDescription": "Testbenk som modellerer en kabel mellom to bygninger og måler bitfeilrate og pakketap i UART-kommunikasjon.",
+  "tags": [
+    "UART",
+    "bitfeilrate",
+    "SNR",
+    "AVR"
+  ],
+  "importance": 50,
+  "projectPage": "projects/2025-10-dp7-testbenk-kabelkommunikasjon",
+  "generated": true
+}

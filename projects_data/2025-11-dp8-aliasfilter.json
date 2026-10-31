@@ -1,0 +1,17 @@
+{
+  "id": "2025-11-dp8-aliasfilter",
+  "title": "DP8 Aliasfilter",
+  "category": "school",
+  "isProject": true,
+  "start": "2025-11",
+  "shortDescription": "Fjerde ordens Butterworth anti-alias-filter med to kaskadekoblede Sallen-Key-trinn, for en ADC med 7,1 kHz samplingsfrekvens.",
+  "tags": [
+    "Butterworth",
+    "Sallen-Key",
+    "anti-alias",
+    "LTspice"
+  ],
+  "importance": 55,
+  "projectPage": "projects/2025-11-dp8-aliasfilter",
+  "generated": true
+}

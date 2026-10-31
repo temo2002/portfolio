@@ -1,0 +1,23 @@
+{
+  "title": "DP9 FIR-filter",
+  "start": "2026-06",
+  "shortDescription": "FIR-lavpassfilter for støydemping i lyd: verifisert i MATLAB, med spektrumanalyse og implementasjon på mikrokontroller.",
+  "tags": [
+    "FIR",
+    "MATLAB",
+    "DSP",
+    "lineær fase"
+  ],
+  "importance": 55,
+  "isProject": true,
+  "sections": [
+    {
+      "title": "Innhold",
+      "bullets": [
+        "Teori om LTI-systemer, konvolusjon, frekvensrespons og lineær fase.",
+        "Filteret ble verifisert i MATLAB, både som frekvensrespons og som effektspekter før og etter filtrering.",
+        "Implementert på mikrokontroller, med vurdering av filterorden mot prosesseringstid."
+      ]
+    }
+  ]
+}

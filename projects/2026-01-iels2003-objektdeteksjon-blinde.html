@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+<!-- generated:import_reports -->
+<!-- Denne siden er laget av tools/import_reports.py. Fjern merket over for å redigere den selv. -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IELS2003 Objektdeteksjon for blinde og svaksynte · Temmam Nabil Altaie</title>
+<meta name="description" content="Bærbart hjelpemiddel som finner frukt med kamerabasert objektdeteksjon og viser retningen med et vibrasjonsbelte og norsk tale. Gruppeprosjekt på tre.">
+<meta name="theme-color" content="#0a0d18">
+<link rel="icon" href="../icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<!-- seo:start -->
+<link rel="canonical" href="https://temo2002.github.io/portfolio/projects/2026-01-iels2003-objektdeteksjon-blinde.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="nb_NO">
+<meta property="og:site_name" content="Temmam Nabil Altaie">
+<meta property="og:title" content="IELS2003 Objektdeteksjon for blinde og svaksynte · Temmam Nabil Altaie">
+<meta property="og:description" content="Bærbart hjelpemiddel som finner frukt med kamerabasert objektdeteksjon og viser retningen med et vibrasjonsbelte og norsk tale. Gruppeprosjekt på tre.">
+<meta property="og:url" content="https://temo2002.github.io/portfolio/projects/2026-01-iels2003-objektdeteksjon-blinde.html">
+<meta property="og:image" content="https://temo2002.github.io/portfolio/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<!-- seo:end -->
+</head>
+<body>
+
+<header class="nav">
+  <a class="logo" href="../#top"><span class="logo-mark">TA</span> <span class="logo-text">temmam.altaie</span></a>
+  <nav class="open-static">
+    <a href="../#arbeid">Arbeid</a>
+    <a href="../#tidslinje">Tidslinje</a>
+    <a href="../#om">Om meg</a>
+    <a href="../#kontakt">Kontakt</a>
+  </nav>
+</header>
+
+<main class="project-page">
+  <a class="back" href="../#tidslinje">← tilbake til tidslinjen</a>
+
+  <div class="project-meta-row"><span class="cat-tag">skole</span> <span class="project-year">2026</span></div>
+
+  <h1 class="project-title">IELS2003 Objektdeteksjon for blinde og svaksynte</h1>
+  <p class="project-lede">Bærbart hjelpemiddel som finner frukt med kamerabasert objektdeteksjon og viser retningen med et vibrasjonsbelte og norsk tale. Gruppeprosjekt på tre.</p>
+  <ul class="tags"><li>YOLOv8</li><li>Raspberry Pi 5</li><li>ESP32</li><li>Whisper</li><li>haptikk</li></ul>
+
+  <section class="project-section">
+    <h2>Problemet</h2>
+    <p>Personer som mister synet som voksne har visuelle minner, men mangler tilgang til informasjon i sanntid. Prosjektet tok utgangspunkt i ett scenario: å lage fruktsalat på egenhånd. Behovet ble kartlagt gjennom samtaler med to fagpersoner.</p>
+  </section>
+
+  <section class="project-section">
+    <h2>Løsningen</h2>
+    <ul><li>Raspberry Pi 5 kjører YOLOv8n som gjenkjenner eple, banan og appelsin i sanntid.</li><li>Posisjonen sendes over UDP til en ESP32-C3 som styrer sju vibrasjonsmotorer i et belte, så brukeren kjenner retningen uten å bruke hørselen.</li><li>Norsk talesyntese (Piper) varsler om deteksjoner, og brukeren kan stille spørsmål med en knapp via Whisper og Claude Haiku.</li><li>Egenbygd batteripakke av gjenbrukte 18650-celler, og 3D-printede kapslinger.</li></ul>
+  </section>
+
+  <section class="project-section">
+    <h2>Min rolle</h2>
+    <p>Jeg hadde ansvaret for programvaren og integrasjonen mellom modulene: objektdeteksjon på Raspberry Pi 5, tale til tekst, tekst til tale, API-kobling og arbeidsflyt med GitHub.</p>
+  </section>
+
+  <section class="project-section">
+    <h2>Iterasjon</h2>
+    <p>Første konsept var briller med kamera og tale i øret. Samtalene viste at blinde ikke nødvendigvis vender hodet mot det de leter etter, og at stadig tale tar hørselen. Løsningen ble flyttet til brystet med haptisk tilbakemelding.</p>
+  </section>
+
+  <section class="project-section">
+    <h2>Resultater og begrensninger</h2>
+    <ul><li>6 til 8 bilder i sekundet, konfidens på 0,7 til 0,9 i godt lys, og svar fra talekommando på 1 til 2 sekunder.</li><li>Det ble ikke gjennomført formelle brukertester med målgruppen. Det står som viktigste videre arbeid.</li><li>Ingen avstandssensor og ingen AI-akselerator, fordi komponentene manglet.</li></ul>
+  </section>
+
+  <section class="project-section">
+    <h2>Lenker</h2>
+    <p class="project-links"><a class="btn" href="https://github.com/temo2002/IELS2003_BlindeProsjekt" target="_blank" rel="noopener">GitHub ↗</a> <a class="btn" href="https://www.youtube.com/watch?v=ycoaMnyXRqc" target="_blank" rel="noopener">Video på YouTube ↗</a></p>
+  </section>
+  <a class="back" href="../#tidslinje">← tilbake til tidslinjen</a>
+</main>
+
+<footer>
+  <span>© <span id="year">2026</span> Temmam Nabil Altaie</span>
+  <span>håndlaget · ingen rammeverk · servert av GitHub Pages</span>
+</footer>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

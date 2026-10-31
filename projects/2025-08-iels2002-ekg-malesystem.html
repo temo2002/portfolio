@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+<!-- generated:import_reports -->
+<!-- Denne siden er laget av tools/import_reports.py. Fjern merket over for å redigere den selv. -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IELS2002 EKG-målesystem · Temmam Nabil Altaie</title>
+<meta name="description" content="Komplett EKG-målesystem: analog interfacekrets, ADC, ESP32 med pulsberegning og nettbasert sanntidsvisning, fra brødbrett til firelags PCB.">
+<meta name="theme-color" content="#0a0d18">
+<link rel="icon" href="../icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<!-- seo:start -->
+<link rel="canonical" href="https://temo2002.github.io/portfolio/projects/2025-08-iels2002-ekg-malesystem.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="nb_NO">
+<meta property="og:site_name" content="Temmam Nabil Altaie">
+<meta property="og:title" content="IELS2002 EKG-målesystem · Temmam Nabil Altaie">
+<meta property="og:description" content="Komplett EKG-målesystem: analog interfacekrets, ADC, ESP32 med pulsberegning og nettbasert sanntidsvisning, fra brødbrett til firelags PCB.">
+<meta property="og:url" content="https://temo2002.github.io/portfolio/projects/2025-08-iels2002-ekg-malesystem.html">
+<meta property="og:image" content="https://temo2002.github.io/portfolio/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<!-- seo:end -->
+</head>
+<body>
+
+<header class="nav">
+  <a class="logo" href="../#top"><span class="logo-mark">TA</span> <span class="logo-text">temmam.altaie</span></a>
+  <nav class="open-static">
+    <a href="../#arbeid">Arbeid</a>
+    <a href="../#tidslinje">Tidslinje</a>
+    <a href="../#om">Om meg</a>
+    <a href="../#kontakt">Kontakt</a>
+  </nav>
+</header>
+
+<main class="project-page">
+  <a class="back" href="../#tidslinje">← tilbake til tidslinjen</a>
+
+  <div class="project-meta-row"><span class="cat-tag">skole</span> <span class="project-year">2025</span></div>
+
+  <h1 class="project-title">IELS2002 EKG-målesystem</h1>
+  <p class="project-lede">Komplett EKG-målesystem: analog interfacekrets, ADC, ESP32 med pulsberegning og nettbasert sanntidsvisning, fra brødbrett til firelags PCB.</p>
+  <ul class="tags"><li>EKG</li><li>analog design</li><li>KiCad</li><li>ESP32</li><li>PCB</li></ul>
+
+  <section class="project-section">
+    <h2>Hva vi bygde</h2>
+    <p>Et gruppeprosjekt på to i Ingeniørprosjekt II. Systemet forsterker og filtrerer svake biopotensialer og viser EKG og puls i sanntid i nettleseren.</p>
+  </section>
+
+  <section class="project-section">
+    <h2>Systemet</h2>
+    <ul><li>Analog del: instrumenteringsforsterker (INA126), høypassfilter på 33,8 mHz og et forsterkertrinn med TL071 og lavpassfilter på 16 Hz. Samlet forsterkning på omtrent 1000 V/V.</li><li>Digital del: 16-bits ADC (ADS1115) på 860 punktprøver i sekundet, og en ESP32 som finner R-topper, beregner puls og sender data over WebSocket.</li><li>Batteridrift med Li-ion-celle, og et 3D-printet hus.</li></ul>
+  </section>
+
+  <section class="project-section">
+    <h2>Resultater</h2>
+    <ul><li>Tydelige QRS-komplekser på prototypekortet, og puls som avvek 1 til 3 slag i minuttet fra en Garmin pulsklokke.</li><li>Målte knekkfrekvenser nær de beregnede, og CMRR på nesten 100 dB på PCB-en.</li><li>Realisert i fire steg: simulering, brødbrett, prototypekort og firelags PCB tegnet i KiCad.</li></ul>
+  </section>
+
+  <section class="project-section">
+    <h2>Det som ikke fungerte</h2>
+    <p>PCB-en fikk et offset-problem i trinn 2 som sendte neste trinn i metning, så den ble aldri brukt til EKG-logging. Rapporten beskriver feilen åpent og foreslår retting i neste revisjon, mens all logging er gjort på prototypekortet.</p>
+  </section>
+  <a class="back" href="../#tidslinje">← tilbake til tidslinjen</a>
+</main>
+
+<footer>
+  <span>© <span id="year">2026</span> Temmam Nabil Altaie</span>
+  <span>håndlaget · ingen rammeverk · servert av GitHub Pages</span>
+</footer>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

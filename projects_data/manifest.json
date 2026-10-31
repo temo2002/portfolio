@@ -6,6 +6,21 @@
   "2024-ntnu-elsys.json",
   "2024-tillitsvalgt.json",
   "2025-lynkurs.json",
+  "2025-01-dp1-signalnivaaregulator.json",
   "2025-ntnui-calisthenics.json",
-  "2026-laeringsassistent.json"
+  "2025-03-dp3-elektrisk-terning.json",
+  "2025-04-iels2001-stemmestyrt-assistent.json",
+  "2025-05-dp2-stoyfilter.json",
+  "2025-05-dp4-kunstig-romklang.json",
+  "2025-08-iels2002-ekg-malesystem.json",
+  "2025-09-dp5-digitalt-termometer.json",
+  "2025-09-dp6-reaksjonstrener.json",
+  "2025-10-dp7-testbenk-kabelkommunikasjon.json",
+  "2025-11-dp8-aliasfilter.json",
+  "2026-laeringsassistent.json",
+  "2026-01-iels2003-objektdeteksjon-blinde.json",
+  "2026-04-dp12-artikulasjonstrener.json",
+  "2026-06-dp10-fsk-demodulator.json",
+  "2026-06-dp11-iir-notch-filter.json",
+  "2026-06-dp9-fir-filter.json"
 ]

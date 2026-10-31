@@ -1,0 +1,28 @@
+{
+  "title": "DP7 Testbenk for kabelkommunikasjon",
+  "start": "2025-10",
+  "shortDescription": "Testbenk som modellerer en kabel mellom to bygninger og måler bitfeilrate og pakketap i UART-kommunikasjon.",
+  "tags": [
+    "UART",
+    "bitfeilrate",
+    "SNR",
+    "AVR"
+  ],
+  "importance": 50,
+  "isProject": true,
+  "sections": [
+    {
+      "title": "Problemstilling",
+      "paragraphs": [
+        "Hvordan påvirkes bitfeilraten i kabelbasert UART-kommunikasjon av baudrate og signal-til-støy-forhold? Siden kabelen ikke fantes ennå, ble det bygget en testbenk som modellerer demping og støy."
+      ]
+    },
+    {
+      "title": "Omfang",
+      "bullets": [
+        "Kanalmodell for demping og støy, med bitfeilrate og pakketap som mål.",
+        "Egen driver og testprogram i C for mikrokontrolleren."
+      ]
+    }
+  ]
+}

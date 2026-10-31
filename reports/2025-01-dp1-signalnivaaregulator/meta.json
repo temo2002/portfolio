@@ -1,0 +1,22 @@
+{
+  "title": "DP1 Signalnivåregulator",
+  "start": "2025-01",
+  "shortDescription": "Regulator som forsterker eller demper et 237 Hz-signal, bygget med to inverterende operasjonsforsterkere og et potensiometer.",
+  "tags": [
+    "operasjonsforsterker",
+    "analog elektronikk",
+    "måling"
+  ],
+  "importance": 40,
+  "isProject": true,
+  "sections": [
+    {
+      "title": "Resultat",
+      "bullets": [
+        "Maksimal forsterkning 20,5 dB (A omtrent 10,5) og maksimal demping på minus 16,1 dB.",
+        "Signal-til-støy-forhold på 28,45 dB.",
+        "Bygget med LF353P og et potensiometer på 10 kΩ, målt med Analog Discovery 2."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "title": "DP6 Reaksjonstrener",
+  "start": "2025-09",
+  "shortDescription": "Reaksjonsspill med knapper og lysdioder, bygget som sanntidssystem med FreeRTOS og stigende vanskelighetsgrad.",
+  "tags": [
+    "FreeRTOS",
+    "avbrudd",
+    "sanntid"
+  ],
+  "importance": 45,
+  "isProject": true,
+  "sections": [
+    {
+      "title": "Slik fungerer den",
+      "bullets": [
+        "Oppgaver for lysstyring, spilllogikk og skjerm kjører parallelt, og knappene leses via avbrudd.",
+        "Tidsvinduet for å reagere blir kortere og flere lys tennes samtidig jo bedre spilleren er.",
+        "Alle funksjonstester (riktig trykk, feil trykk, timeout og økt vanskelighet) ga forventet resultat."
+      ]
+    }
+  ]
+}

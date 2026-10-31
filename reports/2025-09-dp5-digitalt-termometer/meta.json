@@ -1,0 +1,23 @@
+{
+  "title": "DP5 Digitalt termometer",
+  "start": "2025-09",
+  "shortDescription": "Termometer med K-type termoelement, analog forsterker, 10-bits ADC på AVR128DB48 og visning på OLED-skjerm.",
+  "tags": [
+    "termoelement",
+    "ADC",
+    "OLED",
+    "I2C"
+  ],
+  "importance": 60,
+  "isProject": true,
+  "sections": [
+    {
+      "title": "Resultat",
+      "bullets": [
+        "Forsterkning på omtrent 1027, RC-lavpassfilter på 1,61 Hz og midling over 100 prøver.",
+        "Avvik fra forventet temperatur på 0,10, 0,61 og 0,09 °C i tre testpunkter, altså under 1 °C i området 0 til 40 °C.",
+        "Begrensning: ADC-en brukes single-ended, så systemet kan ikke måle lavere enn referansetemperaturen."
+      ]
+    }
+  ]
+}

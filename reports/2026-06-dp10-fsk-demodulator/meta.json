@@ -1,0 +1,23 @@
+{
+  "title": "DP10 FSK-demodulator",
+  "start": "2026-06",
+  "shortDescription": "Digital demodulator for UART over FSK (200 og 300 Hz, 20 bit/s), med to parallelle FIR-filtre og energisammenligning på AVR128DB48.",
+  "tags": [
+    "FSK",
+    "FIR",
+    "Q15",
+    "AVR"
+  ],
+  "importance": 60,
+  "isProject": true,
+  "sections": [
+    {
+      "title": "Slik fungerer den",
+      "bullets": [
+        "To FIR-filtre, ett per frekvens, fulgt av energiestimering og beslutning midt i hver bitperiode.",
+        "Sanntidsløsning med samplingsfrekvens på 1 kHz, Q15-koeffisienter og 32-bit akkumulering.",
+        "Algoritmen ble verifisert i MATLAB. Full verifikasjon med fysisk signal fra Analog Discovery 2 er beskrevet som videre arbeid."
+      ]
+    }
+  ]
+}

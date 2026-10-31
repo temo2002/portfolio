@@ -1,0 +1,23 @@
+{
+  "title": "DP8 Aliasfilter",
+  "start": "2025-11",
+  "shortDescription": "Fjerde ordens Butterworth anti-alias-filter med to kaskadekoblede Sallen-Key-trinn, for en ADC med 7,1 kHz samplingsfrekvens.",
+  "tags": [
+    "Butterworth",
+    "Sallen-Key",
+    "anti-alias",
+    "LTspice"
+  ],
+  "importance": 55,
+  "isProject": true,
+  "sections": [
+    {
+      "title": "Resultat",
+      "bullets": [
+        "Beregnet knekkfrekvens 2,66 kHz, målt omtrent 2,6 kHz.",
+        "Rundt 10 dB demping ved Nyquist-frekvensen på 3,55 kHz, som oppfyller kravet.",
+        "Realiserte komponentverdier lå under 4 prosent fra de beregnede, og simulering og måling stemte godt overens."
+      ]
+    }
+  ]
+}

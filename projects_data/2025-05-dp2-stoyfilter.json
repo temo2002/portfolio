@@ -1,0 +1,16 @@
+{
+  "id": "2025-05-dp2-stoyfilter",
+  "title": "DP2 Støyfilter",
+  "category": "school",
+  "isProject": true,
+  "start": "2025-05",
+  "shortDescription": "To LC-båndstoppfiltre i kaskade med buffer fjerner en pipetone på 1,68 kHz fra et lydsignal.",
+  "tags": [
+    "båndstoppfilter",
+    "LC-filter",
+    "LTspice"
+  ],
+  "importance": 50,
+  "projectPage": "projects/2025-05-dp2-stoyfilter",
+  "generated": true
+}

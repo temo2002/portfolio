@@ -1,0 +1,22 @@
+{
+  "title": "DP3 Elektrisk terning",
+  "start": "2025-03",
+  "shortDescription": "Digital terning som viser tall fra 1 til 6, realisert som digital logikk i FPGA med IceStudio.",
+  "tags": [
+    "FPGA",
+    "IceStudio",
+    "digital logikk"
+  ],
+  "importance": 35,
+  "isProject": true,
+  "sections": [
+    {
+      "title": "Slik fungerer den",
+      "bullets": [
+        "Teller, to multiplexere, register og dekoder styrer hvilket tall som vises.",
+        "Resultatet vises på syv lysdioder (fire gule, to grønne og en rød), hver med 120 Ω i serie fra 3,3 V.",
+        "Rapporten inkluderer effektberegning for lysdiodene."
+      ]
+    }
+  ]
+}

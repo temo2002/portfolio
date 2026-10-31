@@ -1,0 +1,23 @@
+{
+  "title": "DP12 Artikulasjonstrener",
+  "start": "2026-04",
+  "shortDescription": "Spektrumanalysator på AVR128DB48: 256-punkts FFT med kissFFT, visning av spekteret på OLED og måling av kjøretid.",
+  "tags": [
+    "FFT",
+    "spektralanalyse",
+    "OLED",
+    "kissFFT"
+  ],
+  "importance": 50,
+  "isProject": true,
+  "sections": [
+    {
+      "title": "Status",
+      "bullets": [
+        "FFT-beregning, visning på OLED og måling av kjøretid fungerer.",
+        "Integrasjon med ferdig innspilt lydfil ble ikke ferdigstilt, og det står tydelig i rapporten.",
+        "Videre arbeid: konvertere lydfil til PCM, bedre skalering av spekteret og sanntids sampling fra ADC."
+      ]
+    }
+  ]
+}

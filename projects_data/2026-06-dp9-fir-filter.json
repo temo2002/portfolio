@@ -1,0 +1,17 @@
+{
+  "id": "2026-06-dp9-fir-filter",
+  "title": "DP9 FIR-filter",
+  "category": "school",
+  "isProject": true,
+  "start": "2026-06",
+  "shortDescription": "FIR-lavpassfilter for støydemping i lyd: verifisert i MATLAB, med spektrumanalyse og implementasjon på mikrokontroller.",
+  "tags": [
+    "FIR",
+    "MATLAB",
+    "DSP",
+    "lineær fase"
+  ],
+  "importance": 55,
+  "projectPage": "projects/2026-06-dp9-fir-filter",
+  "generated": true
+}

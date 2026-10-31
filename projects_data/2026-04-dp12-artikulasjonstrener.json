@@ -1,0 +1,17 @@
+{
+  "id": "2026-04-dp12-artikulasjonstrener",
+  "title": "DP12 Artikulasjonstrener",
+  "category": "school",
+  "isProject": true,
+  "start": "2026-04",
+  "shortDescription": "Spektrumanalysator på AVR128DB48: 256-punkts FFT med kissFFT, visning av spekteret på OLED og måling av kjøretid.",
+  "tags": [
+    "FFT",
+    "spektralanalyse",
+    "OLED",
+    "kissFFT"
+  ],
+  "importance": 50,
+  "projectPage": "projects/2026-04-dp12-artikulasjonstrener",
+  "generated": true
+}

@@ -1,0 +1,17 @@
+{
+  "id": "2025-09-dp5-digitalt-termometer",
+  "title": "DP5 Digitalt termometer",
+  "category": "school",
+  "isProject": true,
+  "start": "2025-09",
+  "shortDescription": "Termometer med K-type termoelement, analog forsterker, 10-bits ADC på AVR128DB48 og visning på OLED-skjerm.",
+  "tags": [
+    "termoelement",
+    "ADC",
+    "OLED",
+    "I2C"
+  ],
+  "importance": 60,
+  "projectPage": "projects/2025-09-dp5-digitalt-termometer",
+  "generated": true
+}

@@ -1,0 +1,17 @@
+{
+  "id": "2026-06-dp11-iir-notch-filter",
+  "title": "DP11 IIR notch-filter",
+  "category": "school",
+  "isProject": true,
+  "start": "2026-06",
+  "shortDescription": "Andre ordens IIR notch-filter som fjerner en pipetone på 1680 Hz fra lyd med 44,1 kHz samplingsfrekvens, implementert i Q15 på AVR128DB48.",
+  "tags": [
+    "IIR",
+    "notch-filter",
+    "MATLAB",
+    "Q15"
+  ],
+  "importance": 55,
+  "projectPage": "projects/2026-06-dp11-iir-notch-filter",
+  "generated": true
+}

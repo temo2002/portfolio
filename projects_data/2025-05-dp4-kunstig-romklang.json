@@ -1,0 +1,17 @@
+{
+  "id": "2025-05-dp4-kunstig-romklang",
+  "title": "DP4 Kunstig romklang",
+  "category": "school",
+  "isProject": true,
+  "start": "2025-05",
+  "shortDescription": "Digital romklang i sanntid på AVR128DB48: ett differanseledd med ringbuffer, fastpunktaritmetikk og 30 µs samplingstid.",
+  "tags": [
+    "DSP",
+    "AVR",
+    "ringbuffer",
+    "sanntid"
+  ],
+  "importance": 55,
+  "projectPage": "projects/2025-05-dp4-kunstig-romklang",
+  "generated": true
+}

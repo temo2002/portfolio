@@ -1,0 +1,16 @@
+{
+  "id": "2025-03-dp3-elektrisk-terning",
+  "title": "DP3 Elektrisk terning",
+  "category": "school",
+  "isProject": true,
+  "start": "2025-03",
+  "shortDescription": "Digital terning som viser tall fra 1 til 6, realisert som digital logikk i FPGA med IceStudio.",
+  "tags": [
+    "FPGA",
+    "IceStudio",
+    "digital logikk"
+  ],
+  "importance": 35,
+  "projectPage": "projects/2025-03-dp3-elektrisk-terning",
+  "generated": true
+}

@@ -1,0 +1,16 @@
+{
+  "id": "2025-01-dp1-signalnivaaregulator",
+  "title": "DP1 Signalnivåregulator",
+  "category": "school",
+  "isProject": true,
+  "start": "2025-01",
+  "shortDescription": "Regulator som forsterker eller demper et 237 Hz-signal, bygget med to inverterende operasjonsforsterkere og et potensiometer.",
+  "tags": [
+    "operasjonsforsterker",
+    "analog elektronikk",
+    "måling"
+  ],
+  "importance": 40,
+  "projectPage": "projects/2025-01-dp1-signalnivaaregulator",
+  "generated": true
+}

@@ -1,0 +1,19 @@
+{
+  "id": "2026-01-iels2003-objektdeteksjon-blinde",
+  "title": "IELS2003 Objektdeteksjon for blinde og svaksynte",
+  "category": "school",
+  "isProject": true,
+  "start": "2026-01",
+  "shortDescription": "Bærbart hjelpemiddel som finner frukt med kamerabasert objektdeteksjon og viser retningen med et vibrasjonsbelte og norsk tale. Gruppeprosjekt på tre.",
+  "tags": [
+    "YOLOv8",
+    "Raspberry Pi 5",
+    "ESP32",
+    "Whisper",
+    "haptikk"
+  ],
+  "importance": 85,
+  "projectPage": "projects/2026-01-iels2003-objektdeteksjon-blinde",
+  "generated": true,
+  "end": "2026-06"
+}

@@ -1,0 +1,19 @@
+{
+  "id": "2025-04-iels2001-stemmestyrt-assistent",
+  "title": "IELS2001 Stemmestyrt assistent",
+  "category": "school",
+  "isProject": true,
+  "start": "2025-04",
+  "shortDescription": "Lokal stemmeassistent for smarthus: ESP32 med I2S-mikrofon strømmer lyd til Node-RED og Whisper, som styrer lys via Home Assistant, uten skytjenester.",
+  "tags": [
+    "ESP32",
+    "Whisper",
+    "Node-RED",
+    "Home Assistant",
+    "DSP"
+  ],
+  "importance": 65,
+  "projectPage": "projects/2025-04-iels2001-stemmestyrt-assistent",
+  "generated": true,
+  "end": "2025-06"
+}

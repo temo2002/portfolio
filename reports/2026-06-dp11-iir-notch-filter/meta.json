@@ -1,0 +1,23 @@
+{
+  "title": "DP11 IIR notch-filter",
+  "start": "2026-06",
+  "shortDescription": "Andre ordens IIR notch-filter som fjerner en pipetone på 1680 Hz fra lyd med 44,1 kHz samplingsfrekvens, implementert i Q15 på AVR128DB48.",
+  "tags": [
+    "IIR",
+    "notch-filter",
+    "MATLAB",
+    "Q15"
+  ],
+  "importance": 55,
+  "isProject": true,
+  "sections": [
+    {
+      "title": "Resultat",
+      "bullets": [
+        "Rundt 45 dB demping ved pipetonen med minimal påvirkning på resten av lyden.",
+        "Filteret trenger bare fire tilstandsvariabler og fem koeffisienter, mot 165 tapper i FIR-løsningen fra DP9.",
+        "Verifisert i MATLAB før implementasjon i C."
+      ]
+    }
+  ]
+}
