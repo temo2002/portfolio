@@ -7,6 +7,7 @@
 Rediger tekstene i språkfilene (eller strukturen i malen), ikke i de genererte filene.
 SEO-blokken (<!-- seo:start --> ... <!-- seo:end -->) fylles av tools/build.py og beholdes her.
 """
+import hashlib
 import json
 import re
 import sys
@@ -14,6 +15,10 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 SEO = re.compile(r"(<!-- seo:start -->)(.*?)(<!-- seo:end -->)", re.S)
+
+
+def asset_v(name):
+    return hashlib.md5((ROOT / name).read_bytes()).hexdigest()[:8]
 
 
 def render(template, strings, lang):
@@ -29,6 +34,7 @@ def main():
     stale = []
     for lang, out in (("no", "index.html"), ("en", "en/index.html")):
         strings = json.loads((ROOT / "i18n" / f"{lang}.json").read_text(encoding="utf-8"))
+        strings.update({"v_css": asset_v("style.css"), "v_js": asset_v("script.js")})
         html = render(template, strings, lang)
         path = ROOT / out
         if path.exists():  # behold SEO-blokken som build.py har fylt ut

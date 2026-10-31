@@ -23,6 +23,7 @@ en fil selv, så blir den aldri overskrevet.
 Bruk:
   python tools/import_reports.py
 """
+import hashlib
 import html
 import json
 from urllib.parse import quote
@@ -221,6 +222,10 @@ UI = {
 }
 
 
+def asset_v(name):
+    return hashlib.md5((ROOT / name).read_bytes()).hexdigest()[:8]
+
+
 def localize(e, lang):
     """Returnerer en kopi av oppføringen med tekster på valgt språk (norsk er standard)."""
     L = dict(e)
@@ -333,7 +338,7 @@ def render_page(e0, lang="no"):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="{up}style.css">
+<link rel="stylesheet" href="{up}style.css?v={asset_v("style.css")}">
 <!-- seo:start -->
 <!-- seo:end -->
 </head>
@@ -370,7 +375,7 @@ def render_page(e0, lang="no"):
   <span>{ui["footer"]}</span>
 </footer>
 <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
-<script src="{up}lightbox.js"></script>
+<script src="{up}lightbox.js?v={asset_v("lightbox.js")}"></script>
 </body>
 </html>
 """

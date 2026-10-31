@@ -71,9 +71,9 @@ const matches = (e, f) => f === "all" || (f === "project" ? e.isProject : e.cate
 let entries = [], activeFilter = "all";
 
 async function loadEntries() {
-  const manifest = await (await fetch(ROOT + "projects_data/manifest.json")).json();
+  const manifest = await (await fetch(ROOT + "projects_data/manifest.json", { cache: "no-cache" })).json();
   const loaded = await Promise.all(manifest.map(async (f) => {
-    try { return normalize(await (await fetch(ROOT + "projects_data/" + f)).json()); }
+    try { return normalize(await (await fetch(ROOT + "projects_data/" + f, { cache: "no-cache" })).json()); }
     catch (err) { console.warn("Hoppet over", f, err); return null; }
   }));
   return loaded.filter(Boolean).sort((a, b) => a.startVal - b.startVal);
