@@ -19,5 +19,25 @@
         "Begrensning: ADC-en brukes single-ended, så systemet kan ikke måle lavere enn referansetemperaturen."
       ]
     }
+  ],
+  "hero": {
+    "file": "img/brodbrett.webp",
+    "w": 611,
+    "h": 655,
+    "caption": "Termometeret på brødbrett med OLED-skjerm."
+  },
+  "figures": [
+    {
+      "file": "img/blokkskjema.webp",
+      "w": 1500,
+      "h": 230,
+      "caption": "Blokkskjema fra transduser til display."
+    },
+    {
+      "file": "img/maling.webp",
+      "w": 1500,
+      "h": 1125,
+      "caption": "Måling i et vannbad."
+    }
   ]
 }

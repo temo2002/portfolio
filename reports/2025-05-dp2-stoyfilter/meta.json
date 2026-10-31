@@ -18,5 +18,31 @@
         "Kvalitetsfaktor på rundt 1,1. Designet er verifisert med både LTspice og Analog Discovery 2."
       ]
     }
+  ],
+  "hero": {
+    "file": "img/oppkobling.webp",
+    "w": 1217,
+    "h": 686,
+    "caption": "Fysisk oppkobling med Analog Discovery 2."
+  },
+  "figures": [
+    {
+      "file": "img/ltspice.webp",
+      "w": 601,
+      "h": 702,
+      "caption": "LTspice-simulering av båndstoppfilteret."
+    },
+    {
+      "file": "img/spektrum.webp",
+      "w": 1500,
+      "h": 663,
+      "caption": "Spektrumanalyse før og etter filtrering."
+    },
+    {
+      "file": "img/bode.webp",
+      "w": 1500,
+      "h": 767,
+      "caption": "Målt frekvensrespons med demping rundt 1,66 kHz."
+    }
   ]
 }

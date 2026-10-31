@@ -19,5 +19,37 @@
         "Teoretisk impulsrespons ble regnet ut i Python og sammenlignet med målinger fra oscilloskopet."
       ]
     }
+  ],
+  "hero": {
+    "file": "img/oppkobling.webp",
+    "w": 1006,
+    "h": 720,
+    "caption": "Oppkobling med AVR128DB48, Analog Discovery 2 og lyttekort."
+  },
+  "figures": [
+    {
+      "file": "img/signalflyt.webp",
+      "w": 404,
+      "h": 220,
+      "caption": "Signalflyt for romklangmodellen."
+    },
+    {
+      "file": "img/testoppsett.webp",
+      "w": 1123,
+      "h": 505,
+      "caption": "Blokkskjema for testoppsettet."
+    },
+    {
+      "file": "img/teori.webp",
+      "w": 1489,
+      "h": 396,
+      "caption": "Teoretisk impulsrespons for ulike verdier av a, regnet ut i Python."
+    },
+    {
+      "file": "img/maling.webp",
+      "w": 979,
+      "h": 673,
+      "caption": "Målt impulsrespons på oscilloskopet for a = 0,4 og a = 0,7."
+    }
   ]
 }

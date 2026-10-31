@@ -19,5 +19,19 @@
         "Verifisert i MATLAB før implementasjon i C."
       ]
     }
+  ],
+  "hero": {
+    "file": "img/spektrum.webp",
+    "w": 904,
+    "h": 506,
+    "caption": "FFT-spekteret med pipetonen tydelig ved 1680 Hz."
+  },
+  "figures": [
+    {
+      "file": "img/pol-null.webp",
+      "w": 1076,
+      "h": 864,
+      "caption": "Pol-nullplott for notch-filteret."
+    }
   ]
 }

@@ -179,6 +179,8 @@ def build_entry(folder):
     lede = meta.pop("lede", "")
     sections = meta.pop("sections", [])
     links = meta.pop("links", [])
+    hero = meta.pop("hero", None)
+    figures = meta.pop("figures", [])
     entry.update(meta)
     if skip:
         return None, None
@@ -187,11 +189,30 @@ def build_entry(folder):
     entry["_lede"] = lede
     entry["_sections"] = sections
     entry["_links"] = links
+    entry["_hero"] = hero
+    entry["_figures"] = figures
     entry["_macros"] = macros
     return entry, "; ".join(notes) or None
 
 
 # ---------- Side ----------
+
+def fig_html(e, f, esc, hero=False):
+    """En figur fra reports/<id>/<fil>. Valgfrie felt: caption, alt, w, h."""
+    url = f"../reports/{e['id']}/{f['file']}"
+    w, h = f.get("w"), f.get("h")
+    dims = f' width="{w}" height="{h}"' if w and h else ""
+    wide = " wide" if (w and h and w / h > 1.9) else ""
+    cap = f'<figcaption>{esc(f["caption"])}</figcaption>' if f.get("caption") else ""
+    lazy = "" if hero else ' loading="lazy"'
+    cls = "fig fig-hero" if hero else "fig" + wide
+    return (f'<figure class="{cls}"><a href="{esc(url)}" target="_blank" rel="noopener">'
+            f'<img src="{esc(url)}" alt="{esc(f.get("alt") or f.get("caption", ""))}"{dims}{lazy}></a>{cap}</figure>')
+
+
+def fig_grid(e, figs, esc):
+    return '<div class="fig-grid">' + "".join(fig_html(e, f, esc) for f in figs) + "</div>" if figs else ""
+
 
 def render_sections(e, esc, pdf_rel):
     out = []
@@ -199,7 +220,10 @@ def render_sections(e, esc, pdf_rel):
         body = "".join(f"<p>{esc(p)}</p>" for p in sec.get("paragraphs", []))
         if sec.get("bullets"):
             body += "<ul>" + "".join(f"<li>{esc(b)}</li>" for b in sec["bullets"]) + "</ul>"
+        body += fig_grid(e, sec.get("figures", []), esc)
         out.append(f'  <section class="project-section">\n    <h2>{esc(sec["title"])}</h2>\n    {body}\n  </section>')
+    if e["_figures"]:
+        out.append(f'  <section class="project-section">\n    <h2>Figurer</h2>\n    {fig_grid(e, e["_figures"], esc)}\n  </section>')
     links = list(e["_links"])
     if pdf_rel:
         out.append(f'''  <section class="project-section">
@@ -225,6 +249,7 @@ def render_page(e):
     tags = "".join(f"<li>{esc(t)}</li>" for t in e.get("tags", []))
     pdf_rel = "../" + e["_pdf"] if e["_pdf"] else None
     extra_sections = render_sections(e, esc, pdf_rel)
+    hero_html = fig_html(e, e["_hero"], esc, hero=True) if e["_hero"] else ""
     return f"""<!DOCTYPE html>
 <html lang="nb">
 <head>
@@ -263,6 +288,7 @@ def render_page(e):
   <h1 class="project-title">{esc(e["title"])}</h1>
   <p class="project-lede">{esc(lede)}</p>
   <ul class="tags">{tags}</ul>
+  {hero_html}
 
 {extra_sections}
   <a class="back" href="../#tidslinje">← tilbake til tidslinjen</a>

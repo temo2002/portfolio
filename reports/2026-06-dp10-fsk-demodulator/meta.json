@@ -19,5 +19,31 @@
         "Algoritmen ble verifisert i MATLAB. Full verifikasjon med fysisk signal fra Analog Discovery 2 er beskrevet som videre arbeid."
       ]
     }
+  ],
+  "hero": {
+    "file": "img/oppkobling.webp",
+    "w": 1006,
+    "h": 720,
+    "caption": "Oppkobling med AVR128DB48 og Analog Discovery 2."
+  },
+  "figures": [
+    {
+      "file": "img/blokkskjema.webp",
+      "w": 828,
+      "h": 477,
+      "caption": "Prinsipiell blokkstruktur for FSK-demodulatoren."
+    },
+    {
+      "file": "img/energi.webp",
+      "w": 893,
+      "h": 598,
+      "caption": "Energideteksjon for 200 Hz og 300 Hz etter absoluttverdi og glidende middel."
+    },
+    {
+      "file": "img/bitbeslutning.webp",
+      "w": 892,
+      "h": 570,
+      "caption": "Bitbeslutning tatt midt i hver bitperiode."
+    }
   ]
 }

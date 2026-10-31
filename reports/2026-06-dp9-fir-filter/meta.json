@@ -19,5 +19,25 @@
         "Implementert på mikrokontroller, med vurdering av filterorden mot prosesseringstid."
       ]
     }
+  ],
+  "hero": {
+    "file": "img/oppkobling.webp",
+    "w": 1006,
+    "h": 720,
+    "caption": "Oppkobling med AVR128DB48 og Analog Discovery 2."
+  },
+  "figures": [
+    {
+      "file": "img/frekvensrespons.webp",
+      "w": 903,
+      "h": 587,
+      "caption": "Frekvens- og faserespons for FIR-lavpassfilteret."
+    },
+    {
+      "file": "img/psd.webp",
+      "w": 887,
+      "h": 589,
+      "caption": "Effektspektraltetthet før og etter filtrering."
+    }
   ]
 }

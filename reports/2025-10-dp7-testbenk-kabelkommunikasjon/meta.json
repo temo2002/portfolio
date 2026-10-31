@@ -24,5 +24,37 @@
         "Egen driver og testprogram i C for mikrokontrolleren."
       ]
     }
+  ],
+  "hero": {
+    "file": "img/oppkobling.webp",
+    "w": 624,
+    "h": 579,
+    "caption": "Testbenken på brødbrett."
+  },
+  "figures": [
+    {
+      "file": "img/blokkskjema.webp",
+      "w": 1040,
+      "h": 647,
+      "caption": "Blokkskjema for testbenken med kanalmodell og støykilde."
+    },
+    {
+      "file": "img/kretsskjema.webp",
+      "w": 1500,
+      "h": 707,
+      "caption": "Kretsskjema for kanalmodell og støyforsterker."
+    },
+    {
+      "file": "img/ber-baudrate.webp",
+      "w": 689,
+      "h": 490,
+      "caption": "Bitfeilrate som funksjon av baudrate."
+    },
+    {
+      "file": "img/ber-snr.webp",
+      "w": 690,
+      "h": 490,
+      "caption": "Bitfeilrate som funksjon av signal-til-støy-forhold."
+    }
   ]
 }

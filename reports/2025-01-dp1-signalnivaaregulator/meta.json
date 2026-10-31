@@ -18,5 +18,25 @@
         "Bygget med LF353P og et potensiometer på 10 kΩ, målt med Analog Discovery 2."
       ]
     }
+  ],
+  "hero": {
+    "file": "img/kretsskisse.webp",
+    "w": 1500,
+    "h": 537,
+    "caption": "Kretsskisse med to inverterende operasjonsforsterkere."
+  },
+  "figures": [
+    {
+      "file": "img/maks-forsterkning.webp",
+      "w": 1500,
+      "h": 728,
+      "caption": "Måling av maksimal forsterkning, inngang og utgang."
+    },
+    {
+      "file": "img/maks-demping.webp",
+      "w": 1500,
+      "h": 730,
+      "caption": "Måling av maksimal demping, inngang og utgang."
+    }
   ]
 }

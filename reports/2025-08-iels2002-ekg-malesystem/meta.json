@@ -16,6 +16,14 @@
       "title": "Hva vi bygde",
       "paragraphs": [
         "Et gruppeprosjekt på to i Ingeniørprosjekt II. Systemet forsterker og filtrerer svake biopotensialer og viser EKG og puls i sanntid i nettleseren."
+      ],
+      "figures": [
+        {
+          "file": "img/kapsling-3d.webp",
+          "w": 1500,
+          "h": 564,
+          "caption": "3D-modell av kapslingen til EKG-enheten, med lokk."
+        }
       ]
     },
     {
@@ -24,6 +32,32 @@
         "Analog del: instrumenteringsforsterker (INA126), høypassfilter på 33,8 mHz og et forsterkertrinn med TL071 og lavpassfilter på 16 Hz. Samlet forsterkning på omtrent 1000 V/V.",
         "Digital del: 16-bits ADC (ADS1115) på 860 punktprøver i sekundet, og en ESP32 som finner R-topper, beregner puls og sender data over WebSocket.",
         "Batteridrift med Li-ion-celle, og et 3D-printet hus."
+      ],
+      "figures": [
+        {
+          "file": "img/interfacekrets.webp",
+          "w": 1500,
+          "h": 632,
+          "caption": "Interfacekretsen i tre trinn: instrumenteringsforsterker, høypassfilter og forsterker med lavpassfilter."
+        },
+        {
+          "file": "img/signalflyt.webp",
+          "w": 548,
+          "h": 253,
+          "caption": "Signalflyt fra interfacekrets via ADS1115 og ESP32 til loggeprogrammet."
+        },
+        {
+          "file": "img/brodbrett.webp",
+          "w": 1100,
+          "h": 710,
+          "caption": "Interfacekretsen først bygget på brødbrett."
+        },
+        {
+          "file": "img/prototypekort-merket.webp",
+          "w": 1500,
+          "h": 678,
+          "caption": "Prototypekortet delt i interface, strømforsyning og ADC, og digital del."
+        }
       ]
     },
     {
@@ -32,15 +66,55 @@
         "Tydelige QRS-komplekser på prototypekortet, og puls som avvek 1 til 3 slag i minuttet fra en Garmin pulsklokke.",
         "Målte knekkfrekvenser nær de beregnede, og CMRR på nesten 100 dB på PCB-en.",
         "Realisert i fire steg: simulering, brødbrett, prototypekort og firelags PCB tegnet i KiCad."
+      ],
+      "figures": [
+        {
+          "file": "img/ekg-nettleser.webp",
+          "w": 1500,
+          "h": 387,
+          "caption": "EKG-signal og pulsberegning i sanntid i nettleseren (67 slag i minuttet)."
+        },
+        {
+          "file": "img/amplituderespons.webp",
+          "w": 1112,
+          "h": 802,
+          "caption": "Amplituderespons for simulering, brødbrett, prototypekort og PCB."
+        },
+        {
+          "file": "img/cmrr.webp",
+          "w": 1123,
+          "h": 801,
+          "caption": "CMRR for de fire realiseringene."
+        }
       ]
     },
     {
       "title": "Det som ikke fungerte",
       "paragraphs": [
         "PCB-en fikk et offset-problem i trinn 2 som sendte neste trinn i metning, så den ble aldri brukt til EKG-logging. Rapporten beskriver feilen åpent og foreslår retting i neste revisjon, mens all logging er gjort på prototypekortet."
+      ],
+      "figures": [
+        {
+          "file": "img/pcb.webp",
+          "w": 1200,
+          "h": 900,
+          "caption": "Firelags PCB med ESP32, ADC og batteri."
+        },
+        {
+          "file": "img/pcb-layout.webp",
+          "w": 1100,
+          "h": 1334,
+          "caption": "PCB-layout tegnet i KiCad."
+        }
       ]
     }
   ],
   "end": "2025-11",
-  "noPdf": true
+  "noPdf": true,
+  "hero": {
+    "file": "img/prototypekort-batteri.webp",
+    "w": 1400,
+    "h": 1050,
+    "caption": "Prototypekortet med Li-ion-batteri, ADC og ESP32."
+  }
 }

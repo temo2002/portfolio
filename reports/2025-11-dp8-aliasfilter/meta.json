@@ -19,5 +19,25 @@
         "Realiserte komponentverdier lå under 4 prosent fra de beregnede, og simulering og måling stemte godt overens."
       ]
     }
+  ],
+  "hero": {
+    "file": "img/amplituderespons.webp",
+    "w": 989,
+    "h": 507,
+    "caption": "Målt og simulert amplituderespons for anti-alias-filteret."
+  },
+  "figures": [
+    {
+      "file": "img/ltspice.webp",
+      "w": 1469,
+      "h": 536,
+      "caption": "LTspice-krets med to kaskadekoblede Sallen-Key-trinn."
+    },
+    {
+      "file": "img/brodbrett.webp",
+      "w": 556,
+      "h": 196,
+      "caption": "Filteret bygget på brødbrett."
+    }
   ]
 }

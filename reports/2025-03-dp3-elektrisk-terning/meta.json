@@ -18,5 +18,19 @@
         "Rapporten inkluderer effektberegning for lysdiodene."
       ]
     }
+  ],
+  "hero": {
+    "file": "img/brodbrett.webp",
+    "w": 1220,
+    "h": 614,
+    "caption": "Terningen realisert på brødbrett med lysdioder og sjusegmentvisning."
+  },
+  "figures": [
+    {
+      "file": "img/icestudio.webp",
+      "w": 1140,
+      "h": 916,
+      "caption": "Kretsen tegnet i IceStudio."
+    }
   ]
 }

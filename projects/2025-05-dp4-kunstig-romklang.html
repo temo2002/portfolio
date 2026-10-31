@@ -45,10 +45,16 @@
   <h1 class="project-title">DP4 Kunstig romklang</h1>
   <p class="project-lede">Digital romklang i sanntid på AVR128DB48: ett differanseledd med ringbuffer, fastpunktaritmetikk og 30 µs samplingstid.</p>
   <ul class="tags"><li>DSP</li><li>AVR</li><li>ringbuffer</li><li>sanntid</li></ul>
+  <figure class="fig fig-hero"><a href="../reports/2025-05-dp4-kunstig-romklang/img/oppkobling.webp" target="_blank" rel="noopener"><img src="../reports/2025-05-dp4-kunstig-romklang/img/oppkobling.webp" alt="Oppkobling med AVR128DB48, Analog Discovery 2 og lyttekort." width="1006" height="720"></a><figcaption>Oppkobling med AVR128DB48, Analog Discovery 2 og lyttekort.</figcaption></figure>
 
   <section class="project-section">
     <h2>Resultat</h2>
     <ul><li>Kravet var en etterklangstid på 0,8 s. Målt tid var 0,78 s med a = 0,4 og 0,81 s med a = 0,7.</li><li>Signalbehandlingen kjører i en avbruddsrutine med heltallsaritmetikk for å holde sanntidskravet.</li><li>Teoretisk impulsrespons ble regnet ut i Python og sammenlignet med målinger fra oscilloskopet.</li></ul>
+  </section>
+
+  <section class="project-section">
+    <h2>Figurer</h2>
+    <div class="fig-grid"><figure class="fig"><a href="../reports/2025-05-dp4-kunstig-romklang/img/signalflyt.webp" target="_blank" rel="noopener"><img src="../reports/2025-05-dp4-kunstig-romklang/img/signalflyt.webp" alt="Signalflyt for romklangmodellen." width="404" height="220" loading="lazy"></a><figcaption>Signalflyt for romklangmodellen.</figcaption></figure><figure class="fig wide"><a href="../reports/2025-05-dp4-kunstig-romklang/img/testoppsett.webp" target="_blank" rel="noopener"><img src="../reports/2025-05-dp4-kunstig-romklang/img/testoppsett.webp" alt="Blokkskjema for testoppsettet." width="1123" height="505" loading="lazy"></a><figcaption>Blokkskjema for testoppsettet.</figcaption></figure><figure class="fig wide"><a href="../reports/2025-05-dp4-kunstig-romklang/img/teori.webp" target="_blank" rel="noopener"><img src="../reports/2025-05-dp4-kunstig-romklang/img/teori.webp" alt="Teoretisk impulsrespons for ulike verdier av a, regnet ut i Python." width="1489" height="396" loading="lazy"></a><figcaption>Teoretisk impulsrespons for ulike verdier av a, regnet ut i Python.</figcaption></figure><figure class="fig"><a href="../reports/2025-05-dp4-kunstig-romklang/img/maling.webp" target="_blank" rel="noopener"><img src="../reports/2025-05-dp4-kunstig-romklang/img/maling.webp" alt="Målt impulsrespons på oscilloskopet for a = 0,4 og a = 0,7." width="979" height="673" loading="lazy"></a><figcaption>Målt impulsrespons på oscilloskopet for a = 0,4 og a = 0,7.</figcaption></figure></div>
   </section>
 
   <section class="project-section">

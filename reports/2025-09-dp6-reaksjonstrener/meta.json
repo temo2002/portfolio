@@ -18,5 +18,31 @@
         "Alle funksjonstester (riktig trykk, feil trykk, timeout og økt vanskelighet) ga forventet resultat."
       ]
     }
+  ],
+  "hero": {
+    "file": "img/brodbrett.webp",
+    "w": 1400,
+    "h": 638,
+    "caption": "Reaksjonstreneren på brødbrett med knapper og lysdioder."
+  },
+  "figures": [
+    {
+      "file": "img/tasks.webp",
+      "w": 934,
+      "h": 385,
+      "caption": "Oppgavefordeling i sanntidssystemet."
+    },
+    {
+      "file": "img/kretsskjema.webp",
+      "w": 1053,
+      "h": 782,
+      "caption": "Kretsskjema med lysdioder og knapper."
+    },
+    {
+      "file": "img/programflyt.webp",
+      "w": 1500,
+      "h": 560,
+      "caption": "Programflyt for spillet."
+    }
   ]
 }

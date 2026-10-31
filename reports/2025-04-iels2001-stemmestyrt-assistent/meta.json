@@ -16,6 +16,20 @@
       "title": "Hva vi bygde",
       "paragraphs": [
         "Et gruppeprosjekt på to i Ingeniørprosjekt I. En ESP32 samler lyd fra en digital I2S-mikrofon og sender den over WebSocket til Node-RED. Der lages en WAV-fil som transkriberes lokalt av Whisper (faster-whisper i Docker), og teksten utløser automasjoner i Home Assistant, blant annet å skru en IKEA Trådfri-pære av og på."
+      ],
+      "figures": [
+        {
+          "file": "img/dataflyt.webp",
+          "w": 883,
+          "h": 350,
+          "caption": "Dataflyt fra mikrofon til automasjon."
+        },
+        {
+          "file": "img/node-red.webp",
+          "w": 1364,
+          "h": 799,
+          "caption": "Node-RED-flyt for signalbehandling og automasjoner."
+        }
       ]
     },
     {
@@ -24,6 +38,26 @@
         "Opprinnelig mål var en smarthøyttaler, men bestillingsproblemer hos leverandøren gjorde at prosjektet ble lagt om til en stemmeassistent uten lydavspilling.",
         "Lyden skurret på grunn av DC-offset. Etter en DFT-analyse ble det løst med et digitalt høypassfilter.",
         "MQTT ble byttet ut med WebSocket for å unngå base64-koding og redusere forsinkelsen."
+      ],
+      "figures": [
+        {
+          "file": "img/rålyd.webp",
+          "w": 1500,
+          "h": 938,
+          "caption": "Lydopptak med skurring i Audacity, før offset ble fjernet."
+        },
+        {
+          "file": "img/dft-for.webp",
+          "w": 1500,
+          "h": 603,
+          "caption": "DFT før filtrering: svært høy amplitude rundt 0 Hz (DC-offset)."
+        },
+        {
+          "file": "img/dft-etter.webp",
+          "w": 1500,
+          "h": 751,
+          "caption": "DFT etter digitalt høypassfilter."
+        }
       ]
     },
     {
@@ -36,5 +70,11 @@
     }
   ],
   "end": "2025-06",
-  "noPdf": true
+  "noPdf": true,
+  "hero": {
+    "file": "img/systemarkitektur.webp",
+    "w": 968,
+    "h": 503,
+    "caption": "Systemarkitektur: ESP32, Node-RED, Whisper, Home Assistant og smartenheter."
+  }
 }

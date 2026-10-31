@@ -198,3 +198,13 @@ footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8p
 .project-page .tags { margin: 14px 0 0; }
 .project-section ul { padding-left: 20px; }
 .project-section li { margin-bottom: 6px; }
+
+/* ---------- Figurer ---------- */
+.fig { margin: 22px 0; }
+.fig a { display: block; }
+.fig img { display: block; width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--line); background: #fff; }
+.fig figcaption { font-family: var(--mono); font-size: 12px; color: var(--muted); margin-top: 8px; line-height: 1.5; }
+.fig-hero { margin: 26px 0 8px; }
+.fig-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 4px 18px; align-items: start; }
+.fig-grid .fig.wide { grid-column: 1 / -1; }
+@media (max-width: 700px) { .fig-grid { grid-template-columns: 1fr; } }

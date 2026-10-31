@@ -19,5 +19,31 @@
         "Videre arbeid: konvertere lydfil til PCM, bedre skalering av spekteret og sanntids sampling fra ADC."
       ]
     }
+  ],
+  "hero": {
+    "file": "img/oled.webp",
+    "w": 342,
+    "h": 637,
+    "caption": "Spekteret vist på OLED-skjermen."
+  },
+  "figures": [
+    {
+      "file": "img/oversikt.webp",
+      "w": 866,
+      "h": 345,
+      "caption": "Overordnet system for artikulasjonstreneren."
+    },
+    {
+      "file": "img/losning.webp",
+      "w": 881,
+      "h": 414,
+      "caption": "Realisert løsning på AVR128DB48."
+    },
+    {
+      "file": "img/programflyt.webp",
+      "w": 511,
+      "h": 600,
+      "caption": "Programflyt for FFT og visning."
+    }
   ]
 }
