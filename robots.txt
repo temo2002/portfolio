@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://temo2002.github.io/portfolio/sitemap.xml
+Sitemap: https://temmamaltaie.no/sitemap.xml
