@@ -44,7 +44,7 @@ document.querySelectorAll(".fade-in").forEach((el) => reduceMotion ? el.classLis
 })();
 
 // ---------- Tidslinje ----------
-const MOBILE_BREAK = 900, PX_PER_YEAR = 270, ROWS = 15, ROW_H = 36, PAD_T = 12, RANGE_MIN_YEARS = 0.25;
+const MOBILE_BREAK = 900, PX_PER_YEAR = 260, ROWS = 18, ROW_H = 28, PAD_T = 8, RANGE_MIN_YEARS = 0.25;
 const nowYear = () => { const d = new Date(); return d.getFullYear() + d.getMonth() / 12; };
 const toYear = (s) => {
   if (s === "present") return nowYear();
@@ -91,21 +91,22 @@ function layout(items, minYear) {
   items.forEach((it) => {
     it.x = (it.startVal - minYear) * PX_PER_YEAR;
     it.title_ = loc(it, "title");
+    const lab = Math.min(240, Math.round(it.title_.length * 6.6 + 6));
     if (it.isRange) {
-      it.w = Math.max((it.endVal - it.startVal) * PX_PER_YEAR, 150);
-      it.wMin = it.wFull = it.w;
+      it.w = Math.max((it.endVal - it.startVal) * PX_PER_YEAR, 36);
+      it.wMin = it.w;
+      it.wFull = Math.max(it.w, lab);
     } else {
-      it.marker = Math.round(6 + it.imp * 12);
-      const lab = Math.min(230, Math.round(it.title_.length * 7 + 20));
+      it.marker = Math.round(5 + it.imp * 8);
       it.wMin = it.marker + 6;
-      it.wFull = it.marker + 8 + lab;
+      it.wFull = it.marker + 7 + lab;
     }
   });
   [...items].sort((a, b) => b.importance - a.importance).forEach((it) => {
     let row = order.find((r) => free(r, it.x, it.x + it.wFull));
     it.hideLabel = false;
-    if (row === undefined) { row = order.find((r) => free(r, it.x, it.x + it.wMin)); it.hideLabel = !it.isRange; }
-    if (row === undefined) { row = order[0]; it.hideLabel = !it.isRange; }
+    if (row === undefined) { row = order.find((r) => free(r, it.x, it.x + it.wMin)); it.hideLabel = true; }
+    if (row === undefined) { row = order[0]; it.hideLabel = true; }
     used[row].push([it.x, it.x + (it.hideLabel ? it.wMin : it.wFull)]);
     it.row = row;
   });
@@ -140,9 +141,9 @@ function renderSwimlane() {
     b.type = "button";
     b.className = `entry ${e.isRange ? "range" : "point"} cat-${e.category}` + (e.projectPage ? " clickable" : "") + (e.hideLabel ? " label-hidden" : "") + (e.status === "ongoing" && e.isRange ? " ongoing" : "");
     b.dataset.id = e.id;
-    b.style.cssText = `left:${e.x}px;top:${PAD_T + e.row * ROW_H}px;height:${ROW_H}px;--imp:${e.imp};z-index:${Math.round(1 + e.imp * 10)};` + (e.isRange ? `width:${e.w}px;` : "");
+    b.style.cssText = `left:${e.x}px;top:${PAD_T + e.row * ROW_H}px;height:${ROW_H}px;--imp:${e.imp};z-index:${Math.round(1 + e.imp * 10)};` + (e.isRange ? `width:${e.wFull}px;` : "");
     b.innerHTML = e.isRange
-      ? `<span class="bar">${esc(e.title_)}</span>${e.status === "ongoing" ? '<span class="ongoing-arrow"></span>' : ""}`
+      ? `<span class="rlabel">${esc(e.title_)}</span><span class="bar" style="width:${e.w}px"></span>`
       : `<span class="marker"></span><span class="label">${esc(e.title_)}</span>`;
     b.setAttribute("aria-label", `${e.title_}, ${fmtDate(e)}`);
     b.addEventListener("mouseenter", () => showTip(e, b));
@@ -158,8 +159,8 @@ function renderSwimlane() {
   const follow = () => {
     const edge = sc.scrollLeft - 24;
     lane.querySelectorAll(".entry.range").forEach((b) => {
-      const x = parseFloat(b.style.left), w = parseFloat(b.style.width);
-      b.firstChild.style.paddingLeft = Math.min(Math.max(10, edge - x + 10), Math.max(10, w - 130)) + "px";
+      const x = parseFloat(b.style.left), w = parseFloat(b.lastChild.style.width);
+      b.firstChild.style.marginLeft = Math.min(Math.max(0, edge - x + 4), Math.max(0, w - 110)) + "px";
     });
   };
   sc.onscroll = follow; follow();
