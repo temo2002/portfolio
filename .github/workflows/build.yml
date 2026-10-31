@@ -16,6 +16,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Importer rapporter
+        run: python tools/import_reports.py
       - name: Valider og bygg
         run: python tools/build.py
       - name: Commit endringer

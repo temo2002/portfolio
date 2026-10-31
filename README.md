@@ -11,6 +11,7 @@ script.js             tidslinje, filter, tooltip, skrivemaskin, demo
 site.json             adresse, tittel og beskrivelse som brukes til SEO
 serve.py              lokal server (bygger først)
 tools/build.py        genererer manifest, sitemap, robots.txt og SEO-tagger
+tools/import_reports.py  lager oppføring og side fra Overleaf-rapporter i reports/
 projects_data/        én JSON-fil per tidslinjeoppføring + manifest.json (generert)
 projects/             dypdykk, med _template.html som mal
 .github/workflows/    bygger automatisk ved push
@@ -65,6 +66,24 @@ Raden på tidslinjen blir klikkbar, og siden havner automatisk i sitemap.xml.
 `python tools/build.py --check` feiler hvis noe er utdatert, uten å skrive noe.
 
 Ved hver push til `main` kjører GitHub Actions det samme og committer eventuelle endringer. Husk å hente ned endringene (`git pull`) før du pusher igjen.
+
+## Rapporter fra Overleaf
+
+Rapporter blir til tidslinjeoppføring og dypdykkside automatisk.
+
+1. I Overleaf: Menu, så Download, så **Source** (zip) og **PDF**.
+2. Pakk ut i `reports/<ÅÅÅÅ-MM>-<navn>/`, for eksempel `reports/2026-09-iels2020-designprosjekt/`. Mappenavnet må starte med dato, og bør bare ha små bokstaver, tall og bindestrek. PDF-en må ligge i mappa som `main.pdf`.
+3. Push. GitHub Actions kjører `tools/import_reports.py` og `tools/build.py` og committer resultatet. Lokalt gjør `python serve.py` det samme.
+
+Skriptet leser `\dokumenttype`, `\fagkode`, `\dokumenttittel` og `\versjon` fra `main.tex`, og bruker `0.Sammendrag.tex` som ingress og kort beskrivelse. Designprosjekt får `isProject: true` og høyere vekt enn øvinger. Alt kan overstyres med en `meta.json` i rapportmappa, for eksempel:
+
+```json
+{ "importance": 85, "tags": ["filter", "opamp"], "end": "2026-12" }
+```
+
+`{ "skip": true }` i `meta.json` hopper over mappa. Filer skriptet har laget er merket og oppdateres hver gang. Fjern `"generated": true` fra JSON-filen, eller merkekommentaren øverst i HTML-siden, for å ta over en fil selv. Slettes rapportmappa, ryddes det som ble generert bort.
+
+Husk at repoet er offentlig, så PDF-ene også er det. Sjekk at faget tillater å dele det du legger ut.
 
 ## Eget domene
 

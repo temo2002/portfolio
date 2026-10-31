@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Lokal utviklingsserver. Bygger først (manifest, sitemap, SEO), og åpner siden.
+"""Lokal utviklingsserver. Importerer rapporter og bygger først (manifest, sitemap, SEO), og åpner siden.
 
   python serve.py            starter på http://localhost:8080
   python serve.py 9000       bruker en annen port
@@ -26,7 +26,8 @@ class Quiet(http.server.SimpleHTTPRequestHandler):
 
 
 if __name__ == "__main__":
-    subprocess.run([sys.executable, str(ROOT / "tools" / "build.py")], check=False)
+    for step in ("import_reports.py", "build.py"):
+        subprocess.run([sys.executable, str(ROOT / "tools" / step)], check=False)
     handler = functools.partial(Quiet, directory=str(ROOT))
     # Bare localhost, så andre på nettverket ikke når siden
     with http.server.ThreadingHTTPServer(("127.0.0.1", PORT), handler) as srv:
