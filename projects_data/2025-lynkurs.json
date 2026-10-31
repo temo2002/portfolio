@@ -1,0 +1,15 @@
+{
+  "id": "2025-lynkurs",
+  "title": "Lynkurs i C og analog elektronikk",
+  "category": "work",
+  "isProject": true,
+  "start": "2025",
+  "end": "2025",
+  "shortDescription": "Holdt egne kurs for medstudenter i C-programmering og filterdesign.",
+  "tags": [
+    "C",
+    "filterdesign",
+    "undervisning"
+  ],
+  "importance": 50
+}

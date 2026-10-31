@@ -1,0 +1,15 @@
+{
+  "id": "2026-laeringsassistent",
+  "title": "Læringsassistent, IELS2021 og IELS2022",
+  "category": "work",
+  "isProject": false,
+  "start": "2026",
+  "end": "present",
+  "shortDescription": "Veileder studenter i elektronikkfag ved NTNU, også i IELS2031.",
+  "tags": [
+    "undervisning",
+    "elektronikk"
+  ],
+  "importance": 75,
+  "status": "ongoing"
+}

@@ -6,13 +6,30 @@
 <title>Temmam Nabil Altaie · Elektronisk systemingeniør</title>
 <meta name="description" content="Temmam Nabil Altaie, elektronikkstudent ved NTNU, læringsassistent, nestleder i NTNUI Calisthenics og trompetist.">
 <meta name="theme-color" content="#0a0d18">
+<link rel="icon" href="icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<!-- seo:start -->
+<link rel="canonical" href="https://temo2002.github.io/portfolio/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="nb_NO">
+<meta property="og:site_name" content="Temmam Nabil Altaie">
+<meta property="og:title" content="Temmam Nabil Altaie · Elektronisk systemingeniør">
+<meta property="og:description" content="Temmam Nabil Altaie, elektronikkstudent ved NTNU, læringsassistent, nestleder i NTNUI Calisthenics og trompetist.">
+<meta property="og:url" content="https://temo2002.github.io/portfolio/">
+<meta property="og:image" content="https://temo2002.github.io/portfolio/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Temmam Nabil Altaie", "url": "https://temo2002.github.io/portfolio", "jobTitle": "Elektronikkstudent", "alumniOf": "NTNU", "image": "https://temo2002.github.io/portfolio/og.png"}</script>
+<!-- seo:end -->
 </head>
 <body>
 
 <header class="nav">
-  <a class="logo" href="#top"><span class="logo-mark">TA</span> temmam.altaie</a>
-  <nav>
+  <a class="logo" href="#top"><span class="logo-mark">TA</span> <span class="logo-text">temmam.altaie</span></a>
+  <button class="burger" id="burger" aria-label="Meny" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+  <nav id="menu">
     <a href="#arbeid">Arbeid</a>
     <a href="#tidslinje">Tidslinje</a>
     <a href="#om">Om meg</a>
@@ -23,12 +40,12 @@
 
 <main id="top">
 
-  <!-- HERO -->
-  <section class="hero">
+  <section class="hero fade-in">
     <div class="hero-text">
       <p class="eyebrow">elektronisk systemdesign · NTNU Trondheim</p>
       <h1>Temmam Nabil Altaie</h1>
       <p class="lead">Elektronikkstudent som liker å forklare det som er vanskelig, bygge det som er nyttig og spille trompet når det betyr noe.</p>
+      <p class="typed-line">Akkurat nå tenker jeg på <span id="typed" class="typed">elektronikk</span><span class="caret" aria-hidden="true"></span></p>
       <div class="cta">
         <a class="btn primary" href="#arbeid">utvalgt arbeid ↓</a>
         <a class="btn" href="#kontakt">ta kontakt →</a>
@@ -45,12 +62,11 @@
         <dt>fra</dt><dd>Lofoten, bor i Trondheim</dd>
       </dl>
       <canvas id="scope" width="520" height="120" aria-label="Animert signal"></canvas>
-      <p class="scope-label" id="scopeLabel">f = 1.0 kHz · sinus + støy</p>
+      <p class="scope-label">f = 1.0 kHz · sinus + støy</p>
     </aside>
   </section>
 
-  <!-- 01 HIGHLIGHTS -->
-  <section id="arbeid">
+  <section id="arbeid" class="fade-in">
     <h2 class="sec"><span>01</span> Utvalgt arbeid</h2>
     <div class="grid3">
       <article class="card project">
@@ -74,8 +90,7 @@
     </div>
   </section>
 
-  <!-- DEMO -->
-  <section id="verktoy-demo">
+  <section id="verktoy-demo" class="fade-in">
     <h2 class="sec"><span>·</span> Prøv selv</h2>
     <div class="card demo">
       <div class="demo-info">
@@ -91,16 +106,23 @@
     </div>
   </section>
 
-  <!-- 02 TIDSLINJE -->
-  <section id="tidslinje">
+  <section id="tidslinje" class="fade-in">
     <h2 class="sec"><span>02</span> Tidslinje</h2>
-    <p class="muted">Størrelsen på kortet viser hvor mye det betydde. Filtrer for å se én ting om gangen.</p>
-    <div class="filters" id="filters"></div>
-    <ol class="timeline" id="timeline"></ol>
+    <p class="muted">Hver rad er noe jeg har holdt på med. Størrelse og tyngde viser hvor mye det betydde. Hold over for detaljer.</p>
+    <div class="filters" id="filters" role="group" aria-label="Filtrer tidslinjen">
+      <button class="filter-chip on" data-filter="all">Alle</button>
+      <button class="filter-chip" data-filter="project">Prosjekter</button>
+      <button class="filter-chip" data-filter="work">Jobb</button>
+      <button class="filter-chip" data-filter="school">Skole</button>
+      <button class="filter-chip" data-filter="hobby">Hobby</button>
+    </div>
+    <div class="lane-wrap" id="laneWrap"><div class="lane" id="lane"></div></div>
+    <div class="tl-list" id="tlList"></div>
+    <p class="muted" id="tlError" hidden>Klarte ikke å laste tidslinjen akkurat nå. Prøv å laste siden på nytt.</p>
+    <div class="tip" id="tip" role="tooltip" hidden></div>
   </section>
 
-  <!-- 03 OM MEG -->
-  <section id="om">
+  <section id="om" class="fade-in">
     <h2 class="sec"><span>03</span> Om meg</h2>
     <div class="about">
       <div class="about-text">
@@ -109,7 +131,7 @@
         <p>Jeg snakker norsk, engelsk og arabisk, og har tilknytning til arabisk språk og irakisk kultur.</p>
       </div>
       <div class="facts">
-        <div class="fact"><strong>2018</strong><span>startet egen bedrift</span></div>
+        <div class="fact"><strong id="yearsBiz">8</strong><span>år med egen bedrift</span></div>
         <div class="fact"><strong>200+</strong><span>utøvere i NTNUI Calisthenics</span></div>
         <div class="fact"><strong>14</strong><span>trenere å koordinere</span></div>
         <div class="fact"><strong>3</strong><span>språk: norsk, engelsk, arabisk</span></div>
@@ -117,8 +139,7 @@
     </div>
   </section>
 
-  <!-- 04 VERKTØY -->
-  <section id="verktoy">
+  <section id="verktoy" class="fade-in">
     <h2 class="sec"><span>04</span> Verktøy</h2>
     <div class="chain">
       <div class="card step"><span class="num">1</span><h3>Måle</h3><p>Oscilloskop, signalgenerator og multimeter</p></div>
@@ -126,11 +147,9 @@
       <div class="card step"><span class="num">3</span><h3>Programmere</h3><p>C og innebygde systemer</p></div>
       <div class="card step"><span class="num">4</span><h3>Dokumentere</h3><p>LaTeX og Overleaf</p></div>
     </div>
-    <p class="muted small">Tips: bytt ut denne listen med verktøyene du faktisk bruker, og legg gjerne til nivåinndeling (ekspert, erfaren).</p>
   </section>
 
-  <!-- 05 KONTAKT -->
-  <section id="kontakt">
+  <section id="kontakt" class="fade-in">
     <h2 class="sec"><span>05</span> Kontakt</h2>
     <div class="card contact">
       <p>Jeg ser etter sommerjobb i 2027 innen elektronikk og innebygde systemer. Si gjerne fra om du har noe på hjertet.</p>
@@ -144,8 +163,8 @@
 </main>
 
 <footer>
-  <span>© 2026 Temmam Nabil Altaie</span>
-  <span>håndlaget · ingen rammeverk · hostet på GitHub Pages</span>
+  <span>© <span id="year">2026</span> Temmam Nabil Altaie</span>
+  <span>håndlaget · ingen rammeverk · servert av GitHub Pages</span>
 </footer>
 
 <script src="script.js"></script>

@@ -1,0 +1,19 @@
+{
+  "id": "2025-ntnui-calisthenics",
+  "title": "Nestleder, NTNUI Calisthenics",
+  "category": "hobby",
+  "isProject": false,
+  "start": "2025-01",
+  "end": "present",
+  "shortDescription": "Nestleder i en gruppe med over 200 utøvere. Koordinerer et team på 14 trenere.",
+  "tags": [
+    "ledelse",
+    "koordinering",
+    "200+ utøvere"
+  ],
+  "importance": 80,
+  "status": "ongoing",
+  "types": [
+    "ledelse"
+  ]
+}

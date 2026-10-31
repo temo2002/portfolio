@@ -1,0 +1,15 @@
+{
+  "id": "2024-ntnu-elsys",
+  "title": "Elektronisk systemdesign, NTNU",
+  "category": "school",
+  "isProject": false,
+  "start": "2024",
+  "end": "2027",
+  "shortDescription": "Bachelor i elektronisk systemdesign i Trondheim, med vekt på analog elektronikk, innebygde systemer og kommunikasjon.",
+  "tags": [
+    "elektronikk",
+    "NTNU"
+  ],
+  "importance": 90,
+  "status": "ongoing"
+}

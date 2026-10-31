@@ -1,0 +1,13 @@
+{
+  "id": "2023-forkurs",
+  "title": "Forkurs i realfag",
+  "category": "school",
+  "isProject": false,
+  "start": "2023",
+  "end": "2024",
+  "shortDescription": "Forkurs som åpnet døren til ingeniørstudier.",
+  "tags": [
+    "realfag"
+  ],
+  "importance": 40
+}

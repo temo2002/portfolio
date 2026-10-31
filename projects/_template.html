@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+<!--
+  Slik lager du et nytt dypdykk:
+  1. Kopier denne filen til projects/<slug>.html (ikke start navnet med understrek)
+  2. Bytt tittel, beskrivelse og innhold under
+  3. Sett "projectPage": "projects/<slug>" i JSON-filen i projects_data/
+  4. Kjør python tools/build.py (eller bare push, så gjør GitHub Actions det)
+  SEO-blokken mellom seo:start og seo:end fylles ut automatisk.
+-->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>[Prosjekttittel] · Temmam Nabil Altaie</title>
+<meta name="description" content="[Én setning som beskriver prosjektet]">
+<meta name="theme-color" content="#0a0d18">
+<link rel="icon" href="../icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<!-- seo:start -->
+<!-- seo:end -->
+</head>
+<body>
+
+<header class="nav">
+  <a class="logo" href="../#top"><span class="logo-mark">TA</span> <span class="logo-text">temmam.altaie</span></a>
+  <nav class="open-static">
+    <a href="../#arbeid">Arbeid</a>
+    <a href="../#tidslinje">Tidslinje</a>
+    <a href="../#om">Om meg</a>
+    <a href="../#kontakt">Kontakt</a>
+  </nav>
+</header>
+
+<main class="project-page">
+  <a class="back" href="../#tidslinje">← tilbake til tidslinjen</a>
+
+  <div class="project-meta-row">
+    <span class="cat-tag">hobby</span>          <!-- work, school eller hobby -->
+    <span class="project-year">ÅÅÅÅ</span>
+    <span class="status-tag">pågår</span>       <!-- fjern hvis ikke relevant -->
+  </div>
+
+  <h1 class="project-title">[Prosjekttittel]</h1>
+  <p class="project-lede">[Ett avsnitt som oppsummerer hva prosjektet er og hvorfor det finnes.]</p>
+
+  <section class="project-section">
+    <h2>Oversikt</h2>
+    <p>Bakgrunn og problemet du ville løse.</p>
+  </section>
+
+  <section class="project-section">
+    <h2>Hvordan det fungerer</h2>
+    <p>De tekniske detaljene. Bruk gjerne en punktliste:</p>
+    <ul>
+      <li>Første punkt</li>
+      <li>Andre punkt</li>
+    </ul>
+  </section>
+
+  <section class="project-section">
+    <h2>Resultat og refleksjon</h2>
+    <p>Hva som fungerte, og hva du ville gjort annerledes.</p>
+  </section>
+
+  <section class="project-section">
+    <h2>Lenker</h2>
+    <p class="project-links"><a class="btn" href="https://github.com/temo2002" target="_blank" rel="noopener">GitHub ↗</a></p>
+  </section>
+
+  <a class="back" href="../#tidslinje">← tilbake til tidslinjen</a>
+</main>
+
+<footer>
+  <span>© <span id="year">2026</span> Temmam Nabil Altaie</span>
+  <span>håndlaget · ingen rammeverk · servert av GitHub Pages</span>
+</footer>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
