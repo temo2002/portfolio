@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+<!-- generated:import_reports -->
+<!-- Denne siden er laget av tools/import_reports.py. Fjern merket over for å redigere den selv. -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Drivere for STM32F411RE i bar C · Temmam Nabil Altaie</title>
+<meta name="description" content="Drivere for GPIO, I2C, SPI og USART til STM32F411RE, skrevet fra bunnen av i C uten HAL, med eksempelprogrammer. Laget mens jeg tok et Udemy-kurs i driverutvikling.">
+<meta name="theme-color" content="#0a0d18">
+<link rel="icon" href="../icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css?v=c503b7e6">
+<!-- seo:start -->
+<link rel="canonical" href="https://temmamaltaie.no/projects/2025-08-stm32f411-drivere.html">
+<link rel="alternate" hreflang="nb" href="https://temmamaltaie.no/projects/2025-08-stm32f411-drivere.html">
+<link rel="alternate" hreflang="en" href="https://temmamaltaie.no/en/projects/2025-08-stm32f411-drivere.html">
+<link rel="alternate" hreflang="x-default" href="https://temmamaltaie.no/projects/2025-08-stm32f411-drivere.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="nb_NO">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:site_name" content="Temmam Nabil Altaie">
+<meta property="og:title" content="Drivere for STM32F411RE i bar C · Temmam Nabil Altaie">
+<meta property="og:description" content="Drivere for GPIO, I2C, SPI og USART til STM32F411RE, skrevet fra bunnen av i C uten HAL, med eksempelprogrammer. Laget mens jeg tok et Udemy-kurs i driverutvikling.">
+<meta property="og:url" content="https://temmamaltaie.no/projects/2025-08-stm32f411-drivere.html">
+<meta property="og:image" content="https://temmamaltaie.no/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<!-- seo:end -->
+</head>
+<body>
+
+<header class="nav">
+  <a class="logo" href="../#top"><span class="logo-mark">TA</span> <span class="logo-text">temmam.altaie</span></a>
+  <nav class="open-static">
+    <a href="../#arbeid">Arbeid</a>
+    <a href="../#tidslinje">Tidslinje</a>
+    <a href="../#om">Om meg</a>
+    <a href="../#kontakt">Kontakt</a>
+    <a class="lang-switch" href="../en/projects/2025-08-stm32f411-drivere.html" hreflang="en" lang="en" title="English version">EN</a>
+  </nav>
+</header>
+
+<main class="project-page">
+  <a class="back" href="../#tidslinje">← tilbake til tidslinjen</a>
+
+  <div class="project-meta-row"><span class="cat-tag">hobby</span> <span class="project-year">2025</span></div>
+
+  <h1 class="project-title">Drivere for STM32F411RE i bar C</h1>
+  <p class="project-lede">Egenskrevne periferidrivere for mikrokontrolleren STM32F411RE, uten HAL og CMSIS. Prosjektet fulgte Udemy-kurset «Mastering Microcontroller with Embedded Driver Development».</p>
+  <ul class="tags"><li>C</li><li>STM32</li><li>embedded</li><li>I2C</li><li>SPI</li><li>USART</li></ul>
+  
+
+  <section class="project-section">
+    <h2>Hva det er</h2>
+    <p>Registerdefinisjoner og drivere for GPIO, I2C, SPI, USART og RCC, skrevet direkte mot registrene i databladet. Driverne støtter både polling og avbruddsstyrt drift, og er testet med små eksempelprogrammer på et Nucleo-F411RE-kort.</p><ul><li>GPIO med eksterne avbrudd (EXTI)</li><li>I2C-master mot en Arduino som slave, med polling og avbrudd</li><li>SPI og USART, blant annet med printf over USART2</li><li>Eksempler fra LED-blink til kommunikasjon mellom STM32 og Arduino</li></ul>
+  </section>
+
+  <section class="project-section">
+    <h2>Hva jeg tar med meg</h2>
+    <ul><li>Å lese databladet og referansemanualen og gjøre det om til fungerende kode</li><li>Avbruddshåndtering og tilstandsmaskiner i kommunikasjonsdrivere</li><li>Struktur på et C-prosjekt med egne drivere, eksempler og Makefile</li></ul>
+  </section>
+
+  <section class="project-section">
+    <h2>Lenker</h2>
+    <p class="project-links"><a class="btn" href="https://github.com/temo2002/stm32f411-bare-metal-drivers" target="_blank" rel="noopener">Kildekode på GitHub ↗</a> <a class="btn" href="https://www.udemy.com/course/mastering-microcontroller-with-peripheral-driver-development/" target="_blank" rel="noopener">Udemy-kurset ↗</a> <a class="btn" href="https://www.udemy.com/certificate/UC-2cad7cf7-a2bf-4710-8e36-2cae67d36ab5/" target="_blank" rel="noopener">Kursbevis ↗</a></p>
+  </section>
+
+  <a class="back" href="../#tidslinje">← tilbake til tidslinjen</a>
+</main>
+
+<footer>
+  <span>© <span id="year">2026</span> Temmam Nabil Altaie</span>
+  <span>håndlaget · ingen rammeverk · servert av GitHub Pages</span>
+</footer>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+<script src="../lightbox.js?v=da3308d5"></script>
+</body>
+</html>

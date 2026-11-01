@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- generated:import_reports -->
+<!-- Denne siden er laget av tools/import_reports.py. Fjern merket over for å redigere den selv. -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bare-metal drivers for the STM32F411RE in C · Temmam Nabil Altaie</title>
+<meta name="description" content="GPIO, I2C, SPI and USART drivers for the STM32F411RE written from scratch in C without HAL, with example programs. Made while taking a Udemy course on driver development.">
+<meta name="theme-color" content="#0a0d18">
+<link rel="icon" href="../../icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css?v=c503b7e6">
+<!-- seo:start -->
+<link rel="canonical" href="https://temmamaltaie.no/en/projects/2025-08-stm32f411-drivere.html">
+<link rel="alternate" hreflang="nb" href="https://temmamaltaie.no/projects/2025-08-stm32f411-drivere.html">
+<link rel="alternate" hreflang="en" href="https://temmamaltaie.no/en/projects/2025-08-stm32f411-drivere.html">
+<link rel="alternate" hreflang="x-default" href="https://temmamaltaie.no/projects/2025-08-stm32f411-drivere.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="nb_NO">
+<meta property="og:site_name" content="Temmam Nabil Altaie">
+<meta property="og:title" content="Bare-metal drivers for the STM32F411RE in C · Temmam Nabil Altaie">
+<meta property="og:description" content="GPIO, I2C, SPI and USART drivers for the STM32F411RE written from scratch in C without HAL, with example programs. Made while taking a Udemy course on driver development.">
+<meta property="og:url" content="https://temmamaltaie.no/en/projects/2025-08-stm32f411-drivere.html">
+<meta property="og:image" content="https://temmamaltaie.no/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<!-- seo:end -->
+</head>
+<body>
+
+<header class="nav">
+  <a class="logo" href="../#top"><span class="logo-mark">TA</span> <span class="logo-text">temmam.altaie</span></a>
+  <nav class="open-static">
+    <a href="../#work">Work</a>
+    <a href="../#timeline">Timeline</a>
+    <a href="../#about">About</a>
+    <a href="../#contact">Contact</a>
+    <a class="lang-switch" href="../../projects/2025-08-stm32f411-drivere.html" hreflang="nb" lang="nb" title="Norsk versjon">NO</a>
+  </nav>
+</header>
+
+<main class="project-page">
+  <a class="back" href="../#timeline">← back to the timeline</a>
+
+  <div class="project-meta-row"><span class="cat-tag">hobby</span> <span class="project-year">2025</span></div>
+
+  <h1 class="project-title">Bare-metal drivers for the STM32F411RE in C</h1>
+  <p class="project-lede">Self-written peripheral drivers for the STM32F411RE microcontroller, without HAL and CMSIS. The project followed the Udemy course &quot;Mastering Microcontroller with Embedded Driver Development&quot;.</p>
+  <ul class="tags"><li>C</li><li>STM32</li><li>embedded</li><li>I2C</li><li>SPI</li><li>USART</li></ul>
+  
+
+  <section class="project-section">
+    <h2>What it is</h2>
+    <p>Register definitions and drivers for GPIO, I2C, SPI, USART and RCC, written directly against the registers in the datasheet. The drivers support both polling and interrupt driven operation, and are tried out with small example programs on a Nucleo-F411RE board.</p><ul><li>GPIO with external interrupts (EXTI)</li><li>I2C master talking to an Arduino slave, in polling and interrupt mode</li><li>SPI and USART, including printf over USART2</li><li>Examples from blinking an LED to communication between the STM32 and an Arduino</li></ul>
+  </section>
+
+  <section class="project-section">
+    <h2>What I take with me</h2>
+    <ul><li>Reading the datasheet and reference manual and turning it into working code</li><li>Interrupt handling and state machines in communication drivers</li><li>Structuring a C project with its own drivers, examples and a Makefile</li></ul>
+  </section>
+
+  <section class="project-section">
+    <h2>Links</h2>
+    <p class="project-links"><a class="btn" href="https://github.com/temo2002/stm32f411-bare-metal-drivers" target="_blank" rel="noopener">Source code on GitHub ↗</a> <a class="btn" href="https://www.udemy.com/course/mastering-microcontroller-with-peripheral-driver-development/" target="_blank" rel="noopener">The Udemy course ↗</a> <a class="btn" href="https://www.udemy.com/certificate/UC-2cad7cf7-a2bf-4710-8e36-2cae67d36ab5/" target="_blank" rel="noopener">Course certificate ↗</a></p>
+  </section>
+
+  <a class="back" href="../#timeline">← back to the timeline</a>
+</main>
+
+<footer>
+  <span>© <span id="year">2026</span> Temmam Nabil Altaie</span>
+  <span>handmade · no framework · served by GitHub Pages</span>
+</footer>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+<script src="../../lightbox.js?v=da3308d5"></script>
+</body>
+</html>

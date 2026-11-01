@@ -1,0 +1,70 @@
+{
+  "title": "Drivere for STM32F411RE i bar C",
+  "label": "STM32-drivere",
+  "category": "hobby",
+  "isProject": true,
+  "start": "2025-08",
+  "end": "2025-10",
+  "importance": 60,
+  "shortDescription": "Drivere for GPIO, I2C, SPI og USART til STM32F411RE, skrevet fra bunnen av i C uten HAL, med eksempelprogrammer. Laget mens jeg tok et Udemy-kurs i driverutvikling.",
+  "tags": ["C", "STM32", "embedded", "I2C", "SPI", "USART"],
+  "noPdf": true,
+  "lede": "Egenskrevne periferidrivere for mikrokontrolleren STM32F411RE, uten HAL og CMSIS. Prosjektet fulgte Udemy-kurset «Mastering Microcontroller with Embedded Driver Development».",
+  "sections": [
+    {
+      "title": "Hva det er",
+      "paragraphs": [
+        "Registerdefinisjoner og drivere for GPIO, I2C, SPI, USART og RCC, skrevet direkte mot registrene i databladet. Driverne støtter både polling og avbruddsstyrt drift, og er testet med små eksempelprogrammer på et Nucleo-F411RE-kort."
+      ],
+      "bullets": [
+        "GPIO med eksterne avbrudd (EXTI)",
+        "I2C-master mot en Arduino som slave, med polling og avbrudd",
+        "SPI og USART, blant annet med printf over USART2",
+        "Eksempler fra LED-blink til kommunikasjon mellom STM32 og Arduino"
+      ]
+    },
+    {
+      "title": "Hva jeg tar med meg",
+      "bullets": [
+        "Å lese databladet og referansemanualen og gjøre det om til fungerende kode",
+        "Avbruddshåndtering og tilstandsmaskiner i kommunikasjonsdrivere",
+        "Struktur på et C-prosjekt med egne drivere, eksempler og Makefile"
+      ]
+    }
+  ],
+  "links": [
+    { "label": "Kildekode på GitHub", "url": "https://github.com/temo2002/stm32f411-bare-metal-drivers" },
+    { "label": "Udemy-kurset", "url": "https://www.udemy.com/course/mastering-microcontroller-with-peripheral-driver-development/" },
+    { "label": "Kursbevis", "url": "https://www.udemy.com/certificate/UC-2cad7cf7-a2bf-4710-8e36-2cae67d36ab5/" }
+  ],
+  "en": {
+    "title": "Bare-metal drivers for the STM32F411RE in C",
+    "label": "STM32 drivers",
+    "shortDescription": "GPIO, I2C, SPI and USART drivers for the STM32F411RE written from scratch in C without HAL, with example programs. Made while taking a Udemy course on driver development.",
+    "tags": ["C", "STM32", "embedded", "I2C", "SPI", "USART"],
+    "lede": "Self-written peripheral drivers for the STM32F411RE microcontroller, without HAL and CMSIS. The project followed the Udemy course \"Mastering Microcontroller with Embedded Driver Development\".",
+    "sections": [
+      {
+        "title": "What it is",
+        "paragraphs": [
+          "Register definitions and drivers for GPIO, I2C, SPI, USART and RCC, written directly against the registers in the datasheet. The drivers support both polling and interrupt driven operation, and are tried out with small example programs on a Nucleo-F411RE board."
+        ],
+        "bullets": [
+          "GPIO with external interrupts (EXTI)",
+          "I2C master talking to an Arduino slave, in polling and interrupt mode",
+          "SPI and USART, including printf over USART2",
+          "Examples from blinking an LED to communication between the STM32 and an Arduino"
+        ]
+      },
+      {
+        "title": "What I take with me",
+        "bullets": [
+          "Reading the datasheet and reference manual and turning it into working code",
+          "Interrupt handling and state machines in communication drivers",
+          "Structuring a C project with its own drivers, examples and a Makefile"
+        ]
+      }
+    ],
+    "links": ["Source code on GitHub", "The Udemy course", "Course certificate"]
+  }
+}

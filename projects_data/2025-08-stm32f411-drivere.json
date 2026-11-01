@@ -1,0 +1,34 @@
+{
+  "id": "2025-08-stm32f411-drivere",
+  "title": "Drivere for STM32F411RE i bar C",
+  "category": "hobby",
+  "isProject": true,
+  "start": "2025-08",
+  "shortDescription": "Drivere for GPIO, I2C, SPI og USART til STM32F411RE, skrevet fra bunnen av i C uten HAL, med eksempelprogrammer. Laget mens jeg tok et Udemy-kurs i driverutvikling.",
+  "tags": [
+    "C",
+    "STM32",
+    "embedded",
+    "I2C",
+    "SPI",
+    "USART"
+  ],
+  "importance": 60,
+  "projectPage": "projects/2025-08-stm32f411-drivere",
+  "generated": true,
+  "label": "STM32-drivere",
+  "end": "2025-10",
+  "en": {
+    "title": "Bare-metal drivers for the STM32F411RE in C",
+    "label": "STM32 drivers",
+    "shortDescription": "GPIO, I2C, SPI and USART drivers for the STM32F411RE written from scratch in C without HAL, with example programs. Made while taking a Udemy course on driver development.",
+    "tags": [
+      "C",
+      "STM32",
+      "embedded",
+      "I2C",
+      "SPI",
+      "USART"
+    ]
+  }
+}
