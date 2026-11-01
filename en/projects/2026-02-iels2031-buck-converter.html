@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- generated:import_reports -->
+<!-- Denne siden er laget av tools/import_reports.py. Fjern merket over for å redigere den selv. -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IELS2031 Buck converter, 5 V to 1 V · Temmam Nabil Altaie</title>
+<meta name="description" content="Synchronous buck converter with the LTC3807 regulating 5 V down to 1 V within ±30 mV for loads from 0.5 to 100 ohm. Two PCB revisions, where the first failed because of a wiring error. Group project of two.">
+<meta name="theme-color" content="#0a0d18">
+<link rel="icon" href="../../icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css?v=c503b7e6">
+<!-- seo:start -->
+<link rel="canonical" href="https://temmamaltaie.no/en/projects/2026-02-iels2031-buck-converter.html">
+<link rel="alternate" hreflang="nb" href="https://temmamaltaie.no/projects/2026-02-iels2031-buck-converter.html">
+<link rel="alternate" hreflang="en" href="https://temmamaltaie.no/en/projects/2026-02-iels2031-buck-converter.html">
+<link rel="alternate" hreflang="x-default" href="https://temmamaltaie.no/projects/2026-02-iels2031-buck-converter.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="nb_NO">
+<meta property="og:site_name" content="Temmam Nabil Altaie">
+<meta property="og:title" content="IELS2031 Buck converter, 5 V to 1 V · Temmam Nabil Altaie">
+<meta property="og:description" content="Synchronous buck converter with the LTC3807 regulating 5 V down to 1 V within ±30 mV for loads from 0.5 to 100 ohm. Two PCB revisions, where the first failed because of a wiring error. Group project of two.">
+<meta property="og:url" content="https://temmamaltaie.no/en/projects/2026-02-iels2031-buck-converter.html">
+<meta property="og:image" content="https://temmamaltaie.no/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<!-- seo:end -->
+</head>
+<body>
+
+<header class="nav">
+  <a class="logo" href="../#top"><span class="logo-mark">TA</span> <span class="logo-text">temmam.altaie</span></a>
+  <nav class="open-static">
+    <a href="../#work">Work</a>
+    <a href="../#timeline">Timeline</a>
+    <a href="../#about">About</a>
+    <a href="../#contact">Contact</a>
+    <a class="lang-switch" href="../../projects/2026-02-iels2031-buck-converter.html" hreflang="nb" lang="nb" title="Norsk versjon">NO</a>
+  </nav>
+</header>
+
+<main class="project-page">
+  <a class="back" href="../#timeline">← back to the timeline</a>
+
+  <div class="project-meta-row"><span class="cat-tag">school</span> <span class="project-year">2026</span></div>
+
+  <h1 class="project-title">IELS2031 Buck converter, 5 V to 1 V</h1>
+  <p class="project-lede">Design, simulation, build and test of a synchronous buck converter in the course IELS2031 Electronics Design at NTNU. Group project of two.</p>
+  <ul class="tags"><li>LTC3807</li><li>buck converter</li><li>KiCad</li><li>LTspice</li><li>PCB</li></ul>
+  <figure class="fig fig-hero"><a class="tile" href="../../reports/2026-02-iels2031-buck-converter/img/tidsdomene-rev2.webp" data-caption="Measured output voltage in revision 2 for the four loads, over two periods." style="--bg:#ffffff;--fit:contain;--src:url(../../reports/2026-02-iels2031-buck-converter/img/tidsdomene-rev2.webp)"><img src="../../reports/2026-02-iels2031-buck-converter/img/tidsdomene-rev2.webp" alt="Measured output voltage in revision 2 for the four loads, over two periods." width="1008" height="677"></a><figcaption>Measured output voltage in revision 2 for the four loads, over two periods.</figcaption></figure>
+
+  <section class="project-section">
+    <h2>The task</h2>
+    <p>Regulate a 5 V input down to 1 V, with the output voltage within ±30 mV and ripple within ±30 mV. The requirements apply to four loads: 0.5, 1, 10 and 100 ohm, that is load currents from 10 mA to 2 A.</p><p>The circuit is built around the LTC3807, a synchronous buck controller from Analog Devices, with a switching frequency of 350 kHz.</p>
+  </section>
+
+  <section class="project-section">
+    <h2>Revision 1 and debugging</h2>
+    <p>The first revision worked at light load, but the output voltage collapsed to around 0.4 V at the 0.5 ohm load. The measurements did not match the calculations, so the fault was most likely in the implementation, not in the dimensioning.</p><p>Reviewing the layout, we found a wiring error between the gate of the top MOSFET and the drain of the bottom MOSFET. It prevented correct control of the switch node, and the current went through the body diodes instead, which causes large losses at high current.</p>
+  </section>
+
+  <section class="project-section">
+    <h2>Revision 2</h2>
+    <p>The layout was redrawn in KiCad with the correct wiring, a compact hot loop and better return currents. Component values were also adjusted for more margin: inductor 4.7 µH, output capacitor 220 µF and sense resistor 4 mΩ.</p><ul><li>All four loads meet both the voltage requirement and the ripple requirement</li><li>Measured ripple (Vpp/2) between 4.5 and 23.9 mV</li><li>Highest efficiency 85.4 % at 1 ohm</li><li>The gap between simulated and measured ripple is partly due to Burst Mode and parasitic effects not included in the simulation</li></ul>
+  </section>
+
+  <section class="project-section">
+    <h2>What I take with me</h2>
+    <ul><li>Correct MOSFET wiring, a compact layout and control of the current loops decide whether a switching regulator works in practice</li><li>Testing against calculations and simulation makes it possible to tell layout errors from dimensioning errors</li><li>Iterating over two PCB revisions, from diagnosis to validation</li></ul>
+  </section>
+
+  <section class="project-section">
+    <h2>Figures</h2>
+    <div class="gallery"><figure class="fig"><a class="tile" href="../../reports/2026-02-iels2031-buck-converter/img/feilkobling.webp" data-caption="The wiring error in revision 1 (left) and the correct wiring in revision 2 (right)." style="--bg:#ffffff;--fit:contain"><img src="../../reports/2026-02-iels2031-buck-converter/img/feilkobling.webp" alt="The wiring error in revision 1 (left) and the correct wiring in revision 2 (right)." width="1224" height="950" loading="lazy"></a><figcaption>The wiring error in revision 1 (left) and the correct wiring in revision 2 (right).</figcaption></figure><figure class="fig"><a class="tile" href="../../reports/2026-02-iels2031-buck-converter/img/tidsdomene-rev1.webp" data-caption="Revision 1: the output voltage collapses to around 0.4 V at the 0.5 ohm load." style="--bg:#ffffff;--fit:contain"><img src="../../reports/2026-02-iels2031-buck-converter/img/tidsdomene-rev1.webp" alt="Revision 1: the output voltage collapses to around 0.4 V at the 0.5 ohm load." width="1009" height="678" loading="lazy"></a><figcaption>Revision 1: the output voltage collapses to around 0.4 V at the 0.5 ohm load.</figcaption></figure><figure class="fig"><a class="tile" href="../../reports/2026-02-iels2031-buck-converter/img/hot-loop.webp" data-caption="Hot loop (red) and low-side loop (blue) in a buck converter." style="--bg:#ffffff;--fit:contain"><img src="../../reports/2026-02-iels2031-buck-converter/img/hot-loop.webp" alt="Hot loop (red) and low-side loop (blue) in a buck converter." width="1600" height="736" loading="lazy"></a><figcaption>Hot loop (red) and low-side loop (blue) in a buck converter.</figcaption></figure><figure class="fig"><a class="tile" href="../../reports/2026-02-iels2031-buck-converter/img/layout-rev2.webp" data-caption="PCB layout, top layer, revision 2." style="--bg:#0b0f20;--fit:contain"><img src="../../reports/2026-02-iels2031-buck-converter/img/layout-rev2.webp" alt="PCB layout, top layer, revision 2." width="964" height="771" loading="lazy"></a><figcaption>PCB layout, top layer, revision 2.</figcaption></figure><figure class="fig"><a class="tile" href="../../reports/2026-02-iels2031-buck-converter/img/simulering.webp" data-caption="Simulated output voltage in LTspice for the four loads." style="--bg:#ffffff;--fit:contain"><img src="../../reports/2026-02-iels2031-buck-converter/img/simulering.webp" alt="Simulated output voltage in LTspice for the four loads." width="1008" height="678" loading="lazy"></a><figcaption>Simulated output voltage in LTspice for the four loads.</figcaption></figure><figure class="fig"><a class="tile" href="../../reports/2026-02-iels2031-buck-converter/img/tidsdomene-1ohm.webp" data-caption="1 ohm load in revision 2, where the efficiency was highest (85.4 %)." style="--bg:#ffffff;--fit:contain"><img src="../../reports/2026-02-iels2031-buck-converter/img/tidsdomene-1ohm.webp" alt="1 ohm load in revision 2, where the efficiency was highest (85.4 %)." width="1008" height="677" loading="lazy"></a><figcaption>1 ohm load in revision 2, where the efficiency was highest (85.4 %).</figcaption></figure></div>
+  </section>
+
+  <section class="project-section">
+    <h2>Links</h2>
+    <p class="project-links"><a class="btn" href="https://www.youtube.com/watch?v=BG9fH19cnxo" target="_blank" rel="noopener">Video on YouTube ↗</a></p>
+  </section>
+
+  <a class="back" href="../#timeline">← back to the timeline</a>
+</main>
+
+<footer>
+  <span>© <span id="year">2026</span> Temmam Nabil Altaie</span>
+  <span>handmade · no framework · served by GitHub Pages</span>
+</footer>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+<script src="../../lightbox.js?v=da3308d5"></script>
+</body>
+</html>

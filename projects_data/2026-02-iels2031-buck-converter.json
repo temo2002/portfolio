@@ -1,0 +1,32 @@
+{
+  "id": "2026-02-iels2031-buck-converter",
+  "title": "IELS2031 Nedstigningsomformer 5 V til 1 V",
+  "category": "school",
+  "isProject": true,
+  "start": "2026-02",
+  "shortDescription": "Synkron buck converter med LTC3807 som regulerer 5 V ned til 1 V innenfor ±30 mV ved laster fra 0,5 til 100 ohm. To PCB-revisjoner, der den første feilet på grunn av en koblingsfeil. Gruppeprosjekt på to.",
+  "tags": [
+    "LTC3807",
+    "buck converter",
+    "KiCad",
+    "LTspice",
+    "PCB"
+  ],
+  "importance": 70,
+  "projectPage": "projects/2026-02-iels2031-buck-converter",
+  "generated": true,
+  "label": "IELS2031 Buck converter",
+  "end": "2026-05",
+  "en": {
+    "title": "IELS2031 Buck converter, 5 V to 1 V",
+    "label": "IELS2031 Buck converter",
+    "shortDescription": "Synchronous buck converter with the LTC3807 regulating 5 V down to 1 V within ±30 mV for loads from 0.5 to 100 ohm. Two PCB revisions, where the first failed because of a wiring error. Group project of two.",
+    "tags": [
+      "LTC3807",
+      "buck converter",
+      "KiCad",
+      "LTspice",
+      "PCB"
+    ]
+  }
+}

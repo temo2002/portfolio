@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+<!-- generated:import_reports -->
+<!-- Denne siden er laget av tools/import_reports.py. Fjern merket over for å redigere den selv. -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IELS2031 Nedstigningsomformer 5 V til 1 V · Temmam Nabil Altaie</title>
+<meta name="description" content="Synkron buck converter med LTC3807 som regulerer 5 V ned til 1 V innenfor ±30 mV ved laster fra 0,5 til 100 ohm. To PCB-revisjoner, der den første feilet på grunn av en koblingsfeil. Gruppeprosjekt på to.">
+<meta name="theme-color" content="#0a0d18">
+<link rel="icon" href="../icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css?v=c503b7e6">
+<!-- seo:start -->
+<link rel="canonical" href="https://temmamaltaie.no/projects/2026-02-iels2031-buck-converter.html">
+<link rel="alternate" hreflang="nb" href="https://temmamaltaie.no/projects/2026-02-iels2031-buck-converter.html">
+<link rel="alternate" hreflang="en" href="https://temmamaltaie.no/en/projects/2026-02-iels2031-buck-converter.html">
+<link rel="alternate" hreflang="x-default" href="https://temmamaltaie.no/projects/2026-02-iels2031-buck-converter.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="nb_NO">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:site_name" content="Temmam Nabil Altaie">
+<meta property="og:title" content="IELS2031 Nedstigningsomformer 5 V til 1 V · Temmam Nabil Altaie">
+<meta property="og:description" content="Synkron buck converter med LTC3807 som regulerer 5 V ned til 1 V innenfor ±30 mV ved laster fra 0,5 til 100 ohm. To PCB-revisjoner, der den første feilet på grunn av en koblingsfeil. Gruppeprosjekt på to.">
+<meta property="og:url" content="https://temmamaltaie.no/projects/2026-02-iels2031-buck-converter.html">
+<meta property="og:image" content="https://temmamaltaie.no/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<!-- seo:end -->
+</head>
+<body>
+
+<header class="nav">
+  <a class="logo" href="../#top"><span class="logo-mark">TA</span> <span class="logo-text">temmam.altaie</span></a>
+  <nav class="open-static">
+    <a href="../#arbeid">Arbeid</a>
+    <a href="../#tidslinje">Tidslinje</a>
+    <a href="../#om">Om meg</a>
+    <a href="../#kontakt">Kontakt</a>
+    <a class="lang-switch" href="../en/projects/2026-02-iels2031-buck-converter.html" hreflang="en" lang="en" title="English version">EN</a>
+  </nav>
+</header>
+
+<main class="project-page">
+  <a class="back" href="../#tidslinje">← tilbake til tidslinjen</a>
+
+  <div class="project-meta-row"><span class="cat-tag">skole</span> <span class="project-year">2026</span></div>
+
+  <h1 class="project-title">IELS2031 Nedstigningsomformer 5 V til 1 V</h1>
+  <p class="project-lede">Design, simulering, bygging og testing av en synkron nedstigningsomformer i emnet IELS2031 Elektronikkonstruksjon ved NTNU. Gruppeprosjekt på to.</p>
+  <ul class="tags"><li>LTC3807</li><li>buck converter</li><li>KiCad</li><li>LTspice</li><li>PCB</li></ul>
+  <figure class="fig fig-hero"><a class="tile" href="../reports/2026-02-iels2031-buck-converter/img/tidsdomene-rev2.webp" data-caption="Målt utgangsspenning i revisjon 2 for de fire lastene, over to perioder." style="--bg:#ffffff;--fit:contain;--src:url(../reports/2026-02-iels2031-buck-converter/img/tidsdomene-rev2.webp)"><img src="../reports/2026-02-iels2031-buck-converter/img/tidsdomene-rev2.webp" alt="Målt utgangsspenning i revisjon 2 for de fire lastene, over to perioder." width="1008" height="677"></a><figcaption>Målt utgangsspenning i revisjon 2 for de fire lastene, over to perioder.</figcaption></figure>
+
+  <section class="project-section">
+    <h2>Oppgaven</h2>
+    <p>Regulere en inngangsspenning på 5 V ned til 1 V, med utgangsspenning innenfor ±30 mV og ripple på ±30 mV. Kravene gjelder for fire laster: 0,5, 1, 10 og 100 ohm, altså laststrømmer fra 10 mA til 2 A.</p><p>Kretsen er bygget rundt LTC3807, en synkron buck-kontroller fra Analog Devices, med svitsjefrekvens på 350 kHz.</p>
+  </section>
+
+  <section class="project-section">
+    <h2>Revisjon 1 og feilsøking</h2>
+    <p>Første revisjon virket ved lett last, men utgangsspenningen kollapset til rundt 0,4 V ved lasten på 0,5 ohm. Målingene stemte ikke med beregningene, så feilen lå trolig i implementeringen, ikke i dimensjoneringen.</p><p>Ved gjennomgang av layouten fant vi en koblingsfeil mellom gaten til topp-MOSFET-en og drainen til bunn-MOSFET-en. Det hindret riktig styring av switch-noden, og strømmen gikk i stedet gjennom body-diodene, som gir store tap ved høy strøm.</p>
+  </section>
+
+  <section class="project-section">
+    <h2>Revisjon 2</h2>
+    <p>Layouten ble tegnet om i KiCad med riktig kobling, kompakt hot loop og bedre returstrømmer. Komponentverdiene ble også justert for større margin: spole 4,7 µH, utgangskondensator 220 µF og sensemotstand 4 mΩ.</p><ul><li>Alle fire laster oppfyller både spenningskravet og ripplekravet</li><li>Målt ripple (Vpp/2) mellom 4,5 og 23,9 mV</li><li>Høyeste effektivitet 85,4 % ved 1 ohm</li><li>Avviket mellom simulert og målt ripple skyldes blant annet Burst Mode og parasittiske effekter som ikke er med i simuleringen</li></ul>
+  </section>
+
+  <section class="project-section">
+    <h2>Hva jeg tar med meg</h2>
+    <ul><li>Riktig MOSFET-kobling, kompakt layout og kontroll på strømsløyfene avgjør om en svitsjeregulator fungerer i praksis</li><li>Å teste mot beregninger og simulering gjør det mulig å skille layoutfeil fra dimensjoneringsfeil</li><li>Iterasjon over to revisjoner av PCB, fra diagnose til validering</li></ul>
+  </section>
+
+  <section class="project-section">
+    <h2>Figurer</h2>
+    <div class="gallery"><figure class="fig"><a class="tile" href="../reports/2026-02-iels2031-buck-converter/img/feilkobling.webp" data-caption="Koblingsfeilen i revisjon 1 (til venstre) og riktig kobling i revisjon 2 (til høyre)." style="--bg:#ffffff;--fit:contain"><img src="../reports/2026-02-iels2031-buck-converter/img/feilkobling.webp" alt="Koblingsfeilen i revisjon 1 (til venstre) og riktig kobling i revisjon 2 (til høyre)." width="1224" height="950" loading="lazy"></a><figcaption>Koblingsfeilen i revisjon 1 (til venstre) og riktig kobling i revisjon 2 (til høyre).</figcaption></figure><figure class="fig"><a class="tile" href="../reports/2026-02-iels2031-buck-converter/img/tidsdomene-rev1.webp" data-caption="Revisjon 1: utgangsspenningen kollapser til rundt 0,4 V ved lasten på 0,5 ohm." style="--bg:#ffffff;--fit:contain"><img src="../reports/2026-02-iels2031-buck-converter/img/tidsdomene-rev1.webp" alt="Revisjon 1: utgangsspenningen kollapser til rundt 0,4 V ved lasten på 0,5 ohm." width="1009" height="678" loading="lazy"></a><figcaption>Revisjon 1: utgangsspenningen kollapser til rundt 0,4 V ved lasten på 0,5 ohm.</figcaption></figure><figure class="fig"><a class="tile" href="../reports/2026-02-iels2031-buck-converter/img/hot-loop.webp" data-caption="Hot loop (rød) og low-side loop (blå) i en buck converter." style="--bg:#ffffff;--fit:contain"><img src="../reports/2026-02-iels2031-buck-converter/img/hot-loop.webp" alt="Hot loop (rød) og low-side loop (blå) i en buck converter." width="1600" height="736" loading="lazy"></a><figcaption>Hot loop (rød) og low-side loop (blå) i en buck converter.</figcaption></figure><figure class="fig"><a class="tile" href="../reports/2026-02-iels2031-buck-converter/img/layout-rev2.webp" data-caption="PCB-layout, topplag, revisjon 2." style="--bg:#0b0f20;--fit:contain"><img src="../reports/2026-02-iels2031-buck-converter/img/layout-rev2.webp" alt="PCB-layout, topplag, revisjon 2." width="964" height="771" loading="lazy"></a><figcaption>PCB-layout, topplag, revisjon 2.</figcaption></figure><figure class="fig"><a class="tile" href="../reports/2026-02-iels2031-buck-converter/img/simulering.webp" data-caption="Simulert utgangsspenning i LTspice for de fire lastene." style="--bg:#ffffff;--fit:contain"><img src="../reports/2026-02-iels2031-buck-converter/img/simulering.webp" alt="Simulert utgangsspenning i LTspice for de fire lastene." width="1008" height="678" loading="lazy"></a><figcaption>Simulert utgangsspenning i LTspice for de fire lastene.</figcaption></figure><figure class="fig"><a class="tile" href="../reports/2026-02-iels2031-buck-converter/img/tidsdomene-1ohm.webp" data-caption="Last på 1 ohm i revisjon 2, der effektiviteten var høyest (85,4 %)." style="--bg:#ffffff;--fit:contain"><img src="../reports/2026-02-iels2031-buck-converter/img/tidsdomene-1ohm.webp" alt="Last på 1 ohm i revisjon 2, der effektiviteten var høyest (85,4 %)." width="1008" height="677" loading="lazy"></a><figcaption>Last på 1 ohm i revisjon 2, der effektiviteten var høyest (85,4 %).</figcaption></figure></div>
+  </section>
+
+  <section class="project-section">
+    <h2>Lenker</h2>
+    <p class="project-links"><a class="btn" href="https://www.youtube.com/watch?v=BG9fH19cnxo" target="_blank" rel="noopener">Video på YouTube ↗</a></p>
+  </section>
+
+  <a class="back" href="../#tidslinje">← tilbake til tidslinjen</a>
+</main>
+
+<footer>
+  <span>© <span id="year">2026</span> Temmam Nabil Altaie</span>
+  <span>håndlaget · ingen rammeverk · servert av GitHub Pages</span>
+</footer>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+<script src="../lightbox.js?v=da3308d5"></script>
+</body>
+</html>

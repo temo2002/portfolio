@@ -1,0 +1,180 @@
+{
+  "title": "IELS2031 Nedstigningsomformer 5 V til 1 V",
+  "label": "IELS2031 Buck converter",
+  "category": "school",
+  "isProject": true,
+  "start": "2026-02",
+  "end": "2026-05",
+  "importance": 70,
+  "shortDescription": "Synkron buck converter med LTC3807 som regulerer 5 V ned til 1 V innenfor ±30 mV ved laster fra 0,5 til 100 ohm. To PCB-revisjoner, der den første feilet på grunn av en koblingsfeil. Gruppeprosjekt på to.",
+  "tags": [
+    "LTC3807",
+    "buck converter",
+    "KiCad",
+    "LTspice",
+    "PCB"
+  ],
+  "noPdf": true,
+  "lede": "Design, simulering, bygging og testing av en synkron nedstigningsomformer i emnet IELS2031 Elektronikkonstruksjon ved NTNU. Gruppeprosjekt på to.",
+  "hero": {
+    "file": "img/tidsdomene-rev2.webp",
+    "w": 1008,
+    "h": 677,
+    "bg": "#ffffff",
+    "fit": "contain",
+    "caption": "Målt utgangsspenning i revisjon 2 for de fire lastene, over to perioder."
+  },
+  "sections": [
+    {
+      "title": "Oppgaven",
+      "paragraphs": [
+        "Regulere en inngangsspenning på 5 V ned til 1 V, med utgangsspenning innenfor ±30 mV og ripple på ±30 mV. Kravene gjelder for fire laster: 0,5, 1, 10 og 100 ohm, altså laststrømmer fra 10 mA til 2 A.",
+        "Kretsen er bygget rundt LTC3807, en synkron buck-kontroller fra Analog Devices, med svitsjefrekvens på 350 kHz."
+      ]
+    },
+    {
+      "title": "Revisjon 1 og feilsøking",
+      "paragraphs": [
+        "Første revisjon virket ved lett last, men utgangsspenningen kollapset til rundt 0,4 V ved lasten på 0,5 ohm. Målingene stemte ikke med beregningene, så feilen lå trolig i implementeringen, ikke i dimensjoneringen.",
+        "Ved gjennomgang av layouten fant vi en koblingsfeil mellom gaten til topp-MOSFET-en og drainen til bunn-MOSFET-en. Det hindret riktig styring av switch-noden, og strømmen gikk i stedet gjennom body-diodene, som gir store tap ved høy strøm."
+      ]
+    },
+    {
+      "title": "Revisjon 2",
+      "paragraphs": [
+        "Layouten ble tegnet om i KiCad med riktig kobling, kompakt hot loop og bedre returstrømmer. Komponentverdiene ble også justert for større margin: spole 4,7 µH, utgangskondensator 220 µF og sensemotstand 4 mΩ."
+      ],
+      "bullets": [
+        "Alle fire laster oppfyller både spenningskravet og ripplekravet",
+        "Målt ripple (Vpp/2) mellom 4,5 og 23,9 mV",
+        "Høyeste effektivitet 85,4 % ved 1 ohm",
+        "Avviket mellom simulert og målt ripple skyldes blant annet Burst Mode og parasittiske effekter som ikke er med i simuleringen"
+      ]
+    },
+    {
+      "title": "Hva jeg tar med meg",
+      "bullets": [
+        "Riktig MOSFET-kobling, kompakt layout og kontroll på strømsløyfene avgjør om en svitsjeregulator fungerer i praksis",
+        "Å teste mot beregninger og simulering gjør det mulig å skille layoutfeil fra dimensjoneringsfeil",
+        "Iterasjon over to revisjoner av PCB, fra diagnose til validering"
+      ]
+    }
+  ],
+  "figures": [
+    {
+      "file": "img/feilkobling.webp",
+      "w": 1224,
+      "h": 950,
+      "bg": "#ffffff",
+      "fit": "contain",
+      "caption": "Koblingsfeilen i revisjon 1 (til venstre) og riktig kobling i revisjon 2 (til høyre)."
+    },
+    {
+      "file": "img/tidsdomene-rev1.webp",
+      "w": 1009,
+      "h": 678,
+      "bg": "#ffffff",
+      "fit": "contain",
+      "caption": "Revisjon 1: utgangsspenningen kollapser til rundt 0,4 V ved lasten på 0,5 ohm."
+    },
+    {
+      "file": "img/hot-loop.webp",
+      "w": 1600,
+      "h": 736,
+      "bg": "#ffffff",
+      "fit": "contain",
+      "caption": "Hot loop (rød) og low-side loop (blå) i en buck converter."
+    },
+    {
+      "file": "img/layout-rev2.webp",
+      "w": 964,
+      "h": 771,
+      "bg": "#0b0f20",
+      "fit": "contain",
+      "caption": "PCB-layout, topplag, revisjon 2."
+    },
+    {
+      "file": "img/simulering.webp",
+      "w": 1008,
+      "h": 678,
+      "bg": "#ffffff",
+      "fit": "contain",
+      "caption": "Simulert utgangsspenning i LTspice for de fire lastene."
+    },
+    {
+      "file": "img/tidsdomene-1ohm.webp",
+      "w": 1008,
+      "h": 677,
+      "bg": "#ffffff",
+      "fit": "contain",
+      "caption": "Last på 1 ohm i revisjon 2, der effektiviteten var høyest (85,4 %)."
+    }
+  ],
+  "links": [
+    {
+      "label": "Video på YouTube",
+      "url": "https://www.youtube.com/watch?v=BG9fH19cnxo"
+    }
+  ],
+  "en": {
+    "title": "IELS2031 Buck converter, 5 V to 1 V",
+    "label": "IELS2031 Buck converter",
+    "shortDescription": "Synchronous buck converter with the LTC3807 regulating 5 V down to 1 V within ±30 mV for loads from 0.5 to 100 ohm. Two PCB revisions, where the first failed because of a wiring error. Group project of two.",
+    "tags": [
+      "LTC3807",
+      "buck converter",
+      "KiCad",
+      "LTspice",
+      "PCB"
+    ],
+    "lede": "Design, simulation, build and test of a synchronous buck converter in the course IELS2031 Electronics Design at NTNU. Group project of two.",
+    "sections": [
+      {
+        "title": "The task",
+        "paragraphs": [
+          "Regulate a 5 V input down to 1 V, with the output voltage within ±30 mV and ripple within ±30 mV. The requirements apply to four loads: 0.5, 1, 10 and 100 ohm, that is load currents from 10 mA to 2 A.",
+          "The circuit is built around the LTC3807, a synchronous buck controller from Analog Devices, with a switching frequency of 350 kHz."
+        ]
+      },
+      {
+        "title": "Revision 1 and debugging",
+        "paragraphs": [
+          "The first revision worked at light load, but the output voltage collapsed to around 0.4 V at the 0.5 ohm load. The measurements did not match the calculations, so the fault was most likely in the implementation, not in the dimensioning.",
+          "Reviewing the layout, we found a wiring error between the gate of the top MOSFET and the drain of the bottom MOSFET. It prevented correct control of the switch node, and the current went through the body diodes instead, which causes large losses at high current."
+        ]
+      },
+      {
+        "title": "Revision 2",
+        "paragraphs": [
+          "The layout was redrawn in KiCad with the correct wiring, a compact hot loop and better return currents. Component values were also adjusted for more margin: inductor 4.7 µH, output capacitor 220 µF and sense resistor 4 mΩ."
+        ],
+        "bullets": [
+          "All four loads meet both the voltage requirement and the ripple requirement",
+          "Measured ripple (Vpp/2) between 4.5 and 23.9 mV",
+          "Highest efficiency 85.4 % at 1 ohm",
+          "The gap between simulated and measured ripple is partly due to Burst Mode and parasitic effects not included in the simulation"
+        ]
+      },
+      {
+        "title": "What I take with me",
+        "bullets": [
+          "Correct MOSFET wiring, a compact layout and control of the current loops decide whether a switching regulator works in practice",
+          "Testing against calculations and simulation makes it possible to tell layout errors from dimensioning errors",
+          "Iterating over two PCB revisions, from diagnosis to validation"
+        ]
+      }
+    ],
+    "links": [
+      "Video on YouTube"
+    ],
+    "captions": {
+      "img/tidsdomene-rev2.webp": "Measured output voltage in revision 2 for the four loads, over two periods.",
+      "img/feilkobling.webp": "The wiring error in revision 1 (left) and the correct wiring in revision 2 (right).",
+      "img/tidsdomene-rev1.webp": "Revision 1: the output voltage collapses to around 0.4 V at the 0.5 ohm load.",
+      "img/hot-loop.webp": "Hot loop (red) and low-side loop (blue) in a buck converter.",
+      "img/layout-rev2.webp": "PCB layout, top layer, revision 2.",
+      "img/simulering.webp": "Simulated output voltage in LTspice for the four loads.",
+      "img/tidsdomene-1ohm.webp": "1 ohm load in revision 2, where the efficiency was highest (85.4 %)."
+    }
+  }
+}
