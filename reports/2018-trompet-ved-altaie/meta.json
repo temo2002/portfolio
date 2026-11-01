@@ -6,35 +6,93 @@
   "start": "2018",
   "end": "present",
   "status": "ongoing",
-  "types": ["musikk"],
+  "types": [
+    "musikk"
+  ],
   "importance": 70,
   "shortDescription": "Egen virksomhet med trompetopptredener i begravelser, bryllup og gudstjenester.",
-  "tags": ["musikk", "gründer", "seremonier"],
+  "tags": [
+    "musikk",
+    "solist",
+    "gründer",
+    "seremonier"
+  ],
   "noPdf": true,
-  "lede": "Siden 2018 har jeg drevet Trompet ved Altaie, der jeg spiller trompet i begravelser, bryllup og gudstjenester.",
+  "lede": "Jeg begynte å spille trompet som fireåring og har siden spilt som solist og i korps, janitsjar og orkester, blant annet for kongeparet. Siden 2018 har jeg drevet Trompet ved Altaie, der jeg spiller i begravelser, bryllup og gudstjenester.",
   "sections": [
     {
-      "title": "Virksomheten",
+      "title": "Fra pockettrompet til solist",
       "paragraphs": [
-        "Trompet ved Altaie er min egen virksomhet. Jeg spiller i seremonier der musikken skal passe stemningen, både høytidelige og festlige anledninger."
+        "Jeg begynte å spille trompet da jeg var fire år, på en liten pockettrompet. Jeg spilte på skolekonserter og på kulturskolen, og deltok i lokale konkurranser. Underveis har jeg spilt i korps og janitsjar, men mest av alt som solist."
+      ]
+    },
+    {
+      "title": "Spilte for kongeparet",
+      "paragraphs": [
+        "Som tenåring ble jeg bedt om å spille under kongeparets hagefest på Nordland Kultursenter i Bodø, under besøket i forbindelse med 25-årsjubileet på tronen. Jeg spilte innmarsjfanfare da kongeparet kom, og underholdt gjestene etterpå. Før det hadde jeg spilt da kronprinsen åpnet Meieriet kultursenter i Leknes."
+      ]
+    },
+    {
+      "title": "Orkester og scene",
+      "bullets": [
+        "Solist sammen med Lofoten og Vesterålen orkesterforening (LVO) tre ganger, mellom 13 og 20 år",
+        "Deltok på talentprogram ved UiT som 15-åring",
+        "Utallige konserter og opptredener gjennom oppveksten"
+      ]
+    },
+    {
+      "title": "Trompet ved Altaie og i dag",
+      "paragraphs": [
+        "Trompet ved Altaie er min egen virksomhet. Jeg spiller i seremonier der musikken skal passe stemningen, både høytidelige og festlige anledninger. I dag spiller jeg også i to linjeforeningsband og jammer med en kompis."
       ]
     }
   ],
   "links": [
-    { "label": "Temmam Altaie Hornpipe (YouTube)", "url": "https://www.youtube.com/watch?v=gQ1276iFJYY" },
-    { "label": "Vidda, Meieriet Kultursenter 2020 (YouTube)", "url": "https://www.youtube.com/watch?v=u2MhqCs3C4g&list=PL3WhdoqzECLowhnnPR6eUrv8c1tzv-qHP&index=4" }
+    {
+      "label": "Temmam Altaie Hornpipe (YouTube)",
+      "url": "https://www.youtube.com/watch?v=gQ1276iFJYY"
+    },
+    {
+      "label": "Vidda, Meieriet Kultursenter 2020 (YouTube)",
+      "url": "https://www.youtube.com/watch?v=u2MhqCs3C4g&list=PL3WhdoqzECLowhnnPR6eUrv8c1tzv-qHP&index=4"
+    }
   ],
   "en": {
     "title": "Trompet ved Altaie",
     "label": "Trompet ved Altaie",
     "shortDescription": "Own business playing the trumpet at funerals, weddings and church services.",
-    "tags": ["music", "founder", "ceremonies"],
-    "lede": "Since 2018 I have run Trompet ved Altaie, playing the trumpet at funerals, weddings and church services.",
+    "tags": [
+      "music",
+      "soloist",
+      "founder",
+      "ceremonies"
+    ],
+    "lede": "I started playing the trumpet at the age of four and have played as a soloist and in marching bands, wind bands and orchestras, including for the King and Queen. Since 2018 I have run Trompet ved Altaie, playing at funerals, weddings and church services.",
     "sections": [
       {
-        "title": "The business",
+        "title": "From pocket trumpet to soloist",
         "paragraphs": [
-          "Trompet ved Altaie is my own business. I play at ceremonies where the music has to suit the mood, both solemn and festive occasions."
+          "I started playing the trumpet when I was four, on a small pocket trumpet. I played at school concerts and at the municipal school of music and arts, and took part in local competitions. Along the way I have played in marching bands and wind bands, but mostly as a soloist."
+        ]
+      },
+      {
+        "title": "Playing for the royal couple",
+        "paragraphs": [
+          "As a teenager I was asked to play at the royal couple's garden party at Nordland Kultursenter in Bodø, during their visit marking 25 years on the throne. I played an entrance fanfare as they arrived, and entertained the guests afterwards. Before that I had played when the Crown Prince opened Meieriet kultursenter in Leknes."
+        ]
+      },
+      {
+        "title": "Orchestra and stage",
+        "bullets": [
+          "Soloist with the Lofoten and Vesterålen orchestra association (LVO) three times, between the ages of 13 and 20",
+          "Took part in a talent programme at UiT at 15",
+          "Countless concerts and performances while growing up"
+        ]
+      },
+      {
+        "title": "Trompet ved Altaie and today",
+        "paragraphs": [
+          "Trompet ved Altaie is my own business. I play at ceremonies where the music has to suit the mood, both solemn and festive occasions. Today I also play in two student society bands and jam with a friend."
         ]
       }
     ],
