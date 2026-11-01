@@ -1,0 +1,206 @@
+%------------------------------------------------------------
+% CV - Temmam Nabil Altaie
+% Based on the "Jake's Resume" layout (MIT licence).
+% Compiles with pdfLaTeX. Built automatically by tools/build_cv.py.
+% The phone number is deliberately left out of this public repo.
+%------------------------------------------------------------
+
+\documentclass[a4paper,10pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[utf8]{inputenc}
+\input{glyphtounicode}
+
+\usepackage[a4paper,top=0.7cm,bottom=0.6cm,left=1.4cm,right=1.4cm]{geometry}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\pdfgentounicode=1
+
+\newcommand{\todo}[1]{\textcolor{red}{[#1]}}
+
+\newcommand{\resumeItem}[1]{
+  \item\small{#1}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{\linewidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{\linewidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}, itemsep=2pt, topsep=1pt]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.2in, itemsep=0pt, parsep=0pt, topsep=3pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-2pt}}
+
+%------------------------------------------------------------
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Temmam Nabil Altaie} \\ \vspace{1pt}
+    \small
+    \href{mailto:temmam.nabil@gmail.com}{temmam.nabil@gmail.com} $|$
+    \href{https://www.linkedin.com/in/temmam-altaie-23918329b/}{linkedin.com/in/temmam-altaie} $|$
+    \href{https://github.com/temo2002}{github.com/temo2002} $|$
+    \href{https://temmamaltaie.no}{temmamaltaie.no}
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Norwegian University of Science and Technology (NTNU)}{Trondheim, Norway}
+      {Bachelor of Engineering, Electronic Systems (after preparatory science course, 2023--2024)}{Aug 2024 -- Jun 2027}
+      \resumeItemListStart
+        \resumeItem{Grade A in all four engineering project courses}
+        \resumeItem{Completed: Electronics Design, Electronic Systems Design and Implementation I--III, Analog and Digital Electronics, Computer Networks for Instrumentation}
+        \resumeItem{Current: Embedded Systems, Advanced Sensor Systems, Radio Communication (RF analysis with the Nordic nRF54L15 as case), bachelor's thesis}
+      \resumeItemListEnd
+    \resumeSubheading
+      {Vest-Lofoten Upper Secondary School}{Leknes, Norway}
+      {Sports and Physical Education}{Aug 2018 -- Jun 2021}
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+  \resumeSubHeadingListStart
+
+    \resumeProjectHeading
+      {\textbf{\href{https://github.com/temo2002/IELS2003_BlindeProsjekt}{Wearable Object Detection for the Blind}} $|$ \emph{Python, YOLOv8, Raspberry Pi, ESP32}}{Jan 2026 -- Jun 2026}
+      \resumeItemListStart
+        \resumeItem{Led software in a team of three; real-time YOLOv8n object detection on a Raspberry Pi 5 at 6--8 FPS}
+        \resumeItem{Mapped object position to seven zones, sent over UDP to an ESP32-C3 driving a haptic belt in under 100\,ms}
+        \resumeItem{Added offline Norwegian speech output (Piper) and speech recognition (Whisper) in multithreaded Python}
+      \resumeItemListEnd
+
+    \resumeProjectHeading
+      {\textbf{Bare-Metal Peripheral Drivers for STM32F411} $|$ \emph{C, ARM Cortex-M4, STM32CubeIDE}}{Sep 2025 -- Oct 2025}
+      \resumeItemListStart
+        \resumeItem{Wrote register-level drivers for GPIO, I\textsuperscript{2}C, SPI, USART and clock configuration without vendor HAL libraries, about 4\,700 lines of C including a custom device header with register maps}
+        \resumeItem{Implemented both blocking and interrupt-driven transfers with NVIC configuration and callback events; verified with test applications}
+      \resumeItemListEnd
+
+    \resumeProjectHeading
+      {\textbf{ECG Measurement System} $|$ \emph{LTspice, KiCad, ESP32, C++, JavaScript}}{Aug 2025 -- Nov 2025}
+      \resumeItemListStart
+        \resumeItem{Designed an analog front end with 1000\,V/V gain and 0.03--16\,Hz bandwidth; verified in LTspice and on prototype}
+        \resumeItem{Implemented R-peak detection on an ESP32 with a 16-bit I\textsuperscript{2}C ADC; heart rate within 1--3 BPM of a reference}
+        \resumeItem{Streamed live data over WebSocket to a web dashboard; four-layer PCB in KiCad}
+      \resumeItemListEnd
+
+    \resumeProjectHeading
+      {\textbf{Offline Voice Assistant for Smart Homes} $|$ \emph{ESP32, Python, Docker, Home Assistant}}{Jan 2025 -- Jun 2025}
+      \resumeItemListStart
+        \resumeItem{Streamed I\textsuperscript{2}S microphone audio from an ESP32 over WebSocket to local speech-to-text, triggering Home Assistant automations without cloud services; under 5\,s response and up to 90\,\% accuracy}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Programming}{: C, C++, Python, JavaScript, HTML, \LaTeX} \\
+     \textbf{Hardware}{: ESP32, STM32, AVR, Raspberry Pi, analog filter and amplifier design, PCB layout} \\
+     \textbf{Interfaces}{: I\textsuperscript{2}C, SPI, I\textsuperscript{2}S, UART, PWM, UDP, WebSocket, Wi-Fi} \\
+     \textbf{Tools}{: KiCad, LTspice, Git, Linux, Docker, oscilloscope, signal generator} \\
+     \textbf{Languages}{: Norwegian (native), English (fluent), Arabic}
+    }}
+ \end{itemize}
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Learning Assistant}{Jan 2026 -- Present}
+      {NTNU, Department of Electronic Systems}{Trondheim, Norway}
+      \resumeItemListStart
+        \resumeItem{Supervise lab and project work in Electronic System Design and Implementation I and II}
+        \resumeItem{Planned and taught crash courses in C programming and analog filter design for about 17 students}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Substitute Teacher}{Jan 2023 -- Jun 2023}
+      {Leknes Lower Secondary School}{Leknes, Norway}
+
+    \resumeSubheading
+      {Conscript Service, Signal Horn Player}{Sep 2021 -- Sep 2022}
+      {His Majesty the King's Guard, 3rd Company (Band and Drill)}{Oslo, Norway}
+      \resumeItemListStart
+        \resumeItem{Signal horn in the music troop of a unit built on discipline, order and precision; assignments included the Platinum Jubilee in Windsor, a Balkan tour, military tattoos in Basel and Oslo, and events for heads of state}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Part-Time Employee}{Jun 2021 -- Present}
+      {Deli de Luca (Esso station), seasonal}{Leknes, Norway}
+
+    \resumeSubheading
+      {Founder and Trumpet Player}{Jan 2018 -- Present}
+      {Trompet ved Altaie (sole proprietorship)}{Norway}
+      \resumeItemListStart
+        \resumeItem{Run a small business performing at weddings, funerals and church services; handle clients and marketing}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------LEADERSHIP-----------
+\section{Leadership}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Vice President}{Jan 2026 -- Present}
+      {NTNUI Calisthenics}{Trondheim, Norway}
+      \resumeItemListStart
+        \resumeItem{Share responsibility for a club of 200+ athletes and coordinate a team of 14 coaches}
+        \resumeItem{Planned a training camp in Spain for 40 participants and wrote funding applications to the NTNUI board}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Class Representative and Reference Group Member}{Aug 2024 -- Present}
+      {NTNU, Electronic Systems}{Trondheim, Norway}
+      \resumeItemListStart
+        \resumeItem{Represent the class in regular meetings with faculty and teaching staff to improve courses}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+\end{document}

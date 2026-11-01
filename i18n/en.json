@@ -18,6 +18,8 @@
   "nav_about": "About",
   "nav_tools": "Tools",
   "nav_contact": "Contact",
+  "nav_cv": "CV",
+  "cv_href": "../cv/Temmam_Altaie_CV.pdf",
   "hero_eyebrow": "electronic systems design · NTNU Trondheim",
   "hero_lead": "Electronics student who likes explaining what is hard, building what is useful and playing the trumpet when it matters.",
   "typed_prefix": "Right now I am thinking about ",
