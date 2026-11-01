@@ -37,7 +37,7 @@ section { padding: 64px 0 8px; }
 .nav nav a:hover { color: var(--text); }
 
 .eyebrow, .status, .card-title, .scope-label, dt, .muted.small {
-  font-family: var(--mono); font-size: 12px; letter-spacing: .04em; text-transform: lowercase;
+  font-family: var(--mono); font-size: 12px; letter-spacing: .04em;
 }
 .eyebrow { color: var(--cyan); margin: 0 0 12px; }
 h1, h2.sec, .project-title { font-family: var(--serif); font-weight: 600; }
