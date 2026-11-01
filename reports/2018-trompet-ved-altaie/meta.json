@@ -1,0 +1,46 @@
+{
+  "title": "Trompet ved Altaie",
+  "label": "Trompet ved Altaie",
+  "category": "work",
+  "isProject": true,
+  "start": "2018",
+  "end": "present",
+  "status": "ongoing",
+  "types": ["musikk"],
+  "importance": 70,
+  "shortDescription": "Egen virksomhet med trompetopptredener i begravelser, bryllup og gudstjenester.",
+  "tags": ["musikk", "gründer", "seremonier"],
+  "noPdf": true,
+  "lede": "Siden 2018 har jeg drevet Trompet ved Altaie, der jeg spiller trompet i begravelser, bryllup og gudstjenester.",
+  "sections": [
+    {
+      "title": "Virksomheten",
+      "paragraphs": [
+        "Trompet ved Altaie er min egen virksomhet. Jeg spiller i seremonier der musikken skal passe stemningen, både høytidelige og festlige anledninger."
+      ]
+    }
+  ],
+  "links": [
+    { "label": "Temmam Altaie Hornpipe (YouTube)", "url": "https://www.youtube.com/watch?v=gQ1276iFJYY" },
+    { "label": "Vidda, Meieriet Kultursenter 2020 (YouTube)", "url": "https://www.youtube.com/watch?v=u2MhqCs3C4g&list=PL3WhdoqzECLowhnnPR6eUrv8c1tzv-qHP&index=4" }
+  ],
+  "en": {
+    "title": "Trompet ved Altaie",
+    "label": "Trompet ved Altaie",
+    "shortDescription": "Own business playing the trumpet at funerals, weddings and church services.",
+    "tags": ["music", "founder", "ceremonies"],
+    "lede": "Since 2018 I have run Trompet ved Altaie, playing the trumpet at funerals, weddings and church services.",
+    "sections": [
+      {
+        "title": "The business",
+        "paragraphs": [
+          "Trompet ved Altaie is my own business. I play at ceremonies where the music has to suit the mood, both solemn and festive occasions."
+        ]
+      }
+    ],
+    "links": [
+      "Temmam Altaie Hornpipe (YouTube)",
+      "Vidda, Meieriet Kultursenter 2020 (YouTube)"
+    ]
+  }
+}

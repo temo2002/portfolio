@@ -4,7 +4,6 @@
   "category": "work",
   "isProject": true,
   "start": "2018",
-  "end": "present",
   "shortDescription": "Egen virksomhet med trompetopptredener i begravelser, bryllup og gudstjenester.",
   "tags": [
     "musikk",
@@ -12,19 +11,22 @@
     "seremonier"
   ],
   "importance": 70,
+  "projectPage": "projects/2018-trompet-ved-altaie",
+  "generated": true,
+  "label": "Trompet ved Altaie",
+  "end": "present",
   "status": "ongoing",
   "types": [
     "musikk"
   ],
   "en": {
     "title": "Trompet ved Altaie",
+    "label": "Trompet ved Altaie",
     "shortDescription": "Own business playing the trumpet at funerals, weddings and church services.",
     "tags": [
       "music",
       "founder",
       "ceremonies"
-    ],
-    "label": "Trompet ved Altaie"
-  },
-  "label": "Trompet ved Altaie"
+    ]
+  }
 }
