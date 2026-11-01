@@ -1,6 +1,6 @@
 {
   "title": "DP11 IIR notch-filter",
-  "start": "2026-06",
+  "start": "2026-03",
   "shortDescription": "Andre ordens IIR notch-filter som fjerner en pipetone på 1680 Hz fra lyd med 44,1 kHz samplingsfrekvens, implementert i Q15 på AVR128DB48.",
   "tags": [
     "IIR",
