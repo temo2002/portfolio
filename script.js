@@ -69,6 +69,7 @@ function normalize(raw) {
 const matches = (e, f) => f === "all" || (f === "project" ? e.isProject : e.category === f || e.types.includes(f));
 
 let entries = [], activeFilter = "all";
+const TOUCH_UI = () => matchMedia("(hover: none)").matches || innerWidth < 700;
 
 async function loadEntries() {
   const manifest = await (await fetch(ROOT + "projects_data/manifest.json", { cache: "no-cache" })).json();
@@ -146,11 +147,15 @@ function renderSwimlane() {
       ? `<span class="rlabel">${esc(e.title_)}</span><span class="bar" style="width:${e.w}px"></span>`
       : `<span class="marker"></span><span class="label">${esc(e.title_)}</span>`;
     b.setAttribute("aria-label", `${e.title_}, ${fmtDate(e)}`);
-    b.addEventListener("mouseenter", () => showTip(e, b));
-    b.addEventListener("focus", () => showTip(e, b));
-    b.addEventListener("mouseleave", hideTip);
-    b.addEventListener("blur", hideTip);
-    if (e.projectPage) b.addEventListener("click", () => { location.href = pageUrl(e); });
+    if (TOUCH_UI()) {
+      b.addEventListener("click", (ev) => { ev.stopPropagation(); showTip(e, b, true); });
+    } else {
+      b.addEventListener("mouseenter", () => showTip(e, b));
+      b.addEventListener("focus", () => showTip(e, b));
+      b.addEventListener("mouseleave", hideTip);
+      b.addEventListener("blur", hideTip);
+      if (e.projectPage) b.addEventListener("click", () => { location.href = pageUrl(e); });
+    }
     lane.appendChild(b);
   });
   const sc = $("laneWrap");
@@ -206,21 +211,26 @@ function applyFilter() {
 
 // Tooltip (kun på desktop)
 const tip = $("tip");
-function showTip(e, el) {
-  if (innerWidth < MOBILE_BREAK) return;
+function showTip(e, el, pinned = false) {
   const tags = loc(e, "tags") || [];
   tip.innerHTML = `<span class="tt-cat">${STR.cats[e.category]} · ${fmtDate(e)}${e.status === "ongoing" ? ` · <i class="dot"></i>${STR.ongoing}` : ""}</span>
     <strong class="tt-title">${esc(loc(e, "title"))}</strong>
     <p>${esc(loc(e, "shortDescription"))}</p>
     ${tags.length ? `<span class="tip-tags">${tags.map((t) => `<i>${esc(t)}</i>`).join("")}</span>` : ""}
-    ${e.projectPage ? `<span class="tip-go">${STR.go}</span>` : ""}`;
+    ${e.projectPage ? (pinned ? `<a class="tip-go" href="${pageUrl(e)}">${STR.go}</a>` : `<span class="tip-go">${STR.go}</span>`) : ""}${pinned ? '<button type="button" class="tip-close" aria-label="×">×</button>' : ""}`;
+  tip.classList.toggle("sheet", pinned);
   tip.hidden = false;
+  if (pinned) {
+    tip.style.left = ""; tip.style.top = "";
+    tip.querySelector(".tip-close").addEventListener("click", hideTip);
+    return;
+  }
   const r = el.getBoundingClientRect(), tr = tip.getBoundingClientRect();
   const left = Math.min(Math.max(8, r.left + r.width / 2 - tr.width / 2), innerWidth - tr.width - 8);
   const top = r.top - tr.height - 12 > 8 ? r.top - tr.height - 12 : r.bottom + 12;
   tip.style.left = left + "px"; tip.style.top = top + "px";
 }
-const hideTip = () => { tip.hidden = true; };
+const hideTip = () => { tip.hidden = true; tip.classList.remove("sheet"); };
 
 $("filters").addEventListener("click", (ev) => {
   const b = ev.target.closest(".filter-chip");
@@ -234,6 +244,11 @@ loadEntries().then((list) => {
   entries = list;
   if (!entries.length) throw new Error("ingen oppføringer");
   renderSwimlane(); renderList(); applyFilter();
+  if (TOUCH_UI()) {
+    const intro = $("tlIntro");
+    if (intro && intro.dataset.touch) intro.textContent = intro.dataset.touch;
+    document.addEventListener("click", (ev) => { if (!tip.contains(ev.target)) hideTip(); });
+  }
 }).catch((err) => { console.error(err); $("tlError").hidden = false; });
 
 // ---------- Oscilloskop i hero ----------

@@ -132,5 +132,6 @@
   "repo1_text": "The software for the aid for the blind: object detection, speech and control of the vibration belt.",
   "repo2_name": "stm32f411-bare-metal-drivers",
   "repo2_text": "Register-level drivers for the STM32F411RE and examples from blinking an LED to I2C and SPI towards an Arduino.",
-  "sec_alongside": "Alongside my studies"
+  "sec_alongside": "Alongside my studies",
+  "tl_intro_touch": "Swipe sideways and tap an entry for details."
 }
