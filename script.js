@@ -48,7 +48,7 @@ if (!reduceMotion && matchMedia("(max-width: 700px)").matches) {
 })();
 
 // ---------- Tidslinje ----------
-const EARLY_BREAK = 2015, EARLY_W = 300;
+const EARLY_BREAK = 2018, EARLY_W = 340;
 const MOBILE_BREAK = 900, PX_PER_YEAR = 260, ROWS = 18, ROW_H = 28, PAD_T = 8, RANGE_MIN_YEARS = 0.25;
 const nowYear = () => { const d = new Date(); return d.getFullYear() + d.getMonth() / 12; };
 const toYear = (s) => {
