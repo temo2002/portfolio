@@ -1,0 +1,72 @@
+{
+  "title": "Nysgjerrig på hvordan ting fungerer",
+  "label": "Nysgjerrighet",
+  "category": "hobby",
+  "isProject": false,
+  "start": "2008",
+  "end": "2012",
+  "importance": 35,
+  "shortDescription": "Åpnet radiobiler for å se hvordan de var laget. Pappa var den største inspirasjonskilden, og interessen ble til studiet jeg tar i dag.",
+  "tags": [
+    "nysgjerrighet",
+    "Linux",
+    "Ubuntu"
+  ],
+  "noPdf": true,
+  "lede": "Interessen for elektronikk og teknologi startet tidlig, og mye av den kom fra pappa.",
+  "sections": [
+    {
+      "title": "Åpne ting for å se inni",
+      "paragraphs": [
+        "Jeg har alltid vært nysgjerrig på hvordan ting fungerer. Radiobilene ble åpnet, for jeg måtte se hvordan de var laget, og leker ble fort ødelagt når nysgjerrigheten tok over.",
+        "Mye av interessen kommer fra pappa. Han introduserte meg tidlig for Ubuntu og Linux. Jeg rootet Samsung-telefoner, rotet rundt i ruterinnstillinger og leste spesifikasjoner på nye telefoner."
+      ]
+    },
+    {
+      "title": "Fra tinkering til erfaring",
+      "paragraphs": [
+        "Mellom 9 og 13 år rootet jeg telefonen for å hacke spill, for eksempel for å få det kuleste skinnet i Subway Surfers og ubegrenset med penger i Hill Climb Racing. Pappa hadde foreldrekontroll på nettet, og jeg kjørte et skript på Ubuntu som loggførte tastetrykk for å finne koden. Jeg ga ikke opp før jeg hadde funnet en vei rundt det som var utfordringene mine.",
+        "Som 13-åring bygde jeg en RC-bil med Arduino sammen med pappa. Jeg hadde ikke like god tålmodighet som nå, men alt jeg har vært innom, har gitt meg mye erfaring."
+      ]
+    },
+    {
+      "title": "Veien til studiet",
+      "paragraphs": [
+        "Det er en stor del av grunnen til at jeg i dag studerer elektronisk systemdesign ved NTNU. Det som startet med å åpne radiobiler, ble til et studium der jeg designer og bygger elektronikk selv."
+      ]
+    }
+  ],
+  "en": {
+    "title": "Curious about how things work",
+    "label": "Curiosity",
+    "shortDescription": "Opened up radio-controlled cars to see how they were made. My dad was the biggest source of inspiration, and the interest became the degree I study today.",
+    "tags": [
+      "curiosity",
+      "Linux",
+      "Ubuntu"
+    ],
+    "lede": "My interest in electronics and technology started early, and a lot of it came from my dad.",
+    "sections": [
+      {
+        "title": "Opening things up to see inside",
+        "paragraphs": [
+          "I have always been curious about how things work. The radio-controlled cars got opened because I had to see how they were made, and toys were soon broken once my curiosity took over.",
+          "A lot of the interest comes from my dad. He introduced me early to Ubuntu and Linux. I rooted Samsung phones, poked around in router settings and read the specifications of new phones."
+        ]
+      },
+      {
+        "title": "From tinkering to experience",
+        "paragraphs": [
+          "Between the ages of 9 and 13 I rooted my phone to hack games, for example to get the coolest skin in Subway Surfers and unlimited money in Hill Climb Racing. My dad had parental controls on the internet, and I ran a script on Ubuntu that logged keystrokes to find the code. I did not give up until I had found a way around whatever challenge I was facing.",
+          "At 13 I built an RC car with an Arduino together with my dad. I did not have as much patience as I do now, but everything I have tried has given me a lot of experience."
+        ]
+      },
+      {
+        "title": "The road to my degree",
+        "paragraphs": [
+          "That is a big part of why I study electronic systems design at NTNU today. What started with opening up radio-controlled cars became a degree where I design and build electronics myself."
+        ]
+      }
+    ]
+  }
+}
