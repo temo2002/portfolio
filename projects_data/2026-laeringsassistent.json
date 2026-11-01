@@ -5,7 +5,7 @@
   "isProject": false,
   "start": "2026",
   "end": "present",
-  "shortDescription": "Veileder studenter i elektronikkfag ved NTNU, også i IELS2031.",
+  "shortDescription": "Veileder studenter i elektronikkfag ved NTNU i IELS2021 og IELS2022.",
   "tags": [
     "undervisning",
     "elektronikk"
@@ -14,7 +14,7 @@
   "status": "ongoing",
   "en": {
     "title": "Learning assistant, IELS2021 and IELS2022",
-    "shortDescription": "Guides students in electronics courses at NTNU, also in IELS2031.",
+    "shortDescription": "Guides students in electronics courses at NTNU in IELS2021 and IELS2022.",
     "tags": [
       "teaching",
       "electronics"
