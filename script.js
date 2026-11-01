@@ -44,6 +44,7 @@ document.querySelectorAll(".fade-in").forEach((el) => reduceMotion ? el.classLis
 })();
 
 // ---------- Tidslinje ----------
+const EARLY_BREAK = 2015, EARLY_W = 300;
 const MOBILE_BREAK = 900, PX_PER_YEAR = 260, ROWS = 18, ROW_H = 28, PAD_T = 8, RANGE_MIN_YEARS = 0.25;
 const nowYear = () => { const d = new Date(); return d.getFullYear() + d.getMonth() / 12; };
 const toYear = (s) => {
@@ -80,6 +81,13 @@ async function loadEntries() {
   return loaded.filter(Boolean).sort((a, b) => a.startVal - b.startVal);
 }
 
+// Årene før EARLY_BREAK trykkes sammen til én smal blokk, så tidslinjen ikke blir lang å scrolle
+function xOf(v, minYear) {
+  if (minYear >= EARLY_BREAK) return (v - minYear) * PX_PER_YEAR;
+  if (v < EARLY_BREAK) return ((v - minYear) / (EARLY_BREAK - minYear)) * EARLY_W;
+  return EARLY_W + (v - EARLY_BREAK) * PX_PER_YEAR;
+}
+
 // Plassering: tyngst først, fra midtraden og utover. Etiketter som ikke får plass skjules.
 function layout(items, minYear) {
   const mid = Math.floor(ROWS / 2), order = [];
@@ -90,11 +98,11 @@ function layout(items, minYear) {
   const used = Array.from({ length: ROWS }, () => []);
   const free = (r, a, b) => used[r].every(([x, y]) => b + 6 <= x || a >= y + 6);
   items.forEach((it) => {
-    it.x = (it.startVal - minYear) * PX_PER_YEAR;
+    it.x = xOf(it.startVal, minYear);
     it.title_ = loc(it, "label") || loc(it, "title");
     const lab = Math.min(240, Math.round(it.title_.length * 6.6 + 6));
     if (it.isRange) {
-      it.w = Math.max((it.endVal - it.startVal) * PX_PER_YEAR, 36);
+      it.w = Math.max(xOf(it.endVal, minYear) - it.x, 36);
       it.wMin = it.w;
       it.wFull = Math.max(it.w, lab);
     } else {
@@ -123,18 +131,24 @@ function renderSwimlane() {
   const maxYear = Math.ceil(Math.max(...entries.map((e) => e.endVal)) + 0.01);
   const rowsUsed = layout(entries, minYear);
   const right = Math.max(...entries.map((e) => e.x + e.wFull));
-  const total = Math.max((maxYear - minYear) * PX_PER_YEAR, right) + 30;
+  const total = Math.max(xOf(maxYear, minYear), right) + 30;
   inner.style.width = total + "px";
   lane.style.height = PAD_T * 2 + rowsUsed * ROW_H + "px";
 
   const cur = Math.floor(nowYear());
-  for (let y = minYear; y <= maxYear; y++) {
+  const addTick = (text, left, width, isCur) => {
     const t = document.createElement("div");
-    t.className = "year-tick" + (y === cur ? " current" : "");
-    t.style.left = (y - minYear) * PX_PER_YEAR + "px"; t.style.width = PX_PER_YEAR + "px";
-    t.textContent = y; axis.appendChild(t);
+    t.className = "year-tick" + (isCur ? " current" : "");
+    t.style.left = left + "px"; t.style.width = width + "px";
+    t.textContent = text; axis.appendChild(t);
     const g = document.createElement("div");
-    g.className = "year-guide"; g.style.left = (y - minYear) * PX_PER_YEAR + "px"; lane.appendChild(g);
+    g.className = "year-guide"; g.style.left = left + "px"; lane.appendChild(g);
+  };
+  const early = minYear < EARLY_BREAK;
+  const earlyLabel = document.documentElement.lang === "en" ? `before ${EARLY_BREAK}` : `før ${EARLY_BREAK}`;
+  for (let y = minYear; y <= maxYear; y++) {
+    if (early && y < EARLY_BREAK) { if (y === minYear) addTick(earlyLabel, 0, EARLY_W, false); continue; }
+    addTick(y, xOf(y, minYear), PX_PER_YEAR, y === cur);
   }
 
   entries.forEach((e) => {
@@ -160,7 +174,7 @@ function renderSwimlane() {
   });
   const sc = $("laneWrap");
   // Åpne med dagens dato i synsfeltet, og la tittelen i lange barer følge med når man scroller
-  sc.scrollLeft = Math.max(0, (nowYear() - minYear) * PX_PER_YEAR - sc.clientWidth * 0.7);
+  sc.scrollLeft = Math.max(0, xOf(nowYear(), minYear) - sc.clientWidth * 0.7);
   const follow = () => {
     const edge = sc.scrollLeft - 24;
     lane.querySelectorAll(".entry.range").forEach((b) => {
