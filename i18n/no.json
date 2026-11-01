@@ -133,5 +133,6 @@
   "repo2_name": "stm32f411-bare-metal-drivers",
   "repo2_text": "Registerdrivere for STM32F411RE og eksempler fra LED-blink til I2C og SPI mot Arduino.",
   "sec_alongside": "Ved siden av studiene",
-  "tl_intro_touch": "Sveip sideveis, og trykk på en rad for detaljer."
+  "tl_intro_touch": "Sveip sideveis, og trykk på en rad for detaljer.",
+  "github_link": "GitHub ↗"
 }
