@@ -1,0 +1,84 @@
+{
+  "title": "Kongens Garde, 3. gardekompani",
+  "category": "work",
+  "isProject": false,
+  "start": "2021-09",
+  "end": "2022-09",
+  "importance": 70,
+  "shortDescription": "Førstegangstjeneste i Hans Majestet Kongens Garde, 3. gardekompani (Musikk- og drillkompaniet), der disiplin, orden og presisjon står sentralt.",
+  "tags": [
+    "førstegangstjeneste",
+    "disiplin",
+    "orden",
+    "presisjon"
+  ],
+  "noPdf": true,
+  "lede": "Førstegangstjeneste i Hans Majestet Kongens Garde, 3. gardekompani, fra september 2021. Kompaniet kalles Musikk- og drillkompaniet, og mottoet er rytme, eleganse og presisjon.",
+  "sections": [
+    {
+      "title": "Tjenesten",
+      "paragraphs": [
+        "Hans Majestet Kongens Garde er Kongens livgarde, en bataljon i Hæren med base på Huseby leir i Oslo. Garden vokter blant annet Det kongelige slott, Skaugum, Bygdøy kongsgård og Akershus festning, og er en del av hovedstadens beredskap.",
+        "3. gardekompani er Gardens musikk- og drillkompani, og den mest kjente avdelingen. Kompaniet består av en stabstropp, en musikktropp og en drilltropp. Musikktroppen er delt i et janitsjarkorps på rundt 55 soldater og et signalkorps på rundt 30. Kompaniet opptrer blant annet ved Slottet og 17. mai, og viser seg også frem i utlandet."
+      ]
+    },
+    {
+      "title": "Disiplin og orden",
+      "bullets": [
+        "Kompaniets motto er «Rytme, eleganse, presisjon». I en avdeling som viser seg frem for et publikum, er presisjonen selve produktet.",
+        "Når mange skal se ut og høres ut som én, finnes det ingen små detaljer. Hver enkelt må gjøre det samme, på samme tid og på samme måte, hver gang.",
+        "Det forutsetter orden i alt fra uniform og utstyr til rutiner og tidsbruk, at man møter forberedt, og at man kan stole på de rundt seg.",
+        "Garden som helhet har mottoet «Alt for Kongen!», og tjenesten bygger på en kultur der standarden gjelder alle, hele tiden."
+      ]
+    }
+  ],
+  "links": [
+    {
+      "label": "Forsvaret om Garden",
+      "url": "https://forsvaret.no/fakta/organisasjon/Haeren/Hans-Majestet-Kongens-Garde"
+    },
+    {
+      "label": "Store norske leksikon",
+      "url": "https://snl.no/Hans_Majestet_Kongens_Garde"
+    },
+    {
+      "label": "3. gardekompani Musikk & Drill",
+      "url": "https://musikkogdrill.com"
+    }
+  ],
+  "en": {
+    "title": "The King's Guard, 3rd Company",
+    "shortDescription": "Conscript service in His Majesty the King's Guard, 3rd Company (the Band and Drill Company), where discipline, order and precision come first.",
+    "tags": [
+      "military service",
+      "discipline",
+      "order",
+      "precision"
+    ],
+    "lede": "Conscript service in His Majesty the King's Guard, 3rd Company, from September 2021. The company is known as the Band and Drill Company, and its motto is rhythm, elegance and precision.",
+    "sections": [
+      {
+        "title": "The service",
+        "paragraphs": [
+          "His Majesty the King's Guard is the King's life guard, an Army battalion based at Huseby leir in Oslo. Among other things, the Guard protects the Royal Palace, Skaugum, Bygdøy Royal Estate and Akershus Fortress, and is part of the capital's readiness force.",
+          "The 3rd Company is the Guard's band and drill company, and its best-known unit. It consists of a staff troop, a music troop and a drill troop. The music troop is split into a concert band of around 55 soldiers and a signal corps of around 30. The company performs at the Palace and on 17 May, among other places, and also appears abroad."
+        ]
+      },
+      {
+        "title": "Discipline and order",
+        "bullets": [
+          "The company's motto is \"Rhythm, elegance, precision\". In a unit that performs for an audience, precision is the product itself.",
+          "When many people are to look and sound like one, there are no small details. Each person must do the same thing, at the same time and in the same way, every time.",
+          "That requires order in everything from uniform and equipment to routines and use of time, turning up prepared, and being able to rely on the people around you.",
+          "The Guard as a whole has the motto \"Alt for Kongen!\" (Everything for the King), and the service builds on a culture where the standard applies to everyone, all the time."
+        ]
+      }
+    ],
+    "links": [
+      "Forsvaret on the Guard",
+      "Store norske leksikon (Norwegian encyclopedia)",
+      "3rd Company Band & Drill"
+    ],
+    "captions": {}
+  }
+}

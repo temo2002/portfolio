@@ -1,0 +1,22 @@
+{
+  "id": "2023-vikar",
+  "title": "Vikar, Leknes ungdomsskole",
+  "category": "work",
+  "isProject": false,
+  "start": "2023-01",
+  "end": "2023-06",
+  "shortDescription": "Vikar ved Leknes ungdomsskole i seks måneder.",
+  "tags": [
+    "undervisning",
+    "vikar"
+  ],
+  "importance": 40,
+  "en": {
+    "title": "Substitute teacher, Leknes lower secondary school",
+    "shortDescription": "Substitute teacher at Leknes lower secondary school for six months.",
+    "tags": [
+      "teaching",
+      "substitute"
+    ]
+  }
+}

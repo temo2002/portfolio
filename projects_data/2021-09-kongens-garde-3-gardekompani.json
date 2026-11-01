@@ -1,0 +1,28 @@
+{
+  "id": "2021-09-kongens-garde-3-gardekompani",
+  "title": "Kongens Garde, 3. gardekompani",
+  "category": "work",
+  "isProject": false,
+  "start": "2021-09",
+  "shortDescription": "Førstegangstjeneste i Hans Majestet Kongens Garde, 3. gardekompani (Musikk- og drillkompaniet), der disiplin, orden og presisjon står sentralt.",
+  "tags": [
+    "førstegangstjeneste",
+    "disiplin",
+    "orden",
+    "presisjon"
+  ],
+  "importance": 70,
+  "projectPage": "projects/2021-09-kongens-garde-3-gardekompani",
+  "generated": true,
+  "end": "2022-09",
+  "en": {
+    "title": "The King's Guard, 3rd Company",
+    "shortDescription": "Conscript service in His Majesty the King's Guard, 3rd Company (the Band and Drill Company), where discipline, order and precision come first.",
+    "tags": [
+      "military service",
+      "discipline",
+      "order",
+      "precision"
+    ]
+  }
+}
