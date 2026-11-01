@@ -287,6 +287,7 @@ function drawScope() {
 drawScope();
 
 // ---------- RC-lavpassfilter (Bode) ----------
+if ($("bode")) {
 const bode = $("bode"), bctx = bode.getContext("2d");
 const rIn = $("r"), cIn = $("c");
 const fmt = (v, unit) => {
@@ -328,3 +329,4 @@ function drawBode() {
 }
 rIn.oninput = cIn.oninput = drawBode;
 drawBode();
+}

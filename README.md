@@ -28,6 +28,10 @@ python serve.py
 
 Bygger først, og åpner siden på http://localhost:8080. Serveren lytter bare på din egen maskin.
 
+## Skjule «Prøv selv»
+
+`"showDemo": false` i `site.json` skjuler RC-filteret på forsiden. Sett den til `true` (eller fjern linjen) og kjør `python tools/build_pages.py` for å vise det igjen.
+
 ## Språk
 
 Siden finnes på norsk (rotmappa) og engelsk (`en/`). Forsidetekstene ligger i `i18n/no.json` og `i18n/en.json`, og strukturen i `index.template.html`. Kjør `python tools/build_pages.py` etter endringer. Rapportsidene får engelsk tekst fra feltet `"en"` i `reports/<mappe>/meta.json` (tittel, beskrivelse, tagger, seksjoner og bildetekster). Mangler `"en"`, vises norsk tekst på begge språk. For oppføringer du skriver for hånd i `projects_data/` legger du `"en": {"title", "shortDescription", "tags"}` i JSON-filen.

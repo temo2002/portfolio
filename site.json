@@ -7,5 +7,6 @@
   "image": "og.png",
   "jobTitle": "Elektronikkstudent",
   "university": "NTNU",
-  "jobTitleEn": "Electronics student"
+  "jobTitleEn": "Electronics student",
+  "showDemo": false
 }

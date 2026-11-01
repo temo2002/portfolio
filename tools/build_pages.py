@@ -21,7 +21,14 @@ def asset_v(name):
     return hashlib.md5((ROOT / name).read_bytes()).hexdigest()[:8]
 
 
+DEMO = re.compile(r"[ \t]*<!-- demo:start -->.*?<!-- demo:end -->\n?", re.S)
+
+
 def render(template, strings, lang):
+    # showDemo: false i site.json skjuler "Prøv selv"-seksjonen (sett til true for å vise den igjen)
+    site = json.loads((ROOT / "site.json").read_text(encoding="utf-8"))
+    if not site.get("showDemo", True):
+        template = DEMO.sub("", template)
     missing = sorted(set(re.findall(r"\{\{(\w+)\}\}", template)) - set(strings))
     if missing:
         sys.exit(f"i18n/{lang}.json mangler nøkler: {', '.join(missing)}")
