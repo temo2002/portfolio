@@ -1,0 +1,25 @@
+{
+  "id": "2015-rc-bil-med-arduino",
+  "title": "RC-bil med Arduino",
+  "label": "RC-bil med Arduino",
+  "category": "hobby",
+  "isProject": true,
+  "start": "2015",
+  "importance": 45,
+  "shortDescription": "Bygde en radiostyrt bil med Arduino sammen med pappa som 13-åring. Jeg hadde ikke like mye tålmodighet som nå, men det ga erfaring jeg bygger videre på.",
+  "tags": [
+    "Arduino",
+    "elektronikk",
+    "RC"
+  ],
+  "en": {
+    "title": "RC car with Arduino",
+    "label": "RC car with Arduino",
+    "shortDescription": "Built a radio-controlled car with an Arduino together with my dad when I was 13. I did not have as much patience as I do now, but it gave me experience I still build on.",
+    "tags": [
+      "Arduino",
+      "electronics",
+      "RC"
+    ]
+  }
+}

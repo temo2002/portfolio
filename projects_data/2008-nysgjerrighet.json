@@ -1,0 +1,26 @@
+{
+  "id": "2008-nysgjerrighet",
+  "title": "Nysgjerrig på hvordan ting fungerer",
+  "label": "Nysgjerrighet",
+  "category": "hobby",
+  "isProject": false,
+  "start": "2008",
+  "end": "2012",
+  "importance": 35,
+  "shortDescription": "Åpnet radiobiler og leker for å se hvordan de var laget. Pappa introduserte meg tidlig for Ubuntu og Linux, og jeg ble opptatt av mobiler, ruterinnstillinger og spesifikasjoner.",
+  "tags": [
+    "nysgjerrighet",
+    "Linux",
+    "Ubuntu"
+  ],
+  "en": {
+    "title": "Curious about how things work",
+    "label": "Curiosity",
+    "shortDescription": "Opened up radio-controlled cars and toys to see how they were made. My dad introduced me early to Ubuntu and Linux, and I got into phones, router settings and spec sheets.",
+    "tags": [
+      "curiosity",
+      "Linux",
+      "Ubuntu"
+    ]
+  }
+}

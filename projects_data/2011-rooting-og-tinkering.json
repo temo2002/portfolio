@@ -1,0 +1,26 @@
+{
+  "id": "2011-rooting-og-tinkering",
+  "title": "Rooting, spillhacking og tinkering",
+  "label": "Tinkering",
+  "category": "hobby",
+  "isProject": false,
+  "start": "2011",
+  "end": "2015",
+  "importance": 35,
+  "shortDescription": "Rootet mobilen for å hacke spill, med skins i Subway Surfers og ubegrenset penger i Hill Climb Racing. Jeg ga ikke opp før jeg fant en vei rundt det som var utfordringene mine, blant annet et skript på Ubuntu som loggførte tastetrykk.",
+  "tags": [
+    "rooting",
+    "Linux",
+    "feilsøking"
+  ],
+  "en": {
+    "title": "Rooting, game hacking and tinkering",
+    "label": "Tinkering",
+    "shortDescription": "Rooted my phone to hack games, with skins in Subway Surfers and unlimited money in Hill Climb Racing. I never gave up until I found a way around whatever challenge I was facing, including a script on Ubuntu that logged keystrokes.",
+    "tags": [
+      "rooting",
+      "Linux",
+      "troubleshooting"
+    ]
+  }
+}
