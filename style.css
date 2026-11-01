@@ -66,6 +66,18 @@ h2.sec span { font-family: var(--mono); font-size: 14px; color: var(--brass); }
 .muted { color: var(--muted); }
 .muted.small { margin-top: 18px; }
 
+.grid2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+.subhead { font-family: var(--mono); font-size: 12px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 40px 0 14px; }
+.project .more { margin: 14px 0 0; font-size: 14px; }
+.project .more a { color: var(--brass); }
+.project .more a:hover { text-decoration: underline; }
+.project.compact { padding: 18px; }
+.project.compact h3 { font-size: 17px; }
+.project.compact p { font-size: 14px; }
+.repo { display: block; transition: .2s; }
+.repo:hover { transform: translateY(-3px); border-color: #3a4580; }
+.repo strong { display: block; font-family: var(--mono); font-size: 14px; color: var(--brass); margin-bottom: 6px; }
+.repo span { font-size: 14px; color: #c5cbe6; }
 .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
 .project { transition: .2s; }
 .project:hover { transform: translateY(-3px); border-color: #3a4580; }
@@ -110,7 +122,7 @@ footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8p
 @media (max-width: 820px) {
   .hero, .demo, .about { grid-template-columns: 1fr; }
   .about-photo img { aspect-ratio: 4 / 3; object-position: 50% 60%; }
-  .grid3, .chain { grid-template-columns: 1fr; }
+  .grid3, .grid2, .chain { grid-template-columns: 1fr; }
   .step::after { display: none; }
   .nav nav { gap: 12px; font-size: 13px; }
   .logo span:last-child { display: none; }

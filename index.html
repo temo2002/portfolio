@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=fbd62d92">
+<link rel="stylesheet" href="style.css?v=677ebaa3">
 <!-- seo:start -->
 <link rel="canonical" href="https://temmamaltaie.no/">
 <link rel="alternate" hreflang="nb" href="https://temmamaltaie.no/">
@@ -74,25 +74,69 @@
 
   <section id="arbeid" class="fade-in">
     <h2 class="sec"><span>01</span> Utvalgt arbeid</h2>
-    <div class="grid3">
+    <div class="grid2">
       <article class="card project">
+        <p class="status">gruppeprosjekt på tre · 2026</p>
+        <h3>Objektdeteksjon for blinde og svaksynte</h3>
+        <p>Bærbart hjelpemiddel som finner frukt med kamera og viser retningen med et vibrasjonsbelte og norsk tale. Jeg hadde ansvaret for programvaren.</p>
+        <ul class="tags"><li>Raspberry Pi 5</li><li>YOLOv8</li><li>ESP32</li><li>Python</li></ul>
+        <p class="more"><a href="projects/2026-01-iels2003-objektdeteksjon-blinde.html">Les mer →</a></p>
+      </article>
+      <article class="card project">
+        <p class="status">gruppeprosjekt på to · 2025</p>
+        <h3>EKG-målesystem</h3>
+        <p>Analog interfacekrets, ESP32 med pulsberegning og sanntidsvisning i nettleseren, fra brødbrett til firelags PCB.</p>
+        <ul class="tags"><li>KiCad</li><li>LTspice</li><li>ESP32</li><li>PCB</li></ul>
+        <p class="more"><a href="projects/2025-08-iels2002-ekg-malesystem.html">Les mer →</a></p>
+      </article>
+      <article class="card project">
+        <p class="status">gruppeprosjekt på to · 2026</p>
+        <h3>Buck converter, 5 V til 1 V</h3>
+        <p>Synkron nedstigningsomformer med LTC3807 som holder utgangen innenfor ±30 mV. To PCB-revisjoner, der den første feilet på grunn av en koblingsfeil.</p>
+        <ul class="tags"><li>LTC3807</li><li>KiCad</li><li>LTspice</li><li>PCB</li></ul>
+        <p class="more"><a href="projects/2026-02-iels2031-buck-converter.html">Les mer →</a></p>
+      </article>
+      <article class="card project">
+        <p class="status">eget prosjekt · 2025</p>
+        <h3>Drivere for STM32F411RE</h3>
+        <p>Drivere for GPIO, I2C, SPI og USART skrevet fra bunnen av i C, uten HAL, med eksempelprogrammer.</p>
+        <ul class="tags"><li>C</li><li>STM32</li><li>I2C</li><li>SPI</li></ul>
+        <p class="more"><a href="projects/2025-08-stm32f411-drivere.html">Les mer →</a></p>
+      </article>
+    </div>
+
+    <h3 class="subhead">Ved siden av studiene</h3>
+    <div class="grid3">
+      <article class="card project compact">
         <p class="status">pågår nå · 2026 til i dag</p>
         <h3>Læringsassistent</h3>
         <p>Veileder medstudenter i elektronikkfag ved NTNU, i IELS2021 og IELS2022. Har også holdt egne lynkurs i C-programmering og analog elektronikk med filterdesign.</p>
         <ul class="tags"><li>undervisning</li><li>analog elektronikk</li><li>C</li><li>filterdesign</li></ul>
       </article>
-      <article class="card project">
+      <article class="card project compact">
         <p class="status">pågår nå · nestleder siden jan 2026</p>
         <h3>NTNUI Calisthenics</h3>
         <p>Nestleder i en gruppe med over 200 utøvere. Koordinerer et team på 14 trenere og holder samfunnet i gang, fra planlegging til det praktiske rundt treningene.</p>
         <ul class="tags"><li>ledelse</li><li>koordinering</li><li>200+ utøvere</li><li>14 trenere</li></ul>
       </article>
-      <article class="card project">
+      <article class="card project compact">
         <p class="status">egen bedrift · siden 2018</p>
         <h3>Trompet ved Altaie</h3>
         <p>Trompetist for begravelser, bryllup og gudstjenester. Små seremonier der timing, ro og lytting er det som teller.</p>
         <ul class="tags"><li>musikk</li><li>gründer</li><li>seremonier</li></ul>
       </article>
+    </div>
+
+    <h3 class="subhead">Kode på GitHub</h3>
+    <div class="grid2">
+      <a class="card repo" href="https://github.com/temo2002/IELS2003_BlindeProsjekt" target="_blank" rel="noopener">
+        <strong>IELS2003_BlindeProsjekt ↗</strong>
+        <span>Programvaren til hjelpemiddelet for blinde: objektdeteksjon, tale og styring av vibrasjonsbeltet.</span>
+      </a>
+      <a class="card repo" href="https://github.com/temo2002/stm32f411-bare-metal-drivers" target="_blank" rel="noopener">
+        <strong>stm32f411-bare-metal-drivers ↗</strong>
+        <span>Registerdrivere for STM32F411RE og eksempler fra LED-blink til I2C og SPI mot Arduino.</span>
+      </a>
     </div>
   </section>
 
@@ -173,7 +217,7 @@
 
 <footer>
   <span>© <span id="year">2026</span> Temmam Nabil Altaie</span>
-  <span>håndlaget · ingen rammeverk · servert av GitHub Pages</span>
+  <span>servert av GitHub Pages</span>
 </footer>
 
 <script src="script.js?v=9f028038"></script>

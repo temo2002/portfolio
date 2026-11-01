@@ -211,13 +211,13 @@ UI = {
            "nav": {"work": "Arbeid", "timeline": "Tidslinje", "about": "Om meg", "contact": "Kontakt"},
            "cats": {"work": "jobb", "school": "skole", "hobby": "hobby"}, "version": "versjon", "report": "Rapporten", "open_pdf": "Åpne PDF",
            "no_pdf": "Nettleseren din viser ikke PDF direkte.", "download": "Last ned rapporten her", "links": "Lenker", "figures": "Figurer",
-           "footer": "håndlaget · ingen rammeverk · servert av GitHub Pages", "pdf_aria": "Rapport som PDF", "alt_label": "EN", "alt_title": "English version",
+           "footer": "servert av GitHub Pages", "pdf_aria": "Rapport som PDF", "alt_label": "EN", "alt_title": "English version",
            "locale": "nb"},
     "en": {"html": "en", "back": "← back to the timeline", "ids": {"work": "work", "timeline": "timeline", "about": "about", "contact": "contact"},
            "nav": {"work": "Work", "timeline": "Timeline", "about": "About", "contact": "Contact"},
            "cats": {"work": "work", "school": "school", "hobby": "hobby"}, "version": "version", "report": "The report", "open_pdf": "Open PDF",
            "no_pdf": "Your browser cannot display PDFs directly.", "download": "Download the report here", "links": "Links", "figures": "Figures",
-           "footer": "handmade · no framework · served by GitHub Pages", "pdf_aria": "Report as PDF", "alt_label": "NO", "alt_title": "Norsk versjon",
+           "footer": "served by GitHub Pages", "pdf_aria": "Report as PDF", "alt_label": "NO", "alt_title": "Norsk versjon",
            "locale": "en"},
 }
 
