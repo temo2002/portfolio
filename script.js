@@ -24,6 +24,10 @@ const io = new IntersectionObserver((entries) => {
   entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.add("is-revealed"); io.unobserve(en.target); } });
 }, { threshold: 0.08 });
 document.querySelectorAll(".fade-in").forEach((el) => reduceMotion ? el.classList.add("is-revealed") : io.observe(el));
+// På mobil fader hver boks inn for seg når den kommer til syne, ikke hele seksjonen på en gang
+if (!reduceMotion && matchMedia("(max-width: 700px)").matches) {
+  document.querySelectorAll(".card, .fact, .step").forEach((el) => { el.classList.add("reveal-card"); io.observe(el); });
+}
 
 // Skrivemaskin: fraser ligger i data-phrases på elementet, så de kan oversettes
 (function typewriter() {
