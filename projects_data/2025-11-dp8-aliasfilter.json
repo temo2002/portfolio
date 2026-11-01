@@ -14,8 +14,10 @@
   "importance": 55,
   "projectPage": "projects/2025-11-dp8-aliasfilter",
   "generated": true,
+  "label": "DP8 Aliasfilter",
   "en": {
     "title": "DP8 Anti-aliasing filter",
+    "label": "DP8 Anti-aliasing",
     "shortDescription": "Fourth-order Butterworth anti-aliasing filter with two cascaded Sallen-Key stages, for an ADC with a 7.1 kHz sampling frequency.",
     "tags": [
       "Butterworth",

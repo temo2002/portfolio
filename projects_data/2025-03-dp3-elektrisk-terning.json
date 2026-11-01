@@ -13,8 +13,10 @@
   "importance": 35,
   "projectPage": "projects/2025-03-dp3-elektrisk-terning",
   "generated": true,
+  "label": "DP3 Terning",
   "en": {
     "title": "DP3 Electronic die",
+    "label": "DP3 Die",
     "shortDescription": "Digital die showing numbers from 1 to 6, built as digital logic in an FPGA with IceStudio.",
     "tags": [
       "FPGA",

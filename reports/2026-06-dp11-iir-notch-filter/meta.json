@@ -60,6 +60,8 @@
     "captions": {
       "img/spektrum.webp": "FFT spectrum with the beep clearly visible at 1680 Hz.",
       "img/pol-null.webp": "Pole-zero plot for the notch filter."
-    }
-  }
+    },
+    "label": "DP11 IIR notch"
+  },
+  "label": "DP11 IIR notch"
 }

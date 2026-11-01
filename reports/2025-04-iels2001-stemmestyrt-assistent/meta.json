@@ -130,6 +130,8 @@
       "img/rålyd.webp": "Audio recording with crackling in Audacity, before the offset was removed.",
       "img/dft-for.webp": "DFT before filtering: very high amplitude around 0 Hz (DC offset).",
       "img/dft-etter.webp": "DFT after the digital high-pass filter."
-    }
-  }
+    },
+    "label": "IELS2001 Voice assistant"
+  },
+  "label": "IELS2001 Stemmeassistent"
 }

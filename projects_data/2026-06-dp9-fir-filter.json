@@ -14,8 +14,10 @@
   "importance": 55,
   "projectPage": "projects/2026-06-dp9-fir-filter",
   "generated": true,
+  "label": "DP9 FIR-filter",
   "en": {
     "title": "DP9 FIR filter",
+    "label": "DP9 FIR filter",
     "shortDescription": "FIR low-pass filter for noise reduction in audio: verified in MATLAB, with spectrum analysis and implementation on a microcontroller.",
     "tags": [
       "FIR",

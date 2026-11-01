@@ -13,8 +13,10 @@
   "importance": 40,
   "projectPage": "projects/2025-01-dp1-signalnivaaregulator",
   "generated": true,
+  "label": "DP1 Signalnivå",
   "en": {
     "title": "DP1 Signal level controller",
+    "label": "DP1 Signal level",
     "shortDescription": "Controller that amplifies or attenuates a 237 Hz signal, built with two inverting operational amplifiers and a potentiometer.",
     "tags": [
       "operational amplifier",

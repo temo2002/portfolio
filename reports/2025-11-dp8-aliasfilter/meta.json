@@ -69,6 +69,8 @@
       "img/amplituderespons.webp": "Measured and simulated amplitude response of the anti-aliasing filter.",
       "img/ltspice.webp": "LTspice circuit with two cascaded Sallen-Key stages.",
       "img/brodbrett.webp": "The filter built on a breadboard."
-    }
-  }
+    },
+    "label": "DP8 Anti-aliasing"
+  },
+  "label": "DP8 Aliasfilter"
 }

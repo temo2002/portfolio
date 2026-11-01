@@ -58,6 +58,8 @@
     "captions": {
       "img/brodbrett.webp": "The die built on a breadboard with LEDs and a seven-segment display.",
       "img/icestudio.webp": "The circuit drawn in IceStudio."
-    }
-  }
+    },
+    "label": "DP3 Die"
+  },
+  "label": "DP3 Terning"
 }

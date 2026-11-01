@@ -275,6 +275,8 @@
       "img/kapsling-siste.webp": "Final version of the enclosure.",
       "img/kapsling-lokk.webp": "Lid with camera mount.",
       "img/teststrategi.webp": "Test strategy: component testing before integration testing."
-    }
-  }
+    },
+    "label": "IELS2003 Object detection"
+  },
+  "label": "IELS2003 Objektdeteksjon"
 }

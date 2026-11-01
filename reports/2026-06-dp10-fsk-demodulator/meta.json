@@ -78,6 +78,8 @@
       "img/blokkskjema.webp": "Principle block structure of the FSK demodulator.",
       "img/energi.webp": "Energy detection for 200 Hz and 300 Hz after absolute value and moving average.",
       "img/bitbeslutning.webp": "Bit decision made in the middle of each bit period."
-    }
-  }
+    },
+    "label": "DP10 FSK"
+  },
+  "label": "DP10 FSK"
 }

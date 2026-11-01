@@ -90,7 +90,7 @@ function layout(items, minYear) {
   const free = (r, a, b) => used[r].every(([x, y]) => b + 6 <= x || a >= y + 6);
   items.forEach((it) => {
     it.x = (it.startVal - minYear) * PX_PER_YEAR;
-    it.title_ = loc(it, "title");
+    it.title_ = loc(it, "label") || loc(it, "title");
     const lab = Math.min(240, Math.round(it.title_.length * 6.6 + 6));
     if (it.isRange) {
       it.w = Math.max((it.endVal - it.startVal) * PX_PER_YEAR, 36);

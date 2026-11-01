@@ -78,6 +78,8 @@
       "img/oversikt.webp": "Overall system for the articulation trainer.",
       "img/losning.webp": "Realized solution on the AVR128DB48.",
       "img/programflyt.webp": "Program flow for FFT and display."
-    }
-  }
+    },
+    "label": "DP12 Articulation"
+  },
+  "label": "DP12 Artikulasjon"
 }

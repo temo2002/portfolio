@@ -97,6 +97,8 @@
       "img/kretsskjema.webp": "Circuit diagram for the channel model and noise amplifier.",
       "img/ber-baudrate.webp": "Bit error rate as a function of baud rate.",
       "img/ber-snr.webp": "Bit error rate as a function of signal-to-noise ratio."
-    }
-  }
+    },
+    "label": "DP7 Test bench"
+  },
+  "label": "DP7 Testbenk"
 }

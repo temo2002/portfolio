@@ -67,6 +67,8 @@
       "img/kretsskisse.webp": "Circuit sketch with two inverting op-amps.",
       "img/maks-forsterkning.webp": "Measurement of maximum gain, input and output.",
       "img/maks-demping.webp": "Measurement of maximum attenuation, input and output."
-    }
-  }
+    },
+    "label": "DP1 Signal level"
+  },
+  "label": "DP1 Signalnivå"
 }

@@ -191,6 +191,8 @@
       "img/cmrr.webp": "CMRR for the four realizations.",
       "img/pcb.webp": "Four-layer PCB with ESP32, ADC and battery.",
       "img/pcb-layout.webp": "PCB layout drawn in KiCad."
-    }
-  }
+    },
+    "label": "IELS2002 ECG"
+  },
+  "label": "IELS2002 EKG"
 }

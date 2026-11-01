@@ -87,6 +87,8 @@
       "img/testoppsett.webp": "Block diagram of the test setup.",
       "img/teori.webp": "Theoretical impulse response for different values of a, calculated in Python.",
       "img/maling.webp": "Measured impulse response on the oscilloscope for a = 0.4 and a = 0.7."
-    }
-  }
+    },
+    "label": "DP4 Reverb"
+  },
+  "label": "DP4 Romklang"
 }

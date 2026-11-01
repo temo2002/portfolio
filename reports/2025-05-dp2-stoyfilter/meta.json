@@ -76,6 +76,8 @@
       "img/ltspice.webp": "LTspice simulation of the band-stop filter.",
       "img/spektrum.webp": "Spectrum analysis before and after filtering.",
       "img/bode.webp": "Measured frequency response with attenuation around 1.66 kHz."
-    }
-  }
+    },
+    "label": "DP2 Noise filter"
+  },
+  "label": "DP2 Støyfilter"
 }

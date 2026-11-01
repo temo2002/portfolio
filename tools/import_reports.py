@@ -199,7 +199,7 @@ def build_entry(folder):
     entry["_hero"] = hero
     entry["_en"] = en or {}
     if en:  # tittel, beskrivelse og tagger leses av tidslinjen på engelsk
-        entry["en"] = {k: en[k] for k in ("title", "shortDescription", "tags") if k in en}
+        entry["en"] = {k: en[k] for k in ("title", "label", "shortDescription", "tags") if k in en}
     entry["_figures"] = figures
     entry["_macros"] = macros
     return entry, "; ".join(notes) or None

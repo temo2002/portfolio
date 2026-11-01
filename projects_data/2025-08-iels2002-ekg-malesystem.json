@@ -16,8 +16,10 @@
   "projectPage": "projects/2025-08-iels2002-ekg-malesystem",
   "generated": true,
   "end": "2025-11",
+  "label": "IELS2002 EKG",
   "en": {
     "title": "IELS2002 ECG measurement system",
+    "label": "IELS2002 ECG",
     "shortDescription": "Complete ECG measurement system: analog interface circuit, ADC, ESP32 with heart rate calculation and web-based live display, from breadboard to four-layer PCB.",
     "tags": [
       "ECG",

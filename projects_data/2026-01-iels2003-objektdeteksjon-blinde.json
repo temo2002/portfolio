@@ -16,8 +16,10 @@
   "projectPage": "projects/2026-01-iels2003-objektdeteksjon-blinde",
   "generated": true,
   "end": "2026-06",
+  "label": "IELS2003 Objektdeteksjon",
   "en": {
     "title": "IELS2003 Object detection for the blind and visually impaired",
+    "label": "IELS2003 Object detection",
     "shortDescription": "Wearable aid that finds fruit with camera-based object detection and shows the direction with a vibration belt and Norwegian speech. Group project of three.",
     "tags": [
       "YOLOv8",

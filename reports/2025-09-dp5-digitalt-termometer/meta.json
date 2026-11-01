@@ -69,6 +69,8 @@
       "img/brodbrett.webp": "The thermometer on a breadboard with an OLED display.",
       "img/blokkskjema.webp": "Block diagram from transducer to display.",
       "img/maling.webp": "Measurement in a water bath."
-    }
-  }
+    },
+    "label": "DP5 Thermometer"
+  },
+  "label": "DP5 Termometer"
 }

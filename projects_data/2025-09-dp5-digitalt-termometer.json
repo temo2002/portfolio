@@ -14,8 +14,10 @@
   "importance": 60,
   "projectPage": "projects/2025-09-dp5-digitalt-termometer",
   "generated": true,
+  "label": "DP5 Termometer",
   "en": {
     "title": "DP5 Digital thermometer",
+    "label": "DP5 Thermometer",
     "shortDescription": "Thermometer with a K-type thermocouple, analog amplifier, 10-bit ADC on the AVR128DB48 and an OLED display.",
     "tags": [
       "thermocouple",

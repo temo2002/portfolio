@@ -76,6 +76,8 @@
       "img/tasks.webp": "Task distribution in the real-time system.",
       "img/kretsskjema.webp": "Circuit diagram with LEDs and buttons.",
       "img/programflyt.webp": "Program flow for the game."
-    }
-  }
+    },
+    "label": "DP6 Reaction"
+  },
+  "label": "DP6 Reaksjon"
 }

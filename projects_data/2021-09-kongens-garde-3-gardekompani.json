@@ -16,8 +16,10 @@
   "projectPage": "projects/2021-09-kongens-garde-3-gardekompani",
   "generated": true,
   "end": "2022-09",
+  "label": "Kongens Garde",
   "en": {
     "title": "The King's Guard, 3rd Company",
+    "label": "King's Guard",
     "shortDescription": "Conscript service in His Majesty the King's Guard, 3rd Company (the Band and Drill Company), where discipline, order and precision come first.",
     "tags": [
       "military service",

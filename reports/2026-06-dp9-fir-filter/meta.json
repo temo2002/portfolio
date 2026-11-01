@@ -69,6 +69,8 @@
       "img/oppkobling.webp": "Setup with AVR128DB48 and Analog Discovery 2.",
       "img/frekvensrespons.webp": "Magnitude and phase response of the FIR low-pass filter.",
       "img/psd.webp": "Power spectral density before and after filtering."
-    }
-  }
+    },
+    "label": "DP9 FIR filter"
+  },
+  "label": "DP9 FIR-filter"
 }

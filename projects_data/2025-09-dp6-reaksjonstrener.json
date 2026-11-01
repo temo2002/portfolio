@@ -13,8 +13,10 @@
   "importance": 45,
   "projectPage": "projects/2025-09-dp6-reaksjonstrener",
   "generated": true,
+  "label": "DP6 Reaksjon",
   "en": {
     "title": "DP6 Reaction trainer",
+    "label": "DP6 Reaction",
     "shortDescription": "Reaction game with buttons and LEDs, built as a real-time system with FreeRTOS and increasing difficulty.",
     "tags": [
       "FreeRTOS",

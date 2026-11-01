@@ -14,8 +14,10 @@
   "importance": 55,
   "projectPage": "projects/2026-06-dp11-iir-notch-filter",
   "generated": true,
+  "label": "DP11 IIR notch",
   "en": {
     "title": "DP11 IIR notch filter",
+    "label": "DP11 IIR notch",
     "shortDescription": "Second-order IIR notch filter that removes a 1680 Hz beep from audio sampled at 44.1 kHz, implemented in Q15 on the AVR128DB48.",
     "tags": [
       "IIR",

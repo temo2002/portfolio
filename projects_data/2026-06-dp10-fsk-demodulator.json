@@ -14,8 +14,10 @@
   "importance": 60,
   "projectPage": "projects/2026-06-dp10-fsk-demodulator",
   "generated": true,
+  "label": "DP10 FSK",
   "en": {
     "title": "DP10 FSK demodulator",
+    "label": "DP10 FSK",
     "shortDescription": "Digital demodulator for UART over FSK (200 and 300 Hz, 20 bit/s), with two parallel FIR filters and energy comparison on the AVR128DB48.",
     "tags": [
       "FSK",
