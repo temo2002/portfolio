@@ -87,6 +87,9 @@ h2.sec span { font-family: var(--mono); font-size: 14px; color: var(--brass); }
 
 .about { display: grid; grid-template-columns: 1.4fr 1fr; gap: 32px; }
 .about-text p { margin-top: 0; color: #c5cbe6; }
+.about-side { display: grid; gap: 16px; align-content: start; }
+.about-photo { margin: 0; border-radius: 14px; overflow: hidden; border: 1px solid var(--line); background: var(--card); }
+.about-photo img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 65%; }
 .facts { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-content: start; }
 .fact { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px; }
 .fact strong { display: block; font-size: 28px; color: var(--brass); }
@@ -106,6 +109,7 @@ footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8p
 
 @media (max-width: 820px) {
   .hero, .demo, .about { grid-template-columns: 1fr; }
+  .about-photo img { aspect-ratio: 4 / 3; object-position: 50% 60%; }
   .grid3, .chain { grid-template-columns: 1fr; }
   .step::after { display: none; }
   .nav nav { gap: 12px; font-size: 13px; }

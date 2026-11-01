@@ -99,6 +99,28 @@
     "links": [
       "Temmam Altaie Hornpipe (YouTube)",
       "Vidda, Meieriet Kultursenter 2020 (YouTube)"
-    ]
-  }
+    ],
+    "captions": {
+      "img/trompet-snoe.webp": "With the trumpet in Lofoten.",
+      "img/trompet-portrett.webp": "Portrait with trumpet, winter in Lofoten."
+    }
+  },
+  "hero": {
+    "file": "img/trompet-snoe.webp",
+    "w": 1600,
+    "h": 997,
+    "bg": "#0b0f20",
+    "fit": "cover",
+    "caption": "Med trompeten i Lofoten."
+  },
+  "figures": [
+    {
+      "file": "img/trompet-portrett.webp",
+      "w": 1600,
+      "h": 931,
+      "bg": "#0b0f20",
+      "fit": "cover",
+      "caption": "Portrett med trompet, vinter i Lofoten."
+    }
+  ]
 }
